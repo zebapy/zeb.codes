@@ -1,12 +1,25 @@
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Zeb Pykosz | Designer and Developer based in Middlebury, Vermont</title>
+    <meta name="author" content="Zebhdiyah Avery Pykosz">
+    <meta name="description" content="Portfolio of freelance web developer and designer based in Middlebury, Vermont - passionate about internet things">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
-  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+    <!-- Facebook OpenGraph -->
+    <meta property="og:title" content="Zeb Pykosz | Designer and Developer based in Middlebury, Vermont">
+    <meta property="og:description" content="Portfolio of freelance web developer and designer based in Middlebury, Vermont - passionate about creating nice, clean, and usable things on the internet.">
+    <meta property="og:site_name" content="Zeb Pykosz">
+    <meta property="og:image" content="http://zebpykosz.com/img/zeb.jpg">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://zebpykosz.com">
+    
+    <!-- Twitter card -->
+    <meta name="twitter:image" content="http://zebpykosz.com/img/zeb.jpg">
+    <meta name="twitter:title" content="Zeb Pykosz | Designer and Developer based in Middlebury, Vermont">
+    <meta name="twitter:description" content="Portfolio of freelance front-end web developer and designer based in Middlebury, Vermont - passionate about creating nice, clean, and usable things on the internet.">
 
-  <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
-  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-  <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
+    <!-- Place favicon.ico and apple-touch-icon(s) in the root directory -->
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/vendor/modernizr-2.7.1.min.js"></script>
 </head>
