@@ -1,20 +1,15 @@
-$palettes: (
-    primary: (
-        base: #7cd5ff, 
-        dark: #6dbbe0
-    ),
-    
-    secondary: (
-        base: #333, 
-        dark: #292929,
-        light: #c6c6c6
-    ),
 
-    tertiary: (
-        base: #f4f4f4,
-        dark: #959595
-    )
-);
+// Colors
+$brand-blue: #7cd5ff;
+$brand-blue-dark: darken(#7cd5ff, 25%);
+
+$brand-gray: #333;
+$brand-gray-dark: darken(#333, 25%);
+$brand-gray-light: lighten(#333, 25%);
+
+$brand-white: #f4f4f4;
+
+// Button sizes
 
 $buttons: (
     x-large: 24,
