@@ -1,12 +1,23 @@
 # Site settings
 title: "Zeb Pykosz | Designer and Front-end web developer based in Middlebury, Vermont"
+author: Zebhdiyah Pykosz
 email: hello@zebpykosz.com
-description: > # this means to ignore newlines until "baseurl:"
-  Portfolio of freelance web developer and designer based in Middlebury, Vermont - passionate about creating nice, clean, and usable things on the internet.
+description: "Portfolio of freelance web developer and designer based in Middlebury, Vermont - passionate about creating nice, clean, and usable things on the internet."
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: http://zebpykosz.com # the base hostname & protocol for your site
 twitter_username: zebhdiyah
-github_username:  zebapy
+github_username: zebapy
+image_path: http://zebpykosz.com/img/zeb.jpg
+
+exclude: 
+- bower_components 
+- bower.json 
+- README.md
+
+collections:
+    projects:
+        output: true
+        title: Projects
 
 sass:
     style: :compressed
