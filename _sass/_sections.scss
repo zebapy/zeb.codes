@@ -1,0 +1,32 @@
+.section {
+    height: 100%;
+    width: 100%;
+    min-height: 100%;
+    overflow: hidden;
+}
+
+.section-title {
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    font-weight: 300;
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
+
+    &:after {
+        content: '';
+        display: block;
+        width: 5%;
+        height: 2px;
+        background: #000;
+        margin: 10px auto;
+    }
+}
+
+#home {
+    background: #333;
+    background-size: cover;
+    position: relative;
+    display: table;
+    width: 100%;
+}

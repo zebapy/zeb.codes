@@ -1,0 +1,29 @@
+.footer {
+    background: $brand-gray;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    color: $brand-gray-light;
+    font-weight: 300;
+    font-size: 14px;
+    text-align: center;
+
+    @include media($large) {
+        text-align: left;
+    }
+}
+
+.footer-info {
+    margin: 10px 0;
+}
+
+.copyright {
+    @include media($large) {
+        float: left;
+    }
+}
+
+.made-with {
+    @include media($large) {
+        float: right;
+    }   
+}
