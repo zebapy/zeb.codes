@@ -1,26 +1,37 @@
 ---
 layout: default
 ---
-
-<!--[if lt IE 8]>
-    <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-<![endif]-->
-<section id="home" class="content">
+<section id="home" class="section">
     <div class="center">
         <div class="hero animated fadeInDown">
             <h2 class="name">Hello, I'm Zebhdiyah Pykosz</h2>
             <h1>I am a front-end web developer &amp; multi-disciplinary designer based in Middlebury, Vermont.</h1>
-            <p>Please hold tight while my portfolio is getting an update. In the mean time, you can follow me <a href="https://twitter.com/Zebhdiyah">@zebhdiyah</a> or email me at <a href="mailto:zeb.apy@gmail.com" target="_blank"><script>document.write('zeb.apy' + '@' +'gmail' + '.com');</script></a></p>
+            <p>Please hold tight while my portfolio is getting an update. In the mean time, you can follow me <a href="https://twitter.com/Zebhdiyah">@zebhdiyah</a> or email me at <a href="mailto:{{site.email}}" target="_blank"><script>document.write('hello' + '@' +'zebpykosz' + '.com');</script></a></p>
         </div>
     </div>
     <div class="hero-background"></div>
 </section>
-<section id="about">
-    
+<section id="about" class="section">
+    <div class="wrap">
+        <h1 class="section-title">About</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet necessitatibus illum vero impedit sit id rem doloremque expedita adipisci delectus sapiente, nihil unde quisquam, dolore eum atque repudiandae quidem aut.</p>
+    </div>
 </section>
-<section id="work">
-    
+<section id="work" class="section">
+    <div class="wrap">
+        <h1 class="section-title">Work</h1>
+        <ul class="projects-list">
+            {% for project in site.projects %}
+            <li class="projects-list-item">
+                <a href="{{project.url}}" title="{{project.title}}">
+                    <img src="{{project.featured_image}}" alt="{{project.title}}">
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
 </section>
-<section id="contact">
+<section id="contact" class="section">
+    <h1 class="section-title">Contact</h1>
     
 </section>
