@@ -5,9 +5,21 @@ email: hello@zebpykosz.com
 description: "Portfolio of freelance web developer and designer based in Middlebury, Vermont - passionate about creating nice, clean, and usable things on the internet."
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: http://zebpykosz.com # the base hostname & protocol for your site
-twitter_username: zebhdiyah
-github_username: zebapy
 image_path: http://zebpykosz.com/img/zeb.jpg
+
+social:
+    twitter:
+        username: "@Zebhdiyah"
+        url: http://twitter.com/zebhdiyah
+    github:
+        username: zebapy
+        url: http://github.com/zebapy
+    instagram:
+        username: zebapy
+        url: http://instagram.com/zebapy
+    skype:
+        username: rnt1zavery
+        url: skype:rnt1zavery?userinfo
 
 exclude: 
 - bower_components 
