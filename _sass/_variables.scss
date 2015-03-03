@@ -10,11 +10,15 @@ $font-serif: cardo, georgia, 'times new roman', serif;
 
 // Colors
 $brand-blue: #7cd5ff;
-$brand-blue-dark: darken(#7cd5ff, 25%);
+$brand-blue-dark: darken($brand-blue, 25%);
+
+$brand-red: #e06161;
+$brand-red-dark: darken($brand-red, 25%);
 
 $brand-gray: #333;
-$brand-gray-dark: darken(#333, 25%);
-$brand-gray-light: lighten(#333, 25%);
+$brand-gray-dark: darken($brand-gray, 25%);
+$brand-gray-light: lighten($brand-gray, 25%);
+$brand-gray-x-light: lighten($brand-gray, 50%);
 
 $brand-white: #f4f4f4;
 
