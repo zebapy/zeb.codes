@@ -1,8 +1,10 @@
 <footer class="footer" role="contentinfo">
     <div class="wrap clearfix">
-        {% include social.html %}
-        <div class="footer-info copyright">{{site.author}} &copy; {{ site.time | date: '%Y' }}</div>
-        <div class="footer-info made-with">Handcrafted with &hearts; in Vermont</div>
+        <div class="footer-item">
+            {% include social.html %}
+        </div>
+        <div class="footer-item">Handcrafted with &hearts; in Vermont</div>
+        <div class="footer-item">{{site.author}} &copy; {{ site.time | date: '%Y' }}</div>
     </div>
 </footer>
 
