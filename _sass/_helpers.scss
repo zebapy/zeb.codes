@@ -44,3 +44,31 @@
 .pull-left {
     float: left;
 }
+
+$scale: 16px;
+$scale-amount: 3;
+
+$scale-types: (
+    "m": ("margin"),
+    "mt": ("margin-top"),
+    "mb": ("margin-bottom"),
+    "mtb": ("margin-top", "margin-bottom"),
+);
+
+@for $i from 0 through $scale-amount {
+
+    $size: $i * $scale;
+
+    @each $type-name, $declarations in $scale-types {
+
+        .#{$type-name}#{$i} {
+   
+            @each $declaration in $declarations {
+                #{$declaration}: $size;
+            }
+
+        }
+
+    }
+
+}
