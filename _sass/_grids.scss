@@ -1,0 +1,41 @@
+$grid-prefix: 'col' !default;
+$grid-columns: 12;
+$grid-gutter-width: 20px;
+
+@if ($grid-prefix != '') {
+  $grid-prefix: "#{$grid-prefix}-";
+}
+
+.row {
+  @include clearfix();
+}
+
+[class*="col-"] {
+  float: left;
+  min-height: 1px;
+  position: relative;
+  padding-left: ($grid-gutter-width / 2);
+  padding-right: ($grid-gutter-width / 2);
+}
+
+$breakpoints: (
+    "sm": $small,
+    "md": $medium,
+    "lg": $large,
+);
+
+@each $breakpoint-name, $breakpoint-size in $breakpoints {
+
+    @include media($breakpoint-size) {
+
+        @for $index from 1 to $grid-columns {
+    
+            .#{$grid-prefix}#{$breakpoint-name}-#{$index} {
+                width: percentage(($index / $grid-columns));
+            }
+            
+        }
+
+    }
+
+}
