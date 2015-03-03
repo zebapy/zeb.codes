@@ -7,3 +7,7 @@
         @content;
     }
 }
+
+@mixin ease() {
+    @extend %ease;
+}
