@@ -1,0 +1,42 @@
+---
+layout: default
+---
+
+<div class="wrap">
+
+    <div class="text-center">
+        <header class="project-header">
+            <h1 class="project-title">{{ page.title }}</h1>
+            <h4 class="project-type">{{ page.type }}</h4>
+            
+            <ul class="tags">
+                {% for tag in page.tags %}
+                <li class="tag">{{tag | capitalize }}</li>
+                {% endfor %}
+            </ul>
+        </header>
+
+        <article class="project-article">
+            <div class="project-content">
+                {{ content }}
+            </div>
+            <figure class="box-shadow">
+                <img src="{{page.featured_image}}" alt="{{ page.title }}">
+            </figure>
+        </article>
+
+        <footer class="project-footer text-center">
+            
+                <div class="mtb3">
+                    <a href="{{page.url}}" class="btn btn-primary btn-outline">View project &rarr;</a>
+                </div>
+            
+                <div class="mtb3">
+                    <a href="/#work">&larr; Work</a>
+                </div>
+            
+        </footer>
+
+    </div>
+    
+</div>
