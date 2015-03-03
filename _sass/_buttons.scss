@@ -1,26 +1,31 @@
-.button {
+.btn {
     display: inline-block;
-    font-weight: 700;
-    color: #fff;
-    border-radius: 5px;
-    padding: 1em;
+    font-weight: 300;
+    border-radius: 10em;
+    padding: .5em 1em;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    border: 2px solid transparent;
+    cursor: pointer;
+
+    @include ease();
 }
 
-// @each $name, $colors in $palettes {
-   
-//     $base: map-get($colors, 'base');
+.btn-primary {
+    color: #fff;
+    background: $brand-blue;
+    border-color: $brand-blue;
 
-//     .button--#{$name} {
-//         background: $base;
+    &.btn-outline {
+        background: transparent;
+        color: $brand-blue;
 
-//         &:hover {
-//             background: darken($base, 5%);
-//         }
-//     }
-// }
+        &:hover,
+        &:focus {
+            background: $brand-blue;
+            color: #fff;
+        }
+    }
+}
 
-// @each $size, $value in $buttons {
-//     .button--#{$size} {
-//         font-size: em($value);
-//     }
-// }
