@@ -1,0 +1,7 @@
+<ul class="nav nav-social">
+    {% for profile in site.social %}
+
+    <li><a href="{{ profile[1].url }}">{{ profile[0] | capitalize }}</a></li>
+
+    {% endfor %}
+</ul>
