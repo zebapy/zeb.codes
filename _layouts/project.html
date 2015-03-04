@@ -4,10 +4,10 @@ layout: default
 
 <div class="wrap">
 
-    <div class="text-center">
-        <header class="project-header">
+    
+        <header class="text-center">
             <h1 class="project-title">{{ page.title }}</h1>
-            <h4 class="project-type">{{ page.type }}</h4>
+            <!-- <h4 class="project-type">{{ page.type }}</h4> -->
             
             <ul class="tags">
                 {% for tag in page.tags %}
@@ -16,27 +16,32 @@ layout: default
             </ul>
         </header>
 
-        <article class="project-article">
-            <div class="project-content">
-                {{ content }}
-            </div>
-            <figure class="box-shadow">
-                <img src="{{page.featured_image}}" alt="{{ page.title }}">
-            </figure>
-        </article>
+        <div class="p3 text-center">
+            {{ content }}
+        </div>
 
-        <footer class="project-footer text-center">
+    </div>
+
+        <div class="bg-light">
+            <div class="wrap p3">
+                <figure class="box-shadow">
+                    <img src="{{page.featured_image}}" alt="{{ page.title }}">
+                </figure>
             
-                <div class="mtb3">
+        
+
+        <footer class="text-center">
+            
+                <div class="p3">
                     <a href="{{page.url}}" class="btn btn-primary btn-outline">View project &rarr;</a>
                 </div>
             
-                <div class="mtb3">
-                    <a href="/#work">&larr; Work</a>
+                <div class="p3">
+                    <a href="/#work">&larr; Back</a>
                 </div>
             
         </footer>
 
-    </div>
+        </div>
+        </div>
     
-</div>
