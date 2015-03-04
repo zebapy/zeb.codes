@@ -54,6 +54,12 @@ h6 {
     font-family: $font-sans-serif;
 }
 
+figure {
+    img {
+        display: block;
+    }
+}
+
 h1 {
     @include spacecase();
     text-align: center;
