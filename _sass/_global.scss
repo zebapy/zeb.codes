@@ -4,7 +4,6 @@
     box-sizing: border-box;
 }
 
-html, body {
 ::-moz-selection {
     color: $brand-white;
     background: $brand-blue;
@@ -14,6 +13,9 @@ html, body {
     color: $brand-white; 
     background: $brand-blue;
 }
+
+html,
+body {
     height: 100%;
 }
 
@@ -36,6 +38,13 @@ a {
     }
 }
 
+ul,
+ol {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
 h1,
 h2,
 h3,
@@ -45,8 +54,22 @@ h6 {
     font-family: $font-sans-serif;
 }
 
+h1 {
+    @include spacecase();
+    text-align: center;
+    font-weight: 300;
+    margin-top: 100px;
+    // margin-bottom: 100px;
+
+    &:after {
+        content: '–';
+        display: block;
+    }
+}
+
 p {
     font-family: $font-serif;
+    font-size: em(18);
 }
 
 img {
