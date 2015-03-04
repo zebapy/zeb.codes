@@ -3,7 +3,7 @@ title: "Zeb Pykosz | Designer and Front-end web developer based in Middlebury, V
 author: Zebhdiyah Pykosz
 email: hello@zebpykosz.com
 description: "Portfolio of freelance web developer and designer based in Middlebury, Vermont - passionate about creating nice, clean, and usable things on the internet."
-baseurl: "" # the subpath of your site, e.g. /blog/
+baseurl: "/" # the subpath of your site, e.g. /blog/
 url: http://zebpykosz.com # the base hostname & protocol for your site
 image_path: http://zebpykosz.com/img/zeb.jpg
 
