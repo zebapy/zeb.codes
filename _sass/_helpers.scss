@@ -2,13 +2,8 @@
     @include clearfix();
 }
 
-.db {
-    display: block;
-}
 
-.dib {
-    display: inline-block;
-}
+// Typography 
 
 .lead {
     font-size: 1.3em;
@@ -20,13 +15,31 @@
     font-weight: normal;
 }
 
-.center {
-    display: table-cell;
-    vertical-align: middle;
+// Object model
+
+.block {
+    display: block;
 }
 
-.ib {
-    display: inline-block;
+.relative {
+    position: relative;
+}
+
+.full-height {
+    height: 100%;
+    width: 100%;
+    min-height: 100%;
+}
+
+.valign-wrap {
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+
+.valign-content {
+    display: table-cell;
+    vertical-align: middle;
 }
 
 .text-right {
@@ -43,6 +56,14 @@
 
 .pull-left {
     float: left;
+}
+
+.bg-light {
+    background: $brand-white;
+}
+
+.bg-gray {
+    background: $brand-gray;
 }
 
 $scale: 16px;
