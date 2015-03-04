@@ -66,6 +66,10 @@
     background: $brand-gray;
 }
 
+.box-shadow {
+    box-shadow: 0 0 10px 0 rgba(black, .25);
+}
+
 $scale: 16px;
 $scale-amount: 3;
 
