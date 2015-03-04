@@ -1,13 +1,19 @@
 <header class="header">
     <div class="wrap">
-        <a class="header-title" href="{{ site.baseurl }}/">{{ site.author }}</a>
-        <nav class="header-nav">    
-            <ul class="nav nav-main">
-                <li><a href="{{ site.baseurl }}">Home</a></li>
-                <li><a href="/#about">About</a></li>
-                <li><a href="/#work">Work</a></li>
-                <li><a href="/#contact">Contact</a></li>
-            </ul>
-        </nav>
+        <div class="row">
+            <div class="col-sm-12 col-lg-6">
+                <a class="header-title" href="{{ site.baseurl }}">{{ site.author }}</a>
+            </div>
+            <div class="col-sm-12 col-lg-6">
+                <nav class="header-nav">    
+                    <ul class="nav nav-justify">
+                        <li><a href="{{ site.baseurl }}">Home</a></li>
+                        <li><a href="/about" data-hash="#about">About</a></li>
+                        <li><a href="/work" data-hash="#work">Work</a></li>
+                        <li><a href="/contact" data-hash="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
     </div>
 </header>
