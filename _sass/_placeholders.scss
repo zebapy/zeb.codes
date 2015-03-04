@@ -13,3 +13,8 @@
 %ease {
     transition: all .1s ease-in-out;
 }
+
+%spacecase {
+    text-transform: uppercase;
+    letter-spacing: .1em;
+}

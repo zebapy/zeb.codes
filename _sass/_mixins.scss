@@ -11,3 +11,7 @@
 @mixin ease() {
     @extend %ease;
 }
+
+@mixin spacecase() {
+    @extend %spacecase;
+}
