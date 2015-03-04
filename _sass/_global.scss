@@ -5,6 +5,15 @@
 }
 
 html, body {
+::-moz-selection {
+    color: $brand-white;
+    background: $brand-blue;
+}
+
+::selection {
+    color: $brand-white; 
+    background: $brand-blue;
+}
     height: 100%;
 }
 
