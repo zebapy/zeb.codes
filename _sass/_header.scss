@@ -1,29 +1,20 @@
 .header {
-    @include clearfix();
-    // background: $brand-gray;
+    // @include clearfix();
+    // background: #fff;
     padding: 20px 0;
     // position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    z-index: 50;
+    // left: 0;
+    // top: 0;
+    // width: 100%;
+    // z-index: 10;
 
     a {
-        color: $brand-gray;
-        border: 0;
-        text-transform: uppercase;
-        letter-spacing: .1em;
+        color: #000;
         font-size: 14px;
+        @include spacecase();
     }
 }
 
 .header-title {
-    float: left;
     font-weight: 700;
 }
-
-.header-nav {
-    float: right;
-    font-weight: 300;
-}
-
