@@ -1,45 +1,47 @@
 ---
 layout: default
 ---
-<section id="home" class="section">
-    <div class="center">
-        <div class="hero animated fadeInDown text-center">
-            <h2 class="name">Hello, I'm Zebhdiyah Pykosz</h2>
-            <h1>I am a front-end web developer &amp; designer based in Middlebury, Vermont.</h1>
-            <a href="#work" class="btn btn-primary btn-outline">View Work &darr;</a>
+<section class="section full-height relative bg-gray">
+    <div class="valign-wrap">
+        <div class="valign-content">
+            <div class="hero animated fadeInDown text-center">
+                <h1>Front-end web developer &amp; designer based in Middlebury, Vermont.</h1>
+                <a href="#work" class="btn btn-primary btn-outline">View Work &darr;</a>
+            </div>
         </div>
     </div>
     <div class="hero-background"></div>
 </section>
-<section id="about" class="section section-about">
+<section id="about" class="section full-height">
     <div class="wrap">
-        <h1 class="section-title">About</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet necessitatibus illum vero impedit sit id rem doloremque expedita adipisci delectus sapiente, nihil unde quisquam, dolore eum atque repudiandae quidem aut.</p>
+        <h1 class="heading">About</h1>
+        <p class="lead">Born and raised in Vermont, 23 year-old mostly self-taught front-end web developer and visual designer (phew, that was a lot of hyphens) focused on creating performant and pleasant experiences on the web. Lover of code, croissants, minimalism, <abbr title="Magic: The Gathering">MTG</abbr>, and his <a href="">tiger</a>. Dabbles in full stack development and piano.</p>
+        <div id="instafeed"></div>  
     </div>
 </section>
-<section id="work" class="section section-work">
+<section id="work" class="section bg-light full-height">
     <div class="wrap">
-        <h1 class="section-title">Work</h1>
-        <ul class="projects-list">
+        <h1 class="heading">Work</h1>
+        <div class="row">
             {% for project in site.projects %}
-            <li class="projects-list-item">
-                <a href="{{project.url}}" title="{{project.title}}">
-                    <img src="{{project.featured_image}}" alt="{{project.title}}">
-                </a>
-            </li>
+            
+                <div class="col-sm-4">
+                    <a href="{{project.url}}" title="{{project.title}}">
+                        <img src="{{project.featured_image}}" alt="{{project.title}}">
+                    </a>
+                </div>
             {% endfor %}
-        </ul>
+        </div>
     </div>
 </section>
-<section id="contact" class="section section-contact">
-    <h1 class="section-title">Contact</h1>
-    <div class="text-center">
-        <div class="contact-item">
-            <a href="mailto:{{ site.email }}" class="">{{ site.email }}</a>
-        </div>
-        
-        <div class="contact-item">
-            <a href="tel:+18022823746">+1 802 282 3746</a>
+<section id="contact" class="section full-height">
+    <div class="valign-wrap">
+        <div class="valign-content">
+            <h1 class="heading">Contact</h1>
+            <p class="lead">Like my work? Drop me a line. I'd be interested in hearing about that awesome project you're working on and how I can help.</p>
+            <div class="text-center">
+                <a href="mailto:{{ site.email }}" class="btn btn-primary btn-outline">{{ site.email }}</a>
+            </div>
         </div>
     </div>
 </section>
