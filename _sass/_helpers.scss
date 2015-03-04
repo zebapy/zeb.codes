@@ -78,6 +78,7 @@ $scale-types: (
     "mt": ("margin-top"),
     "mb": ("margin-bottom"),
     "mtb": ("margin-top", "margin-bottom"),
+    "p": ("padding")
 );
 
 @for $i from 0 through $scale-amount {
