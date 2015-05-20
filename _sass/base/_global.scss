@@ -5,13 +5,13 @@
 }
 
 ::-moz-selection {
-    color: $brand-white;
-    background: $brand-blue;
+    color: $white;
+    background: $brand-primary;
 }
 
 ::selection {
-    color: $brand-white; 
-    background: $brand-blue;
+    color: $white; 
+    background: $brand-primary;
 }
 
 html,
@@ -21,19 +21,19 @@ body {
 
 body {
     background: #fff;
-    font-family: $font-sans-serif;
+    font-family: $font-family-sans-serif;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     line-height: 1.4;
 }
 
 a {
-    color: $brand-blue;
+    color: $brand-primary;
     text-decoration: none;
-    // border-bottom: 1px solid $brand-blue;
+    // border-bottom: 1px solid $brand-primary;
 
     &:hover {
-        color: $brand-blue-dark;
+        color: $brand-primary-dark;
         // border-color: $brand-blue-dark;
     }
 }
@@ -51,7 +51,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: $font-sans-serif;
+    font-family: $font-family-sans-serif;
 }
 
 figure {
@@ -61,21 +61,12 @@ figure {
 }
 
 h1 {
-    @include spacecase();
-    text-align: center;
-    font-weight: 300;
-    padding-top: 100px;
-    // margin-bottom: 100px;
 
-    &:after {
-        content: '–';
-        display: block;
-    }
 }
 
 p {
-    font-family: $font-serif;
-    font-size: em(18);
+    font-family: $font-family-serif;
+    font-size: 18px;
 }
 
 img {

@@ -1,25 +1,33 @@
-// @import "fonts";
-@import "variables";
-@import "placeholders";
-@import "functions";
-@import "mixins";
+// Core
+@import "core/functions";
+@import "core/variables";
+@import "core/placeholders";
+@import "core/mixins";
 
-@import "normalize";
+// Vendor
+@import "vendor/normalize";
 
-@import "global";
-@import "grid";
-@import "animations";
-@import "helpers";
+// Base
+@import "base/global";
+@import "base/animations";
 
-@import "buttons";
-@import "navs";
-@import "tags";
-@import "lists";
+// Components
+@import "components/forms";
+@import "components/buttons";
+// @import "components/instafeed";
 
-@import "hero";
-@import "skills";
-@import "instafeed";
+// Layout
+@import "layout/grid";
+@import "layout/header";
+@import "layout/sections";
+// @import "layout/footer";
 
-@import "header";
-// @import "sections";
-@import "footer";
+// Helpers
+@import "helpers/clearfix";
+@import "helpers/block";
+@import "helpers/floats";
+@import "helpers/spacing-scales";
+@import "helpers/text-align";
+@import "helpers/backgrounds";
+
+@import "helpers/helpers";

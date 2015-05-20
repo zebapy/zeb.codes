@@ -1,46 +1,70 @@
 ---
 layout: default
 ---
-<section class="section full-height relative bg-gray">
-    <div class="valign-wrap">
-        <div class="valign-content">
-            <div class="hero animated fadeInDown text-center">
-                <h1>Front-end web developer &amp; designer based in Middlebury, Vermont.</h1>
-                <a href="#work" class="btn btn-primary btn-outline">View Work &darr;</a>
+
+<section class="section section--home">
+    <div class="container-liquid">
+        <div class="row">
+            <div class="col col--half bg-primary full-height">
+                <img src="//placehold.it/50x50" alt="">
+            </div>
+            <div class="col col--half bg-gray-dark full-height">                
+                <h2>Designer +<br>Developer</h2>
             </div>
         </div>
     </div>
-    <div class="hero-background"></div>
 </section>
-<section id="about" class="section full-height">
-    <div class="wrap">
-        <h1 class="heading">About</h1>
-        <p class="lead">Born and raised in Vermont, 23 year-old mostly self-taught front-end web developer and visual designer (phew, that was a lot of hyphens) focused on creating performant and pleasant experiences on the web. Lover of code, croissants, minimalism, <abbr title="Magic: The Gathering">MTG</abbr>, and his <a href="">tiger</a>. Dabbles in full stack development and piano.</p>
-        <div id="instafeed" class="animated fadeInDown"></div>
-    </div>
-</section>
-<section id="work" class="section bg-light full-height">
-    <div class="wrap">
-        <h1>Work</h1>
+<section class="section section--about">
+    <div class="container-liquid">
         <div class="row">
-            {% for project in site.projects %}
-            
-                <div class="col-sm-4">
-                    <a href="{{project.url}}" title="{{project.title}}">
-                        <img src="{{project.featured_image}}" alt="{{project.title}}">
-                    </a>
-                </div>
-            {% endfor %}
+            <div class="col col--half">
+                <h1>About</h1>
+                <p>Justo sodales rhoncus vestibulum dis lacus tristique vestibulum ullamcorper ut leo tempor suspendisse ac litora curabitur enim a augue eros eget in erat condimentum mollis suspendisse risus. Fames dictum porttitor iaculis nec quam condimentum suspendisse quam parturient commodo a condimentum himenaeos nisi cras a commodo torquent ullamcorper a inceptos fringilla parturient hendrerit. Enim turpis ut a parturient odio et nibh nulla condimentum magnis potenti luctus nec ridiculus ultrices amet diam vestibulum parturient vel aptent. </p>
+            </div>
+            <div class="col col--half">
+                <h1>Skills</h1>
+            </div>
         </div>
     </div>
 </section>
-<section id="contact" class="section full-height">
-    <div class="valign-wrap">
-        <div class="valign-content">
-            <h1 class="heading">Contact</h1>
-            <p class="lead">Like my work? Drop me a line. I'd be interested in hearing about that awesome project you're working on and how I can help.</p>
-            <div class="text-center">
-                <a href="mailto:{{ site.email }}" class="btn btn-primary btn-outline">{{ site.email }}</a>
+<section class="section section--work">
+    <div class="container-liquid">
+        <div class="row">
+            <div class="col col--half">
+                <h1>Work</h1>
+                
+            </div>
+            <div class="col col--half">
+                <h1>Fateseal</h1>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="section section--contact">
+    <div class="container-liquid">
+        <div class="row">
+            <div class="col col--half bg-primary">
+                <h1>Want to work with me?</h1>
+                <h2 class="color-primary-dark">Don’t be shy. Message me.</h2>
+                <form action="//formspree.io/zeb.apy@gmail.com" method="POST">
+                    <div class="form-group">
+                        <input type="text" name="name" placeholder="Your name, please" required spellcheck="false" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="_replyto" placeholder="Your email address" required class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <textarea name="message" placeholder="Whatcha say?" required class="form-control"></textarea>
+                    </div>
+                    <div class="form-group form-actions">
+                        <input type="submit" value="Get in touch" class="btn btn-primary">
+                    </div>
+                </form>
+                
+            </div>
+            <div class="col col--half">
+                <h1>Follow me elsewhere</h1>
+                {% include social.html %}
             </div>
         </div>
     </div>

@@ -1,0 +1,29 @@
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-control {
+    font-size: 16px;
+    padding: 1em;
+    background: $white;
+    display: block;
+    width: 100%;
+    border: 2px solid $brand-primary;
+
+    &:focus,
+    &:hover {
+        border-color: $brand-primary-dark
+    }
+
+    @at-root textarea#{&} {
+        min-height: 200px;
+    }
+}
+
+.form-actions {
+    @include clearfix();
+
+    .btn {
+        float: right;
+    }
+}
