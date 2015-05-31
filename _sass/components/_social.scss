@@ -1,0 +1,17 @@
+.social-list {
+    text-align: center;
+}
+
+.social-item {
+    margin: 20px 0;
+}
+
+.social-anchor {
+    color: $gray-light;
+    @include ease();
+
+    &:focus,
+    &:hover {
+        color: $gray;
+    }
+}
