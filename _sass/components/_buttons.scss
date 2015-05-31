@@ -8,6 +8,8 @@
     letter-spacing: .1em;
     border: 2px solid transparent;
     cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
 
     @include ease();
 }
