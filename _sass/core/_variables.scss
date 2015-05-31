@@ -8,8 +8,8 @@ $font-family-sans-serif: montserrat, 'helvetica neue', helvetica, sans-serif;
 $font-family-serif: cardo, georgia, 'times new roman', serif;
 
 // Colors
-$brand-primary: #7CEED7;
-$brand-primary-dark: #60B9A7;
+$brand-primary: #fffc00;
+$brand-primary-dark: darken($brand-primary, 30%);
 
 $white: #fff;
 
