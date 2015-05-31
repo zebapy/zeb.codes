@@ -15,7 +15,7 @@
 
 .skill-label {
     display: block;
-    color: $black;
+    color: $white;
     font-size: 12px;
     text-align: left;
     margin-bottom: 5px;
@@ -24,7 +24,7 @@
 
 .skill-bar {
     display: block;
-    background: $black;
+    background: $brand-primary;
     height: 2px;
     position: relative;
 }
