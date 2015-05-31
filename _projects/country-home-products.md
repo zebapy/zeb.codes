@@ -8,7 +8,6 @@ featured_image: chp-thumb.jpg
 tags:
 - design
 - frontend
-- jekyll
 images:
 ---
 
