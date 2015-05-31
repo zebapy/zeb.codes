@@ -29,12 +29,12 @@ body {
 }
 
 a {
-    color: $brand-primary;
+    color: $gray;
     text-decoration: none;
     // border-bottom: 1px solid $brand-primary;
 
     &:hover {
-        color: $brand-primary-dark;
+        color: $gray-dark;
         // border-color: $brand-blue-dark;
     }
 }
