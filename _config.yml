@@ -1,7 +1,7 @@
 # Site settings
 title: "Zeb Pykosz | Designer and Front-end web developer based in Middlebury, Vermont"
 author: Zebhdiyah Pykosz
-email: hi@zeb.codes
+email: hello@zebpykosz.com
 description: "Portfolio of freelance web developer and designer based in Middlebury, Vermont - passionate about creating nice, clean, and usable things on the internet."
 baseurl: "/" # the subpath of your site, e.g. /blog/
 url: http://zeb.codes # the base hostname & protocol for your site
