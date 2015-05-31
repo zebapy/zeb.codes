@@ -2,70 +2,93 @@
 layout: default
 ---
 
-<section class="section section--home">
-    <div class="container-liquid">
-        <div class="row">
-            <div class="col col--half bg-primary full-height">
-                <img src="//placehold.it/50x50" alt="">
-            </div>
-            <div class="col col--half bg-gray-dark full-height">                
-                <h2>Designer +<br>Developer</h2>
-            </div>
+<section class="section bg-primary relative" id="home">
+    <div class="center-md">
+        <h1>Nice to meet you!<br>I'm Zebhdiyah Pykosz.</h1>
+        <p>I design &amp; develop things on this lovely place we call the internet.</p>
+    </div>
+</section>
+<section class="section p0 relative overlay">
+    <a href="#work" class="btn btn-white btn-outline center z-3">See my work</a>
+    <div class="carousel">
+        {% for item in site.data.carousel %}
+            <div class="carousel-item" style="background-image: url('{{ item }}');"></div>
+        {% endfor %}
+    </div>
+</section>
+<section class="section" id="about">
+    <div class="container container-narrow">
+        <header class="section-header">
+            <h1>About</h1>
+        </header>
+        <p>I&rsquo;m a {{ site.time | date: '%Y' | minus:1991 }} year-old designer and front-end developer born and raised in rural Vermont (currently based in Middlebury). I am primarily self-taught with {{ site.time | date: '%Y' | minus:2009 }} years of experience; scouring the internet for new techniques and strategies to bring to my work. I love sitting down for a few hours on my Macbook to crank out some code or work a new project while listening to Spotify &mdash; both of which I&rsquo;m not sure I could live without.</p>
+        <p>I am currently employed at Country Home Products, where I maintain their web presences, design UI for new projects, or do A/B testing on existing designs.</p>
+        <p>I am also a co-founder of a large personal project called Fateseal which consumes a lot of my free time. You can learn more about the project in my <a href="#work">portfolio</a>.</p>
+        <div class="text-center">
+            <img src="{{site.gravatar}}" alt="{{site.author}}" class="img-circle">
         </div>
     </div>
 </section>
-<section class="section section--about">
-    <div class="container-liquid">
-        <div class="row">
-            <div class="col col--half">
-                <h1>About</h1>
-                <p>Justo sodales rhoncus vestibulum dis lacus tristique vestibulum ullamcorper ut leo tempor suspendisse ac litora curabitur enim a augue eros eget in erat condimentum mollis suspendisse risus. Fames dictum porttitor iaculis nec quam condimentum suspendisse quam parturient commodo a condimentum himenaeos nisi cras a commodo torquent ullamcorper a inceptos fringilla parturient hendrerit. Enim turpis ut a parturient odio et nibh nulla condimentum magnis potenti luctus nec ridiculus ultrices amet diam vestibulum parturient vel aptent. </p>
-            </div>
-            <div class="col col--half">
-                <h1>Skills</h1>
-            </div>
-        </div>
-    </div>
+<section class="section" id="skills">
+    <header class="section-header">
+        <h1>Skills</h1>
+    </header>
+    <ul class="skill-list">
+        {% for skill in site.data.skills %}
+        <li class="skill-item">
+            <span class="skill-label">{{skill.name}}</span>
+            <span class="skill-bar" data-level="{{skill.level}}%" style="width: {{skill.level}}%"></span>
+        </li>
+        {% endfor %}
+    </ul>
 </section>
-<section class="section section--work">
-    <div class="container-liquid">
-        <div class="row">
-            <div class="col col--half">
-                <h1>Work</h1>
-                
-            </div>
-            <div class="col col--half">
-                <h1>Fateseal</h1>
-            </div>
-        </div>
-    </div>
+<section class="section section--work bg-gray-lighter" id="work">
+    <ul class="project-list">
+        {% for project in site.projects %}
+        <li class="project-item">
+            <a href="{{project.url}}" class="project-anchor">
+                <img src="{{project.featured_image}}" alt="{{project.title}}" class="project-image">
+                <div class="project-content">
+                    <h2>{{project.title}}</h2>
+                    <ul class="tags-list">
+                    {% for tag in project.tags %}
+                        <li class="tags-item">{{tag}}</li>
+                    {% endfor %}
+                    </ul>
+                </div>
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
 </section>
-<section class="section section--contact">
-    <div class="container-liquid">
-        <div class="row">
-            <div class="col col--half bg-primary">
-                <h1>Want to work with me?</h1>
-                <h2 class="color-primary-dark">Don’t be shy. Message me.</h2>
-                <form action="//formspree.io/zeb.apy@gmail.com" method="POST">
-                    <div class="form-group">
-                        <input type="text" name="name" placeholder="Your name, please" required spellcheck="false" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <input type="email" name="_replyto" placeholder="Your email address" required class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <textarea name="message" placeholder="Whatcha say?" required class="form-control"></textarea>
-                    </div>
-                    <div class="form-group form-actions">
-                        <input type="submit" value="Get in touch" class="btn btn-primary">
-                    </div>
-                </form>
-                
-            </div>
-            <div class="col col--half">
-                <h1>Follow me elsewhere</h1>
-                {% include social.html %}
-            </div>
+<section class="section" id="project">
+</section>
+<section class="section bg-primary" id="contact">
+    <header class="section-header">
+        <h1>Get in touch</h1>
+        <p class="color-primary-dark">Want to say hello or talk to me about a project you have? Contact me by completing the form below.</p>
+    </header>
+    <form action="//formspree.io/zeb.apy@gmail.com" method="POST">
+        <div class="form-group">
+            <input type="text" name="name" placeholder="Your name, please" spellcheck="false" class="form-control" required>
         </div>
+        <div class="form-group">
+            <input type="email" name="_replyto" placeholder="Your email address" class="form-control" required>
+        </div>
+        <div class="form-group">
+            <textarea name="message" placeholder="Leave me a message..." class="form-control" required></textarea>
+        </div>
+        <div class="form-group form-actions">
+            <input type="submit" value="Send message" class="btn btn-black">
+        </div>
+    </form>
+</section>
+<section class="section" id="follow">
+    <header class="section-header">
+        <h1>Follow me elsewhere</h1>
+    </header>
+    <div class="section-content">
+        {% include social.html %}
     </div>
+    <footer class="global-footer color-gray-light">{{site.author}} &copy; {{ site.time | date: '%Y' }}</footer>
 </section>
