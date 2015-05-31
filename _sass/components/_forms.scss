@@ -10,6 +10,7 @@
     width: 100%;
     border-radius: 0;
     border: 2px solid $brand-primary;
+    transition: border-color .2s;
     -webkit-appearance: none;
     appearance: none;
 
