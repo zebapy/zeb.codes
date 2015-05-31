@@ -10,7 +10,7 @@
         "level": "84"
     },
     {
-        "name": "Javascript/jQuery/Coffeescript/ES6",
+        "name": "Javascript",
         "color": "#EFDA5B",
         "level": "76"
     },
@@ -30,18 +30,13 @@
         "level": "72"
     },
     {
-        "name": "Node.js/Express",
+        "name": "Node.js",
         "color": "#90C541",
         "level": "57"
     },
     {
-        "name": "Photoshop/Illustrator/Indesign/Premiere Pro",
+        "name": "Photoshop",
         "color": "#98ddf6",
-        "level": "72"
-    },
-    {
-        "name": "Git/Github",
-        "color": "#522C79",
-        "level": "54"
-    },
+        "level": "82"
+    }
 ]
