@@ -7,7 +7,7 @@ baseurl: "/" # the subpath of your site, e.g. /blog/
 url: http://zeb.codes # the base hostname & protocol for your site
 image_path: http://zeb.codes/img/zeb.jpg
 
-gravatar: https://en.gravatar.com/userimage/14820278/7a7abc448a6f29e03663ea4fb4897054.jpg?size=200
+gravatar: https://en.gravatar.com/userimage/14820278/7a7abc448a6f29e03663ea4fb4897054.jpg?size=100
 
 social:
     twitter:
