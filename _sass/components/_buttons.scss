@@ -62,6 +62,13 @@
         border-color: $black;
         background: $white;
     }
+
+    &.btn-outline {
+        background: none;
+        color: $black;
+    }
+}
+
 .btn-sm {
     font-size: 12px;
     padding: .5em 1em;
