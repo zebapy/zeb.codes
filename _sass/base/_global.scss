@@ -31,11 +31,18 @@ body {
 a {
     color: $gray;
     text-decoration: none;
-    // border-bottom: 1px solid $brand-primary;
 
     &:hover {
         color: $gray-dark;
-        // border-color: $brand-blue-dark;
+    }
+
+    p & {
+        display: inline-block;
+        border-bottom: 1px solid $black;
+
+        &:hover {
+            border-color: $brand-primary;
+        }
     }
 }
 
