@@ -4,7 +4,7 @@ title: DR Power Equipment Blog
 type: website
 url: http://blog.drpower.com
 date: 2015-02-25
-featured_image: /img/screencapture-blog-drpower-com.png
+featured_image: dr-power-blog-thumb.jpg
 tags:
 - design
 - frontend

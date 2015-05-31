@@ -4,7 +4,7 @@ title: Country Home Products
 type: website
 url: http://www.chp.com
 date: 2015-02-25
-featured_image: /img/screencapture-www-chp-com.png
+featured_image: chp-thumb.jpg
 tags:
 - design
 - frontend
