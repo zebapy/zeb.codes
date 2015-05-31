@@ -34,3 +34,24 @@
     }
 }
 
+.btn-white {
+    color: $black;
+    background: $white;
+
+    &.btn-outline {
+        border-color: $white;
+        color: $white;
+        background: none;
+
+        &:hover,
+        &:focus {
+            color: $black;
+            background: $white;
+            border-color: $white;
+        }
+
+        &:active {
+            border-color: $black;
+        }
+    }
+}
