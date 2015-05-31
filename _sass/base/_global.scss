@@ -70,10 +70,14 @@ figure {
 
 h1 {
     font-size: 24px;
+    // @include spacecase();
 }
 
 h2 {
     font-size: 20px;
+    // @include spacecase();
+}
+
 h3,
 .h3 {
     color: $gray-dark;
