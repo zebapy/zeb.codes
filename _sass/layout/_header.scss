@@ -88,30 +88,3 @@
         }
     }
 }
-
-// .headroom {
-//     transition: transform .2s linear, background .2s linear;
-// }
-
-// .headroom--pinned {
-//     transform: translateY(0%);
-// }
-
-// .headroom--unpinned {
-//     transform: translateY(-100%);
-// }
-
-// .headroom--not-top {
-//     @include media($medium) {
-//         background: $black;
-
-//         a {
-//             color: $gray-light;
-
-//             &:hover,
-//             &:focus {
-//                 color: $white;
-//             }
-//         }
-//     }
-// }
