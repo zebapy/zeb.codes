@@ -1,33 +1,44 @@
 // Core
-@import "core/functions";
-@import "core/variables";
-@import "core/placeholders";
-@import "core/mixins";
+@import 'core/functions';
+@import 'core/variables';
+@import 'core/placeholders';
+@import 'core/mixins';
 
 // Vendor
-@import "vendor/normalize";
+@import 'vendor/normalize';
 
 // Base
-@import "base/global";
-@import "base/animations";
+@import 'base/global';
+@import 'base/animations';
 
 // Components
-@import "components/forms";
-@import "components/buttons";
-// @import "components/instafeed";
+@import 'components/forms';
+@import 'components/buttons';
+@import 'components/navs';
+@import 'components/projects';
+@import 'components/skills';
+@import 'components/social';
+@import 'components/carousel';
+// @import 'components/instafeed';
 
 // Layout
-@import "layout/grid";
-@import "layout/header";
-@import "layout/sections";
-// @import "layout/footer";
+@import 'layout/grid';
+@import 'layout/hero';
+@import 'layout/header';
+@import 'layout/sections';
+@import 'layout/containers';
+@import 'layout/footer';
 
 // Helpers
-@import "helpers/clearfix";
-@import "helpers/block";
-@import "helpers/floats";
-@import "helpers/spacing-scales";
-@import "helpers/text-align";
-@import "helpers/backgrounds";
-
-@import "helpers/helpers";
+@import 'helpers/clearfix';
+// @import 'helpers/block';
+// @import 'helpers/floats';
+@import 'helpers/spacing-scales';
+@import 'helpers/text-align';
+@import 'helpers/colors';
+@import 'helpers/positions';
+@import 'helpers/center';
+@import 'helpers/backgrounds';
+@import 'helpers/overlay';
+@import 'helpers/img';
+@import 'helpers/z-index';
