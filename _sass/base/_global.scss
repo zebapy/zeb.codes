@@ -20,7 +20,8 @@ body {
 }
 
 body {
-    background: #fff;
+    background: $white;
+    color: $black;
     font-family: $font-family-sans-serif;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
