@@ -8,7 +8,10 @@
     background: $white;
     display: block;
     width: 100%;
+    border-radius: 0;
     border: 2px solid $brand-primary;
+    -webkit-appearance: none;
+    appearance: none;
 
     &:focus,
     &:hover {
