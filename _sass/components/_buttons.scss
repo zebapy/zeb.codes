@@ -55,3 +55,15 @@
         }
     }
 }
+
+.btn-black {
+    color: $white;
+    background: $black;
+    border-color: $black;
+
+    &:hover {
+        color: $black;
+        border-color: $black;
+        background: $white;
+    }
+}
