@@ -14,9 +14,13 @@
     -webkit-appearance: none;
     appearance: none;
 
-    &:focus,
     &:hover {
-        border-color: $brand-primary-dark
+        border-color: $brand-primary-dark;
+    }
+
+    &:focus {
+        border-color: $black;
+        outline: 0;
     }
 
     @at-root textarea#{&} {
