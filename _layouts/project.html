@@ -1,47 +1,33 @@
 ---
 layout: default
 ---
-
-<div class="wrap">
-
-    
-        <header class="text-center">
-            <h1 class="project-title">{{ page.title }}</h1>
-            <!-- <h4 class="project-type">{{ page.type }}</h4> -->
-            
-            <ul class="tags">
-                {% for tag in page.tags %}
-                <li class="tag">{{tag | capitalize }}</li>
-                {% endfor %}
-            </ul>
-        </header>
-
-        <div class="p3 text-center">
-            {{ content }}
-        </div>
-
+<div id="main">
+    <div id="project">
+        <!-- <div class="container container-narrow"> -->
+            <header class="p2 text-center">
+                <a href="/#work" class="btn-close" data-modal-close data-tooltip="Close">&times;</a>
+                <h1 class="project-title">{{ page.title }}</h1>
+                <!-- <h4 class="project-type">{{ page.type }}</h4> -->
+                <ul class="tags">
+                    {% for tag in page.tags %}
+                    <li class="tag">{{tag | capitalize }}</li>
+                    {% endfor %}
+                </ul>
+            </header>
+            <div class="p2 text-center">
+                {{ content }}
+            </div>
+            <!-- <img src="{{page.featured_image}}" alt="{{ page.title }}"> -->
+            <footer class="text-center">
+                {% if page.project_url %}
+                <div class="p3">
+                    <a href="{{page.project_url}}" class="btn btn-primary">View project &rarr;</a>
+                </div>
+                {% endif %}
+                <div class="p3">
+                    <a href="/#work" data-modal-close>&larr; Back home</a>
+                </div>
+            </footer>
+        <!-- </div> -->
     </div>
-
-        <div class="bg-light">
-            <div class="wrap p3">
-                <figure class="box-shadow">
-                    <img src="{{page.featured_image}}" alt="{{ page.title }}">
-                </figure>
-            
-        
-
-        <footer class="text-center">
-            
-                <div class="p3">
-                    <a href="{{page.url}}" class="btn btn-primary btn-outline">View project &rarr;</a>
-                </div>
-            
-                <div class="p3">
-                    <a href="/#work">&larr; Back</a>
-                </div>
-            
-        </footer>
-
-        </div>
-        </div>
-    
+</div>
