@@ -16,18 +16,16 @@ layout: default
         {% endfor %}
     </div>
 </section>
-<section class="section section-two-thirds" id="about">
-    <div class="container container-narrow">
-        <header class="section-header">
-            <img src="{{site.gravatar}}" alt="{{site.author}}" class="img-circle">
-            <h1 class="h3">About</h1>
-        </header>
-        <p>I&rsquo;m a {{ site.time | date: '%Y' | minus:1991 }} year-old designer and front-end developer born and raised in rural Vermont (currently based in Middlebury). I am primarily self-taught with {{ site.time | date: '%Y' | minus:2009 }} years of experience; scouring the internet for new techniques and strategies to bring to my work. I love sitting down for a few hours on my Macbook to crank out some code or work a new project while listening to Spotify &mdash; both of which I&rsquo;m not sure I could live without.</p>
-        <p>I am currently employed at Country Home Products, where I maintain their web presences, design UI for new projects, or do A/B testing on existing designs.</p>
-        <p>I am also co-founder of a large project called Fateseal which consumes a lot of my free time. You can learn more about the project in my <a href="#work">portfolio</a>.</p>
-    </div>
+<section class="section" id="about">
+    <header class="section-header">
+        <img src="{{site.gravatar}}" alt="{{site.author}}" class="img-circle">
+        <h1 class="h3">About</h1>
+    </header>
+    <p>I&rsquo;m a {{ site.time | date: '%Y' | minus:1991 }} year-old designer and front-end developer born and raised in rural Vermont (currently based in Middlebury). I am primarily self-taught with {{ site.time | date: '%Y' | minus:2009 }} years of experience; scouring the internet for new techniques and strategies to bring to my work. I love sitting down for a few hours on my Macbook to crank out some code or work a new project while listening to Spotify &mdash; both of which I&rsquo;m not sure I could live without.</p>
+    <p>I am currently employed at Country Home Products, where I maintain their web presences, design UI for new projects, or do A/B testing on existing designs.</p>
+    <p>I am also co-founder of a large project called Fateseal which consumes a lot of my free time. You can learn more about the project in my <a href="#work">portfolio</a>.</p>
 </section>
-<section class="section section-third bg-gray-dark" id="skills">
+<section class="section bg-gray-dark" id="skills">
     <header class="text-center">
         <h1 class="h3 color-white">Skills</h1>
     </header>
@@ -40,7 +38,7 @@ layout: default
         {% endfor %}
     </ul>
 </section>
-<section class="section section-full-width section-height-auto bg-gray-lighter" id="work">
+<section class="section bg-gray-lighter" id="work">
     <header class="section-header">
         <h1>Work</h1>
     </header>
