@@ -2,7 +2,7 @@
 layout: project
 title: Fateseal
 type: website
-url: http://www.fateseal.com
+project_url: http://www.fateseal.com
 date: 2015-05-18
 featured_image: fateseal-thumb.jpg
 tags:

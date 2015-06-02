@@ -2,7 +2,7 @@
 layout: project
 title: DR Power Landing Pages
 type: landing pages
-url: http://drtrimmer.com
+project_url: http://drtrimmer.com
 date: 2014-10-01
 featured_image: dr-power-landing-page-thumb.jpg
 tags:

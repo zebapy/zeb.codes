@@ -2,7 +2,7 @@
 layout: project
 title: Country Home Products
 type: website
-url: http://www.chp.com
+project_url: http://www.chp.com
 date: 2015-02-25
 featured_image: chp-thumb.jpg
 tags:
