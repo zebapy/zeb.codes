@@ -73,3 +73,12 @@
     font-size: 12px;
     padding: .5em 1em;
 }
+
+.btn-close {
+    font-size: 20px;
+    transition: transform .8s ease-out;
+
+    &:hover {
+        transform: rotate(360deg);
+    }
+}
