@@ -52,7 +52,7 @@ layout: default
                 <div class="project-content">
                     <h2>{{project.title}}</h2>
                     <ul class="tags-list">
-                    {% for tag in project.tags %}
+                    {% for tag in project.tags | limit: 3 %}
                         <li class="tags-item">{{tag}}</li>
                     {% endfor %}
                     </ul>
