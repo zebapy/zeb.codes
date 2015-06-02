@@ -14,4 +14,10 @@ tags:
 images:
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque temporibus in veritatis quia sunt dolorum quo, explicabo soluta corrupti eligendi doloremque aperiam nemo voluptatibus consequatur incidunt numquam quod aut. Debitis.
+Fateseal is a [Magic: The Gathering](http://en.wikipedia.org/wiki/Magic:_The_Gathering) deck building website with social networking aspects. Its goal is to connect MTG players of all skill levels, introduce the game to new players, and improve users. I co-founded this project with a fellow MTG player and programmer in my local area. We are both very passionate about this project and hope to grow it into something reputable, but for now we spend whatever free time we can iterating over its features and gathering feedback from our small userbase to evolve it. I have gained many skills from working on this project outside of front-end that I hope to carry into my career and other projects.
+
+<figure>
+    <img src="/img/fateseal-homepage.png" alt="">
+</figure>
+
+_MTG card artwork is copyright of Wizards of the Coast LLC_
