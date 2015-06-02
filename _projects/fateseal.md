@@ -6,6 +6,7 @@ project_url: http://www.fateseal.com
 date: 2015-05-18
 featured_image: fateseal-thumb.jpg
 tags:
+- cofounder
 - design
 - frontend
 - backend
