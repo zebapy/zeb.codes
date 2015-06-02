@@ -1,0 +1,31 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    // font-family: $font-family-sans-serif;
+}
+
+h1 {
+    font-size: 24px;
+    @include spacecase();
+}
+
+h2 {
+    font-size: 20px;
+    @include spacecase();
+}
+
+h3,
+.h3 {
+    color: $gray-dark;
+    font-size: 18px;
+    @include spacecase();
+}
+
+p {
+    font-family: $font-family-serif;
+    font-size: 18px;
+    font-style: italic;
+}
