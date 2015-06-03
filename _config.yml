@@ -32,9 +32,9 @@ exclude:
 - README.md
 
 collections:
-    projects:
+    work:
         output: true
-        title: Projects
+        title: Work
 
 sass:
     style: :compressed
