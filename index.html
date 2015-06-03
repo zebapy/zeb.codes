@@ -43,25 +43,22 @@ layout: default
     <header class="section-header">
         <h1>Work</h1>
     </header>
-    <ul class="project-list">
-        {% for project in site.projects %}
-        <li class="project-item">
-            <a href="{{project.url}}" class="project-anchor">
-                <img src="/img/{{project.featured_image}}" alt="{{project.title}}" class="project-image">
-                <div class="project-content">
-                    <h2>{{project.title}}</h2>
-                    <ul class="tags-list">
-                    {% for tag in project.tags | limit: 3 %}
-                        <li class="tags-item">{{tag}}</li>
-                    {% endfor %}
-                    </ul>
-                </div>
-            </a>
-        </li>
-        {% endfor %}
-    </ul>
 </section>
-<!-- <section class="section" id="project"></section> -->
+{% for project in site.work %}
+<section class="section project">
+    <a href="{{project.url}}" class="project-anchor">
+        <img src="/img/{{project.featured_image}}" alt="{{project.title}}" class="project-image">
+        <div class="project-content">
+            <h2 class="project-title">{{project.title}}</h2>
+            <ul class="tags">
+            {% for tag in project.tags | limit: 3 %}
+                <li class="tag">{{tag}}</li>
+            {% endfor %}
+            </ul>
+        </div>
+    </a>
+</section>
+{% endfor %}
 <section class="section bg-primary" id="contact">
     <header class="section-header">
         <h1>Get in touch</h1>
