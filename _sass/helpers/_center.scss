@@ -13,3 +13,11 @@
         transform: translate(-50%);
     }
 }
+
+.center-vertical-md {
+    @include media($medium) {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
