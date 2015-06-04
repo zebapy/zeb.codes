@@ -7,6 +7,7 @@ color: "#3c9c35"
 project_url: http://www.chp.com
 date: 2015-02-25
 featured_image: www-chp-com.png
+summary: Static, responsive website for parent company of multiple power equipment child businesses
 tags:
 - design
 - frontend
