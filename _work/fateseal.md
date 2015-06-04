@@ -6,6 +6,8 @@ color: "#4a90e2"
 project_url: http://www.fateseal.com
 date: 2015-05-18
 featured_image: www-fateseal-com.png
+summary: |
+    Responsive social networking website and <abbr title="Magic: The Gathering">MTG</abbr> deck building tool
 tags:
 - cofounder
 - design
