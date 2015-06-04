@@ -1,20 +1,20 @@
 .project {
     @include clearfix();
-    margin: 2em 0;
+    margin: 3em 0;
     perspective: 1000px;
 }
 
-.project-figure {
-    float: left;
-    width: 40%;
-    height: 300px;
-    margin: 0;
-    overflow: hidden;
-    transition: .8s;
+.project-media {
 
-    &:hover {
-        transform: rotateY(5deg) translate3d(-10px, -5px, 0);
-        box-shadow: 10px 5px 5px rgba($black, .1);
+    @include media($medium) {
+        float: left;
+        width: 40%;
+        transition: .8s;
+
+        &:hover .browser {
+            transform: rotateY(5deg) translate3d(-10px, -5px, 0);
+            box-shadow: 10px 5px 5px rgba($black, .1);
+        }
     }
 }
 
@@ -23,13 +23,15 @@
 }
 
 .project-image {
-    padding: 2em;
-    background: $white;
+    // padding: 2em;
+    // background: $white;
 }
 
 .project-content {
-    float: left;
-    padding: 0 2em;
+    @include media($medium) {
+        float: left;
+        padding: 0 2em;
+    }
     // width: 70%;
 }
 

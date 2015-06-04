@@ -17,11 +17,18 @@ layout: default
     <div class="section-content">
         {% for project in site.work %}
             <div class="project">
-                <figure class="project-figure">
-                    <a href="{{project.url}}" class="project-anchor">
-                        <img src="/img/{{project.featured_image}}" alt="{{project.title}}" class="project-image">
-                    </a>
-                </figure>
+                <div class="project-media">
+                    <div class="browser">
+                        <div class="browser-toolbar">
+                            <i class="browser-icons"></i>
+                        </div>
+                        <div class="browser-viewport">
+                            <a href="{{project.url}}">
+                                <img src="/img/{{project.featured_image}}" alt="{{project.title}}">
+                            </a>
+                        </div>
+                    </div>
+                </div>
                 <div class="project-content">
                     <h2 class="project-title"><a href="{{project.url}}">{{project.title}}</a></h2>
                     <p class="project-tags">
