@@ -2,6 +2,9 @@
     @include clearfix();
     margin: 3em 0;
     perspective: 1000px;
+    background: $white;
+    padding: 2em;
+    width: 100%;
 }
 
 .project-media {
