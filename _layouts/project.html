@@ -1,33 +1,31 @@
 ---
 layout: default
 ---
-<div id="main">
-    <div id="project">
-        <!-- <div class="container container-narrow"> -->
-            <header class="p2 text-center">
-                <a href="/#work" class="btn-close" data-modal-close data-tooltip="Close">&times;</a>
-                <h1 class="project-title">{{ page.title }}</h1>
-                <!-- <h4 class="project-type">{{ page.type }}</h4> -->
-                <ul class="tags">
-                    {% for tag in page.tags %}
-                    <li class="tag">{{tag | capitalize }}</li>
-                    {% endfor %}
-                </ul>
-            </header>
-            <div class="p2 text-center">
-                {{ content }}
-            </div>
-            <!-- <img src="{{page.featured_image}}" alt="{{ page.title }}"> -->
-            <footer class="text-center">
-                {% if page.project_url %}
-                <div class="p3">
-                    <a href="{{page.project_url}}" class="btn btn-primary">View project &rarr;</a>
-                </div>
-                {% endif %}
-                <div class="p3">
-                    <a href="/#work" data-modal-close>&larr; Back home</a>
-                </div>
-            </footer>
-        <!-- </div> -->
+
+<div class="container">
+    <header class="p2 text-center">
+        <a href="/#work" class="btn btn-secondary">Thanks, I'm done looking</a>
+        <h1 class="font-huge">{{ page.title }}</h1>
+        <!-- <h4 class="project-type">{{ page.type }}</h4> -->
+        <p class="project-tags">
+           {% for tag in page.tags %}
+               {{tag | capitalize }}{% unless forloop.last %}, {% endunless %}
+           {% endfor %}
+       </p>
+    </header>
+    <div class="">
+        {{ content }}
     </div>
+    <!-- <img src="{{page.featured_image}}" alt="{{ page.title }}"> -->
+    <footer class="text-center">
+        {% if page.project_url %}
+        <div class="p3">
+            <a href="{{page.project_url}}" class="btn btn-primary">View project &rarr;</a>
+        </div>
+        {% endif %}
+        <div class="p3">
+            <a href="/#work" data-modal-close>&larr; Back home</a>
+        </div>
+    </footer>
 </div>
+<!-- </div> -->

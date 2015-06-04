@@ -9,18 +9,15 @@
     display: block;
     width: 100%;
     border-radius: 0;
-    border: 2px solid $brand-primary;
-    transition: border-color .2s;
+    border: 0;
+    transition: box-shadow .2s;
     -webkit-appearance: none;
     appearance: none;
 
+    &:focus,
     &:hover {
-        border-color: $brand-primary-dark;
-    }
-
-    &:focus {
-        border-color: $black;
         outline: 0;
+        box-shadow: 0 0 10px rgba($black, .25);
     }
 
     @at-root textarea#{&} {

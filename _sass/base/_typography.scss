@@ -9,23 +9,35 @@ h6 {
 
 h1 {
     font-size: 24px;
-    @include spacecase();
+    // @include spacecase();
 }
 
 h2 {
     font-size: 20px;
-    @include spacecase();
+    // @include spacecase();
 }
 
 h3,
 .h3 {
-    color: $gray-dark;
+    // color: $gray-dark;
     font-size: 18px;
-    @include spacecase();
+    // @include spacecase();
 }
 
 p {
-    font-family: $font-family-serif;
-    font-size: 18px;
+    font-family: $font-family-sans-serif;
+    font-size: 16px;
     // font-style: italic;
+}
+
+.lead {
+    font-size: 18px;
+}
+
+.font-huge {
+    font-size: 64px;
+}
+
+.subtitled {
+    margin-bottom: 0;
 }

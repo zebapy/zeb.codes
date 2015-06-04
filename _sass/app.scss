@@ -11,6 +11,7 @@
 @import 'base/global';
 @import 'base/animations';
 @import 'base/typography';
+@import 'base/grid';
 
 // Components
 @import 'components/forms';
@@ -21,12 +22,12 @@
 @import 'components/social';
 @import 'components/carousel';
 @import 'components/tags';
-@import 'components/modal';
+// @import 'components/modal';
 // @import 'components/tooltip';
 // @import 'components/instafeed';
 
 // Layout
-@import 'layout/header';
+// @import 'layout/header';
 @import 'layout/sections';
 @import 'layout/containers';
 @import 'layout/footer';

@@ -1,22 +1,26 @@
 .btn {
     display: inline-block;
-    padding: 1em 2em;
     font-size: 14px;
-    text-transform: uppercase;
-    letter-spacing: .1em;
-    border: 2px solid transparent;
-    cursor: pointer;
-    transition: .2s;
+    // @include spacecase();
     text-align: center;
+    border: 4px solid transparent;
     border-radius: 0;
+    padding: 1em 2em;
+    transition: .2s;
     -webkit-appearance: none;
     appearance: none;
+    cursor: pointer;
 }
 
 .btn-primary {
-    color: $black;
+    color: $white;
     background: $brand-primary;
-    border-color: $brand-primary;
+    // border-color: $brand-primary;
+
+    &:hover {
+        color: $white;
+        background: $brand-primary-dark;
+    }
 
     &.btn-outline {
         background: none;
@@ -30,55 +34,23 @@
     }
 }
 
-.btn-white {
+.btn-secondary {
     color: $black;
-    background: $white;
+    background: $brand-secondary;
+    border-color: $brand-secondary-dark;
+
+    &:hover {
+        background: $brand-secondary-dark;
+    }
 
     &.btn-outline {
-        border-color: $white;
-        color: $white;
         background: none;
+        color: $brand-primary;
 
         &:hover,
         &:focus {
-            color: $black;
-            background: $white;
-            border-color: $white;
+            background: $brand-primary;
+            color: $white;
         }
-
-        &:active {
-            border-color: $black;
-        }
-    }
-}
-
-.btn-black {
-    color: $white;
-    background: $black;
-    border-color: $black;
-
-    &:hover {
-        color: $black;
-        border-color: $black;
-        background: $white;
-    }
-
-    &.btn-outline {
-        background: none;
-        color: $black;
-    }
-}
-
-.btn-sm {
-    font-size: 12px;
-    padding: .5em 1em;
-}
-
-.btn-close {
-    font-size: 20px;
-    transition: transform .8s ease-out;
-
-    &:hover {
-        transform: rotate(360deg);
     }
 }

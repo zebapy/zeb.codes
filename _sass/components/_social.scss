@@ -1,17 +1,17 @@
 .social-list {
-    text-align: center;
+    // text-align: center;
 }
 
 .social-item {
-    margin: 20px 0;
+    margin-bottom: 20px;
 }
 
 .social-anchor {
-    color: $gray-light;
-    @include ease();
+    // color: $gray-light;
+    // @include ease();
 
     &:focus,
     &:hover {
-        color: $gray;
+        // color: $gray;
     }
 }

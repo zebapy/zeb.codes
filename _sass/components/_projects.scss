@@ -1,36 +1,44 @@
 .project {
-    position: relative;
-    background: $black;
-    // border: 5px solid transparent;
+    @include clearfix();
+    margin: 2em 0;
+    perspective: 1000px;
 }
 
-.project-anchor {}
+.project-figure {
+    float: left;
+    width: 40%;
+    height: 300px;
+    margin: 0;
+    overflow: hidden;
+    transition: .8s;
+
+    &:hover {
+        transform: rotateY(5deg) translate3d(-10px, -5px, 0);
+        box-shadow: 10px 5px 5px rgba($black, .1);
+    }
+}
+
+.project-anchor {
+    
+}
 
 .project-image {
-    position: absolute;
-    z-index: 2;
-    opacity: .2;
-    transition: transform 10s ease-in;
-    transform: rotate(-5deg) translate(-50%);
-    max-width: 200%;
-    left: 50%;
-    top: -50%;
-
-    .project:hover & {
-        transform: rotate(-5deg) translate(-50%) scale(1.1);
-    }
+    padding: 2em;
+    background: $white;
 }
 
 .project-content {
-    @include center();
-    text-align: center;
-    color: $white;
-    z-index: 3;
+    float: left;
+    padding: 0 2em;
+    // width: 70%;
 }
 
 .project-title {
+    font-size: 24px;
+    font-weight: normal;
+    margin-top: 0;
+}
 
-    .project:hover & {
-        text-decoration: underline;
-    }
+.project-tags {
+    color: $gray-light;
 }
