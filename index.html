@@ -16,27 +16,17 @@ layout: default
     </header>
     <div class="section-content">
         {% for project in site.work %}
-            <div class="project">
-                <div class="project-media">
-                    <div class="browser">
-                        <div class="browser-toolbar">
-                            <i class="browser-icons"></i>
-                        </div>
-                        <div class="browser-viewport">
-                            <a href="{{project.url}}">
-                                <img src="/img/{{project.featured_image}}" alt="{{project.title}}">
-                            </a>
-                        </div>
+            <div class="project" style="border-bottom: 4px solid {{ project.color}};">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-8">
+                        <h2 class="project-title"><a href="{{project.url}}">{{project.title}}</a></h2>
+                        <!-- <h3>{{project.date | date: '%Y'}}</h3> -->
+                        <p>{{project.summary}}</p>
+                        <p class="project-tags">{% for tag in project.tags %}#{{tag }} {% endfor %}</p>
                     </div>
-                </div>
-                <div class="project-content">
-                    <h2 class="project-title"><a href="{{project.url}}">{{project.title}}</a></h2>
-                    <p class="project-tags">
-                        {% for tag in project.tags %}
-                            {{tag | capitalize }}{% unless forloop.last %}, {% endunless %}
-                        {% endfor %}
-                    </p>
-                    <a href="{{ project.url }}" class="btn btn-secondary">View project</a>
+                    <div class="col-xs-12 col-sm-4 text-right">
+                        <a href="{{ project.url }}" class="btn btn-secondary">View project</a>
+                    </div>
                 </div>
             </div>
         {% endfor %}
