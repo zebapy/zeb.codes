@@ -1,16 +1,52 @@
-$grid-prefix: 'col' !default;
-$grid-columns: 12;
-$grid-gutter-width: 20px;
+// Define grid variables
 
-@if ($grid-prefix != '') {
+$grid-prefix: "col" !default;
+$grid-columns: 12;
+$grid-gutter-width: 30px;
+
+@if ($grid-prefix != "") {
     $grid-prefix: "#{$grid-prefix}-";
+}
+
+$breakpoints: (
+    "xs": "",
+    "sm": $small,
+    "md": $medium,
+    "lg": $large,
+);
+
+
+// Set up classes
+
+%container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: ($grid-gutter-width / 2);
+    padding-right: ($grid-gutter-width / 2);
+}
+
+.container {
+    max-width: 1440px;
+    @extend %container;
+}
+
+.container-narrow {
+    max-width: 33em;
+    @extend %container;
+}
+
+.container-fluid {
+    max-width: 100%;
+    @extend %container;
 }
 
 .row {
     @include clearfix();
+    margin-left: -($grid-gutter-width / 2);
+    margin-right: -($grid-gutter-width / 2);
 }
 
-[class*="col-"] {
+[class*="#{$grid-prefix}"] {
     float: left;
     min-height: 1px;
     position: relative;
@@ -18,24 +54,34 @@ $grid-gutter-width: 20px;
     padding-right: ($grid-gutter-width / 2);
 }
 
-$breakpoints: (
-    "sm": $small,
-    "md": $medium,
-    "lg": $large,
-);
+
+// Generate the grid
+
+@mixin grid($size, $columns: 12) {
+
+    @for $index from 1 through $columns {
+
+        .#{$grid-prefix}#{$size}-#{$index} {
+            width: percentage(($index / $columns));
+        }
+
+    }
+
+}
 
 @each $breakpoint-name, $breakpoint-size in $breakpoints {
 
-    @include media($breakpoint-size) {
+    @if $breakpoint-name == "xs" {
+        
+        @include grid($breakpoint-name, $grid-columns);
 
-        @for $index from 1 to $grid-columns {
-    
-            .#{$grid-prefix}#{$breakpoint-name}-#{$index} {
-                width: percentage(($index / $grid-columns));
-            }
-            
+    } @else {
+
+        @include media($breakpoint-size) {
+
+            @include grid($breakpoint-name, $grid-columns);
+
         }
-
     }
 
 }
