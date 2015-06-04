@@ -1,15 +1,21 @@
-.container {
-    max-width: 1440px;
+%container {
     margin-left: auto;
     margin-right: auto;
+    padding-left: ($grid-gutter-width / 2);
+    padding-right: ($grid-gutter-width / 2);
+}
+
+.container {
+    max-width: 1440px;
+    @extend %container;
 }
 
 .container-narrow {
     max-width: 33em;
+    @extend %container;
 }
 
 .container-liquid {
     max-width: 100%;
-    margin-left: auto;
-    margin-right: auto;
+    @extend %container;
 }
