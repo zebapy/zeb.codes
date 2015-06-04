@@ -14,10 +14,13 @@
     -webkit-appearance: none;
     appearance: none;
 
-    &:focus,
     &:hover {
+        box-shadow: 0 0 10px rgba($black, .1);
+    }
+
+    &:focus {
+        box-shadow: 0 0 10px rgba($black, .2);   
         outline: 0;
-        box-shadow: 0 0 10px rgba($black, .25);
     }
 
     @at-root textarea#{&} {
