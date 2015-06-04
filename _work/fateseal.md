@@ -2,6 +2,7 @@
 layout: project
 title: Fateseal
 type: website
+color: "#4a90e2"
 project_url: http://www.fateseal.com
 date: 2015-05-18
 featured_image: www-fateseal-com.png
