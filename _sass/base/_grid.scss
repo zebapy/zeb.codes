@@ -68,6 +68,11 @@ $breakpoints: (
         .#{$grid-prefix}#{$size}-push-#{$index} {
             left: percentage(($index / $columns));
         }
+
+        .#{$grid-prefix}#{$size}-pull-#{$index} {
+            right: percentage(($index / $columns));
+        }
+
     }
 
 }
