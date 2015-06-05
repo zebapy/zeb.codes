@@ -26,14 +26,14 @@ Fateseal is a [Magic: The Gathering](http://en.wikipedia.org/wiki/Magic:_The_Gat
                 <div class="browser-icons"></div>
             </div>
             <div class="browser-viewport">
-                <img src="/img/www-fateseal-com.png" alt="">
+                <img src="/img/www-fateseal-com.jpg" alt="">
             </div>
         </div>
     </div>
     <div class="col-xs-12 col-md-5">
         <div class="iphone">
             <div class="iphone-screen">
-                <img src="/img/www-fateseal-com-mobile.png" alt="">
+                <img src="/img/www-fateseal-com-mobile.jpg" alt="">
             </div>
         </div>
     </div>
