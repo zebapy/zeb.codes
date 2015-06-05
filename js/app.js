@@ -27,7 +27,11 @@
     // project link clicked
     var $projectLink = $('[data-project]').find('a');
 
-    var loadProject = function(url, cb) {
+    var projectLoadingClass = 'loading';
+    var projectDoneClass = 'open';
+    var currentProject = '';
+
+    var getData = function(url, cb) {
 
         setTimeout(function() {
 
@@ -42,39 +46,59 @@
             });
 
         // REMOVE FOR PRODUCTION. just to dummy latency
-        }, 0);
+        }, 1000);
     };
 
-    $projectLink.on('click', function(event) {
+    var showProjectContent = function($project) {
 
-        event.preventDefault();
+    };
 
-        var $this = $(this);
+    var hideProjectContent = function() {
+
+    };
+
+    var closeProject = function(id) {
+
+        var $projectToClose = $(id);
+
+        var $projectContent = $projectToClose.find('.project-content');
+
+        $projectToClose.removeClass(projectDoneClass);
+
+        $projectContent.slideUp();
+    };
+
+    var openProject = function($this) {
+
+        var url = $this.attr('href');
 
         var $project = $this.closest('[data-project]');
         var $projectSummary = $project.find('.project-summary');
+        var projectId = $project.attr('id');
+        var projectHash = '#' + projectId;
+        var $projectContent = $('<div class="project-content"></div>');
 
-        if($project.hasClass('project-loaded')) return false;
+        $projectContent.hide();
+        $project.append($projectContent);
+
+        if($project.hasClass(projectDoneClass)) {
+            return closeProject(projectHash);
+        } else if ($project.data('loaded') === true) {
+            return $projectContent.slideDown();
+        }
 
         // disable links
         $projectLink.attr('disabled', true);
-        
-        var url = $this.attr('href');
 
-        var projectId = $project.attr('id');
-        var projectHash = '#' + projectId;
+        currentProject = projectId;
 
         // add loading to project container
-        $project.addClass('project-loading');
-
-        var $newContent = $('<div class="project-content"></div>');
+        $project.addClass(projectLoadingClass).attr('data-loaded', true);
 
         // append new content
-        $project.append($newContent);
+        getData(url, function(data) {
 
-        loadProject(url, function(data) {
-
-            $project.removeClass('project-loading').addClass('project-loaded');
+            $project.removeClass(projectLoadingClass).addClass(projectDoneClass);
 
             scrollToHash(projectHash, function() {
                 
@@ -84,10 +108,21 @@
                 var content = $(data).find('#content');
 
                 // show new content
-                $newContent.html(content);
+                $projectContent.html(content);
+
+                $projectContent.slideDown();
             });
         });
+    };
+
+    $projectLink.on('click', function(event) {
+
+        event.preventDefault();
+
+        openProject($(this));
 
     });
+
+    
 
 })();
