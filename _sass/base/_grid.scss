@@ -65,6 +65,9 @@ $breakpoints: (
             width: percentage(($index / $columns));
         }
 
+        .#{$grid-prefix}#{$size}-push-#{$index} {
+            left: percentage(($index / $columns));
+        }
     }
 
 }
