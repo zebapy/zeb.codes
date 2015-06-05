@@ -1,10 +1,12 @@
 $browser-close: #FFADAD;
 $browser-minimize: #FFF9AD;
 $browser-expand: #C2FFAD;
+$browser-border-width: 2px;
+$browser-border-color: $brand-secondary-dark;
 
 .browser {
-    border: 2px solid $brand-secondary-dark;
-    border-radius: 2%;
+    border: $browser-border-width solid $browser-border-color;
+    border-radius: 10px;
     overflow: hidden;
     // box-shadow: 5px 5px 0 5px rgba($black, .05);
     display: inline-block;
@@ -13,7 +15,7 @@ $browser-expand: #C2FFAD;
 
 .browser-toolbar {
     position: relative;
-    border-bottom: 2px solid $brand-secondary-dark;
+    border-bottom: $browser-border-width solid $browser-border-color;
     padding: 10px;
     // background: #fff;
 }
@@ -54,12 +56,10 @@ $browser-expand: #C2FFAD;
 }
 
 .browser-viewport {
-    // width: 50vw;
-    // height: 30vh;
-    // min-width: 300px;
-    // min-height: 400px;
-    // max-width: 800px;
-    max-height: 300px;
-    // background: gainsboro;
+    max-height: 60%;
     overflow: hidden;
+
+    img {
+        display: block;
+    }
 }
