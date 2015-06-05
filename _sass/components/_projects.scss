@@ -1,10 +1,61 @@
 .project {
     @include clearfix();
-    margin: 3em 0;
-    perspective: 1000px;
     background: $white;
-    padding: 2em;
     width: 100%;
+    border-bottom: 4px solid transparent;
+    margin: 3em 0;
+    padding: 2em;
+    transition: .2s;
+}
+
+.project-loading {
+    position: relative;
+
+    &:before {
+        content: '';
+        display: block;
+        background: $brand-secondary-dark;
+        height: 4px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        animation: loading 10s infinite;
+    }
+}
+
+.project-loaded {
+    box-shadow: 0 0 10px rgba($black, .2);
+
+
+}
+
+.project-btn {
+
+    .open-text {
+        display: block;
+
+        .project-loaded & {
+            display: none;
+        }
+    }
+
+    .close-text {
+        display: none;
+        
+        .project-loaded & {
+            display: block;
+        }
+    }
+}
+
+@keyframes loading {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 100%;
+    }
 }
 
 .project-media {
@@ -30,12 +81,12 @@
     // background: $white;
 }
 
-.project-content {
-    @include media($medium) {
-        float: left;
-        padding: 0 2em;
+.project-summary {
+    transition: opacity .8s;
+
+    .project-loading & {
+        opacity: .2;
     }
-    // width: 70%;
 }
 
 .project-title {
