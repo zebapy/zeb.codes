@@ -1,6 +1,6 @@
 .section {
     // @include clearfix();
-    display: table;
+    // display: table;
     // float: left;
     margin: 1em 0;
 
@@ -9,38 +9,18 @@
     }
 }
 
-.section-half {
-    @include media($medium) {
-        width: 50%;
-        float: left;
-    }
-}
-
-.section-third {
-    @include media($medium) {
-        width: 32%;
-        float: left;
-    }
-}
-
-.section-two-thirds {
-    @include media($medium) {
-        width: 66%;
-        float: left;
-    }
-}
 
 .section-header {
-    border-bottom: 4px solid $brand-secondary-dark;
-    padding: 2em;
+    // border-bottom: 4px solid $brand-secondary-dark;
+    // padding: 2em;
 
-    @include media($medium) {
-        display: table-cell;
-        width: 200px;
-        border-bottom: 0;
-        vertical-align: top;
-        padding: 0 2em;
-    }
+    // @include media($medium) {
+    //     display: table-cell;
+    //     width: 200px;
+    //     border-bottom: 0;
+    //     vertical-align: top;
+    //     padding: 0 2em;
+    // }
 }
 
 .section-title {
@@ -49,17 +29,19 @@
     @include media($medium) {
         font-size: 14px;
         font-weight: normal;
-        text-align: right;
+        margin: 0;
     }
 }
 
 .section-content {
     padding: 2em;
+    border-top: 4px solid $brand-secondary-dark;
 
     @include media($medium) {
         border-left: 4px solid $brand-secondary-dark;
+        border-top: 0;
         // float: left;
-        display: table-cell;
+        // display: table-cell;
         // width: 70%;
     }
 }

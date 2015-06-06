@@ -2,9 +2,11 @@
 layout: project
 title: DR Power Landing Pages
 type: landing pages
+color: "#e2583a"
 project_url: http://drtrimmer.com
 date: 2014-10-01
 featured_image: www-drpower-com-inquiry-trimmer-mowers.png
+summary: Responsive lead generation landing pages for power equipment company
 tags:
 - design
 - frontend
