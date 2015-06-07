@@ -32,7 +32,7 @@
         init: function() {
             this.$element.data('loaded', false);
             this.initListener();
-            this.$projectContent.hide();
+            // this.$projectContent.hide();
             this.$element.append(this.$projectContent);
         },
 
@@ -94,6 +94,7 @@
 
         onProjectLoading: function() {
             this.$element.addClass(this.settings.projectLoadingClass);
+            this.$projectContent.html('<i class="spinner"></i>');
         },
 
         onProjectLoaded: function() {
