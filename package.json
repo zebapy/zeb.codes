@@ -1,0 +1,27 @@
+{
+  "name": "zebapy.github.io",
+  "version": "1.0.0",
+  "description": "This is a public repo to display the source behind my personal portfolio website [http://zebpykosz.com](http://zebpykosz.com)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zebapy/zebapy.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zebapy/zebapy.github.io/issues"
+  },
+  "homepage": "https://github.com/zebapy/zebapy.github.io",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^2.3.1",
+    "gulp-combine-mq": "^0.4.0",
+    "gulp-minify-css": "^1.1.6",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^1.2.0"
+  }
+}
