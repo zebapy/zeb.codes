@@ -19,7 +19,8 @@ layout: default
                 <h1 class="section-title text-md-right">Work</h1>
             </div>
             <div class="col-xs-12 col-md-10 section-content">
-                {% for project in site.work %}
+                {% assign projects = site.work | sort: 'date' | reverse %}
+                {% for project in projects %}
                     <div class="project" id="{{ project.title | slugify }}" style="border-color: {{ project.color}};" data-project>
                         <div class="project-summary">
                             <div class="row">
