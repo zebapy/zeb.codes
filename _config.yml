@@ -31,6 +31,8 @@ exclude:
 - bower.json 
 - README.md
 - node_modules
+- /css/*.map
+- /js/*.map
 
 collections:
     work:
