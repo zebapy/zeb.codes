@@ -202,7 +202,7 @@
         };
 
         $.ajax({
-            url: '//formspree.io/zeb.apy@gmail.com', 
+            url: '//formspree.io/zeb.apy@gmail.com',
             method: 'POST',
             data: formData,
             dataType: 'json',
