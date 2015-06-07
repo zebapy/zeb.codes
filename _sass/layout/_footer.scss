@@ -1,7 +1,9 @@
 .global-footer {
-    // text-align: center;
-    // margin-top: 50px;
-    font-size: 18px;
-    padding: 2em;
-    // color: $brand-secondary-dark;
+    font-size: 14px;
+    padding: 10px;
+
+    @include media($medium) {
+        font-size: 18px;
+        padding: 2em;
+    }
 }
