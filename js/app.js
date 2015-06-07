@@ -110,21 +110,16 @@
         },
 
         loadData: function(url, cb) {
-            setTimeout(function() {
-
-                $.ajax({
-                    type: 'get',
-                    url: url,
-                    success: function(data) {
-                        cb(data);
-                    },
-                    error: function() {
-
-                    }
-                });
-
-            // REMOVE FOR PRODUCTION. just to dummy latency
-            }, 1000);
+            $.ajax({
+                type: 'get',
+                url: url,
+                success: function(data) {
+                    cb(data);
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    console.log(arguments);
+                }
+            });
         }
     });
 
