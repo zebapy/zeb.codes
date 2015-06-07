@@ -213,8 +213,6 @@
                 console.log(arguments);
             }
         });
-    });
-
-    
+    });    
 
 })();
