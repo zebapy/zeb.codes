@@ -1,5 +1,7 @@
 .btn {
-    display: inline-block;
+    display: block;
+    width: 100%;
+
     font-size: 14px;
     // @include spacecase();
     text-align: center;
@@ -10,6 +12,13 @@
     -webkit-appearance: none;
     appearance: none;
     cursor: pointer;
+    margin: 10px 0;
+
+    @include media($small) {
+        display: inline-block;
+        width: auto;
+        margin: auto;
+    }
 }
 
 .btn-primary {
