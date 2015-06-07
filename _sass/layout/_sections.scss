@@ -1,26 +1,9 @@
 .section {
-    // @include clearfix();
-    // display: table;
-    // float: left;
     margin: 1em 0;
 
     @include media($medium) {
         margin: 4em 0;
     }
-}
-
-
-.section-header {
-    // border-bottom: 4px solid $brand-secondary-dark;
-    // padding: 2em;
-
-    // @include media($medium) {
-    //     display: table-cell;
-    //     width: 200px;
-    //     border-bottom: 0;
-    //     vertical-align: top;
-    //     padding: 0 2em;
-    // }
 }
 
 .section-title {
@@ -40,8 +23,5 @@
     @include media($medium) {
         border-left: 4px solid $brand-secondary-dark;
         border-top: 0;
-        // float: left;
-        // display: table-cell;
-        // width: 70%;
     }
 }
