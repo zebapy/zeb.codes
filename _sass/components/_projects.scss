@@ -1,3 +1,23 @@
+@-webkit-keyframes loading {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes loading {
+    0% {
+        width: 0%;
+    }
+
+    100% {
+        width: 100%;
+    }
+}
+
 .project {
     @include clearfix();
     background: $white;
@@ -49,16 +69,6 @@
         .project.open & {
             display: block;
         }
-    }
-}
-
-@keyframes loading {
-    0% {
-        width: 0%;
-    }
-
-    100% {
-        width: 100%;
     }
 }
 
