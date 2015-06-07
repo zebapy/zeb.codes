@@ -3,10 +3,14 @@
     background: $white;
     width: 100%;
     border-bottom: 4px solid transparent;
-    margin: 3em 0;
-    padding: 2em;
+    margin: 1em 0;
+    padding: 1em;
     transition: .2s;
 
+    @include media($medium) {
+        margin: 3em 0;
+        padding: 2em;
+    }
 
     &.loading {
         position: relative;
@@ -90,9 +94,13 @@
 }
 
 .project-title {
-    font-size: 24px;
+    font-size: 18px;
     font-weight: normal;
     margin-top: 0;
+
+    @include media($medium) {
+        font-size: 24px;
+    }
 }
 
 .project-tags {
