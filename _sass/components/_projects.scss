@@ -104,13 +104,8 @@
 }
 
 .project-title {
-    font-size: 18px;
+    font-size: 24px;
     font-weight: normal;
-    margin-top: 0;
-
-    @include media($medium) {
-        font-size: 24px;
-    }
 }
 
 .project-tags {
