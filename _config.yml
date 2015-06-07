@@ -30,6 +30,7 @@ exclude:
 - bower_components 
 - bower.json 
 - README.md
+- node_modules
 
 collections:
     work:
