@@ -170,10 +170,11 @@
         var name = $form.find('input[name="name"]').val();
         var email = $emailField.val();
         var message = $form.find('textarea[name="message"]').val();
+        var sendingClass = $form.data('sending-class');
 
         $formGroup.removeClass('has-error');
-        $form.addClass('sending');
-        $submitButton.val('Sending message...').attr('disabled', true);
+        $form.addClass(sendingClass);
+        $submitButton.val($submitButton.data('disable-with')).attr('disabled', true);
         
         if(!validateEmail(email)) {
             addHasErrorToGroup($emailField);
@@ -191,7 +192,7 @@
 
         if(hasErrors) {
             $submitButton.val(originalSubmitButtonVal).attr('disabled', false);
-            return $form.removeClass('sending');
+            return $form.removeClass(sendingClass);
         }
 
         var formData = {
