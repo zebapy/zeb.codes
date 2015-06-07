@@ -8,16 +8,14 @@ $browser-border-color: $brand-secondary-dark;
     border: $browser-border-width solid $browser-border-color;
     border-radius: 10px;
     overflow: hidden;
-    // box-shadow: 5px 5px 0 5px rgba($black, .05);
-    display: inline-block;
     transition: .8s;
+    
 }
 
 .browser-toolbar {
     position: relative;
     border-bottom: $browser-border-width solid $browser-border-color;
     padding: 10px;
-    // background: #fff;
 }
 
 .browser-icons {
