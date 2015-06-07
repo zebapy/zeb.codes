@@ -1,5 +1,7 @@
 (function() {
 
+    'use strict';
+
     var scrollToHash = function(hash, cb) {
         $('html, body').stop(true, true).animate({
             scrollTop: $(hash).offset().top
