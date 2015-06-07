@@ -34,6 +34,10 @@
     @at-root textarea#{&} {
         min-height: 200px;
     }
+
+    .has-error & {
+        border-bottom: 2px solid tomato;
+    }
 }
 
 .form-actions {
