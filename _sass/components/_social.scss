@@ -7,11 +7,10 @@
 }
 
 .social-anchor {
-    // color: $gray-light;
-    // @include ease();
+  
+    border-bottom: 2px solid $brand-secondary-dark;
 
-    &:focus,
     &:hover {
-        // color: $gray;
+        border-color: $brand-primary;
     }
 }
