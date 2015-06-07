@@ -2,7 +2,6 @@ $iphone-border-width: 2px;
 $iphone-border-color: $brand-secondary-dark;
 
 .iphone {
-    display: inline-block;
     border: $iphone-border-width solid $iphone-border-color;
     border-radius: 20px;
     width: 100%;
