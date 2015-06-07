@@ -1,7 +1,7 @@
 var gulp = require('gulp');
 var uglify = require('gulp-uglify');
 var cmq = require('gulp-combine-mq');
-var prefix = require('gulp-autoprefixer');
+var autoprefixer = require('gulp-autoprefixer');
 var minifyCss = require('gulp-minify-css');
 var rename = require('gulp-rename');
 
@@ -9,7 +9,9 @@ gulp.task('css', function() {
     return gulp.src('./_site/css/app.css')
         .pipe(cmq())
         .pipe(minifyCss())
-        .pipe(prefix('last 2'))
+        .pipe(autoprefixer({
+            browsers: ['last 2 versions']
+        }))
         .pipe(rename({ suffix: '.min' }))
         .pipe(gulp.dest('./css'));
 });
