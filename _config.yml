@@ -1,0 +1,46 @@
+# Site settings
+title: "Zeb Pykosz | Designer and Front-end web developer based in Middlebury, Vermont"
+author: Zebhdiyah Pykosz
+email: hello@zebpykosz.com
+description: "Portfolio of freelance web developer and designer based in Middlebury, Vermont - passionate about creating nice, clean, and usable things on the internet."
+baseurl: "/" # the subpath of your site, e.g. /blog/
+url: http://zeb.codes # the base hostname & protocol for your site
+image_path: http://zeb.codes/img/zeb.jpg
+
+gravatar: https://en.gravatar.com/userimage/14820278/7a7abc448a6f29e03663ea4fb4897054.jpg?size=100
+
+social:
+    twitter:
+        username: "@Zebhdiyah"
+        url: http://twitter.com/zebhdiyah
+    github:
+        username: zebapy
+        url: http://github.com/zebapy
+    instagram:
+        username: zebapy
+        url: http://instagram.com/zebapy
+    skype:
+        username: rnt1zavery
+        url: skype:rnt1zavery?userinfo
+    codepen:
+        username: zebapy
+        url: http://codepen.io/zebapy
+
+exclude: 
+- bower_components 
+- bower.json 
+- README.md
+- node_modules
+- /css/*.map
+- /js/*.map
+
+collections:
+    work:
+        output: true
+        title: Work
+
+sass:
+    style: :compressed
+
+# Build settings
+markdown: kramdown

@@ -1,5 +1,5 @@
 _site
-/bower_components
 .sass-cache
-/dist
-/node_modules
+bower_components
+node_modules
+*.map

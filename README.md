@@ -1,11 +1,7 @@
-# Glint
+# zebpykosz.com
 
-Glint is a starter template utilizing [Html5-Boilerplate](https://github.com/h5bp/html5-boilerplate) whilst converting all CSS to [SASS](http://sass-lang.com/) files and implementing [Bourbon](https://github.com/thoughtbot/bourbon) with [Neat](https://github.com/thoughtbot/neat) grid system.
+This is a public repo to display the source behind my personal portfolio website [http://zebpykosz.com](http://zebpykosz.com)
 
-## Requirements
+### Todo
 
-Sass 3.2+
-
-## License
-
-Glint is licensed under the MIT license.
+- Ditch jQuery and use only vanilla JS

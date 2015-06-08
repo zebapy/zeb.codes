@@ -1,0 +1,27 @@
+#instafeed {
+    text-align: center;
+    margin: 100px 0;
+
+    &:hover {
+        a {
+            opacity: 0.25;
+        }
+    }
+
+    a {
+        overflow: hidden;
+        border-radius: 50%;
+        height: 50px;
+        width: 50px;
+        display: inline-block;
+        margin: 20px;
+        position: relative;
+        transition: opacity .2s ease-in-out;
+
+        &:hover {
+
+            opacity: 1;
+
+        }
+    }
+}

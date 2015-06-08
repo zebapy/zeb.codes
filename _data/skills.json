@@ -1,0 +1,42 @@
+[
+    {
+        "name": "HTML5",
+        "color": "#e3544d",
+        "level": "93"
+    },
+    {
+        "name": "CSS3/Sass",
+        "color": "#d685cf",
+        "level": "84"
+    },
+    {
+        "name": "Javascript/Coffeescript/jQuery",
+        "color": "#efda5b",
+        "level": "76"
+    },
+    {
+        "name": "UI/UX Design",
+        "color": "#9EECD7",
+        "level": "73"
+    },
+    {
+        "name": "Responsive Web Design",
+        "color": "#E89B9B",
+        "level": "83"
+    },
+    {
+        "name": "Wordpress",
+        "color": "#21759b",
+        "level": "72"
+    },
+    {
+        "name": "Node.js",
+        "color": "#90C541",
+        "level": "57"
+    },
+    {
+        "name": "Photoshop",
+        "color": "#98ddf6",
+        "level": "82"
+    }
+]

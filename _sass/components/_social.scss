@@ -1,0 +1,16 @@
+.social-list {
+
+}
+
+.social-item {
+    margin-bottom: 20px;
+}
+
+.social-anchor {
+  
+    border-bottom: 2px solid $brand-secondary-dark;
+
+    &:hover {
+        border-color: $brand-primary;
+    }
+}

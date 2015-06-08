@@ -1,0 +1,22 @@
+@keyframes spinner {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.spinner {
+    border-radius: 100%;
+    width: 20px;
+    height: 20px;
+    display: block;
+    border-left: 2px solid $brand-secondary-dark;
+    border-top: 2px solid $brand-secondary-dark;
+    border-right: 2px solid $brand-secondary-dark;
+    border-bottom: 2px solid $brand-primary;
+    animation: spinner .8s ease-in-out infinite;
+    margin: 0 auto;
+}

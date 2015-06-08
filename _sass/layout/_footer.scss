@@ -1,0 +1,9 @@
+.global-footer {
+    font-size: 14px;
+    padding: 10px;
+
+    @include media($medium) {
+        font-size: 18px;
+        padding: 2em;
+    }
+}

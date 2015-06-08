@@ -1,0 +1,9 @@
+<ul class="social-list">
+    {% for profile in site.social %}
+
+    <li class="social-item">
+        <a href="{{ profile[1].url }}" class="social-anchor">{{ profile[0] | capitalize }}</a>
+    </li>
+
+    {% endfor %}
+</ul>

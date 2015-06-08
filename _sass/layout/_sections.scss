@@ -1,0 +1,28 @@
+.section {
+    margin: 1em 0;
+
+    @include media($medium) {
+        margin: 4em 0;
+    }
+}
+
+.section-title {
+    text-align: left;
+
+    @include media($medium) {
+        font-size: 14px;
+        font-weight: normal;
+        margin: 0;
+    }
+}
+
+.section-content {
+    padding: 1em;
+    border-top: 4px solid $brand-secondary-dark;
+
+    @include media($medium) {
+        border-left: 4px solid $brand-secondary-dark;
+        border-top: 0;
+        padding: 2em;
+    }
+}
