@@ -120,7 +120,7 @@
                     cb(data);
                 },
                 error: function(jqXHR, textStatus, errorThrown) {
-                    console.log(arguments);
+                    
                 }
             });
         }
@@ -173,7 +173,7 @@
         $formGroup.removeClass('has-error');
         $form.addClass(sendingClass);
         $submitButton.val($submitButton.data('disable-with')).attr('disabled', true);
-        
+
         if(!validateEmail(email)) {
             addHasErrorToGroup($emailField);
             hasErrors = true;
@@ -216,6 +216,6 @@
                 console.log(arguments);
             }
         });
-    });    
+    });
 
 })();
