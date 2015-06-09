@@ -112,7 +112,7 @@
             this.$element.removeClass(this.settings.projectDoneClass);
         },
 
-        loadData: function(url, cb) {  
+        loadData: function(url, cb) {
             $.ajax({
                 type: 'get',
                 url: url,
@@ -120,7 +120,7 @@
                     cb(data);
                 },
                 error: function(jqXHR, textStatus, errorThrown) {
-                    console.log(arguments);
+                    
                 }
             });
         }
