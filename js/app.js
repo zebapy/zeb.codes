@@ -112,7 +112,7 @@
             this.$element.removeClass(this.settings.projectDoneClass);
         },
 
-        loadData: function(url, cb) {
+        loadData: function(url, cb) {  
             $.ajax({
                 type: 'get',
                 url: url,
@@ -173,7 +173,7 @@
         $formGroup.removeClass('has-error');
         $form.addClass(sendingClass);
         $submitButton.val($submitButton.data('disable-with')).attr('disabled', true);
-        
+
         if(!validateEmail(email)) {
             addHasErrorToGroup($emailField);
             hasErrors = true;
@@ -216,6 +216,6 @@
                 console.log(arguments);
             }
         });
-    });    
+    });
 
 })();
