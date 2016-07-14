@@ -10,9 +10,9 @@
         "level": "84"
     },
     {
-        "name": "Javascript/Coffeescript/jQuery",
+        "name": "JavaScript/ReactJS/jQuery",
         "color": "#efda5b",
-        "level": "76"
+        "level": "80"
     },
     {
         "name": "UI/UX Design",
@@ -27,15 +27,15 @@
     {
         "name": "Wordpress",
         "color": "#21759b",
-        "level": "72"
+        "level": "62"
     },
     {
         "name": "Node.js",
         "color": "#90C541",
-        "level": "57"
+        "level": "87"
     },
     {
-        "name": "Photoshop",
+        "name": "Sketch/Photoshop",
         "color": "#98ddf6",
         "level": "82"
     }
