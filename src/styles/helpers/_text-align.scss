@@ -1,19 +1,19 @@
 .text-right {
-    text-align: right;
+  text-align: right;
 }
 
 .text-center {
-    text-align: center;
+  text-align: center;
 }
 
 .text-sm-right {
-    @include media($small) {
-        text-align: right;
-    }
+  @include media($small) {
+    text-align: right;
+  }
 }
 
 .text-md-right {
-    @include media($medium) {
-        text-align: right;
-    }
+  @include media($medium) {
+    text-align: right;
+  }
 }

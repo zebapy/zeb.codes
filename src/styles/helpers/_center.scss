@@ -1,23 +1,23 @@
 .center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.center-md {
+  @include media($medium) {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%);
-}
-
-.center-md {
-    @include media($medium) {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%);
-    }
+  }
 }
 
 .center-vertical-md {
-    @include media($medium) {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-    }
+  @include media($medium) {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
 }

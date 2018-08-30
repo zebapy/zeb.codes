@@ -8,19 +8,19 @@ $font-family-sans-serif: montserrat, 'helvetica neue', helvetica, sans-serif;
 $font-family-serif: cardo, georgia, 'times new roman', serif;
 
 // Colors
-$brand-primary: #2C3E50;
+$brand-primary: #2c3e50;
 $brand-primary-dark: darken($brand-primary, 30%);
-$brand-secondary: #ECF0F1;
-$brand-secondary-dark: darken(#ECF0F1, 10%);
+$brand-secondary: #ecf0f1;
+$brand-secondary-dark: darken(#ecf0f1, 10%);
 
 $white: #fff;
-$black: #2E2E2E;
+$black: #2e2e2e;
 
 $gray-base: #000;
-$gray-lighter: #F3F3F3;
-$gray-light: #B9B9B9;
+$gray-lighter: #f3f3f3;
+$gray-light: #b9b9b9;
 $gray: lighten($gray-base, 10%);
-$gray-dark: #2E2E2E;
+$gray-dark: #2e2e2e;
 $gray-darker: darken($gray, 50%);
 
 $body-bg: $brand-secondary;

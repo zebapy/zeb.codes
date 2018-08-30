@@ -1,63 +1,61 @@
-$browser-close: #FFADAD;
-$browser-minimize: #FFF9AD;
-$browser-expand: #C2FFAD;
+$browser-close: #ffadad;
+$browser-minimize: #fff9ad;
+$browser-expand: #c2ffad;
 $browser-border-width: 2px;
 $browser-border-color: $brand-secondary-dark;
 
 .browser {
-    border: $browser-border-width solid $browser-border-color;
-    border-radius: 10px;
-    overflow: hidden;
-    transition: .8s;
-    
+  border: $browser-border-width solid $browser-border-color;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: 0.8s;
 }
 
 .browser-toolbar {
-    position: relative;
-    border-bottom: $browser-border-width solid $browser-border-color;
-    padding: 10px;
+  position: relative;
+  border-bottom: $browser-border-width solid $browser-border-color;
+  padding: 10px;
 }
 
 .browser-icons {
-    position: relative;
+  position: relative;
 
-    &,
-    &:before,
-    &:after {
-        width: 10px;
-        height: 10px;
-        border-radius: 10em;
-        display: block;
-    }
+  &,
+  &:before,
+  &:after {
+    width: 10px;
+    height: 10px;
+    border-radius: 10em;
+    display: block;
+  }
 
-    & {
-        background: tomato;
-    }
+  & {
+    background: tomato;
+  }
 
-    &:after,
-    &:before {
-        content: '';
-        position: absolute;
-        top: 0;
-    }
+  &:after,
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+  }
 
-    &:after {
-        background: lightgreen;
-        left: 30px;
-    }
+  &:after {
+    background: lightgreen;
+    left: 30px;
+  }
 
-    &:before {
-        background: gold;
-        left: 15px;
-    }
-
+  &:before {
+    background: gold;
+    left: 15px;
+  }
 }
 
 .browser-viewport {
-    max-height: 60%;
-    overflow: hidden;
+  max-height: 60%;
+  overflow: hidden;
 
-    img {
-        display: block;
-    }
+  img {
+    display: block;
+  }
 }

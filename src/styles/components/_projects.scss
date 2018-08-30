@@ -1,64 +1,60 @@
 .project {
-    @include clearfix();
-    background: $white;
-    width: 100%;
-    border-bottom: 4px solid transparent;
-    margin: 1em 0;
-    padding: 1em;
-    transition: .2s;
+  @include clearfix();
+  background: $white;
+  width: 100%;
+  border-bottom: 4px solid transparent;
+  margin: 1em 0;
+  padding: 1em;
+  transition: 0.2s;
 
-    @include media($medium) {
-        margin: 3em 0;
-        padding: 2em;
-    }
+  @include media($medium) {
+    margin: 3em 0;
+    padding: 2em;
+  }
 
-    &.loading {
-        // position: relative;
-    }
+  &.loading {
+    // position: relative;
+  }
 
-    &.open {
-        box-shadow: 0 0 10px rgba($black, .2);
-    }
+  &.open {
+    box-shadow: 0 0 10px rgba($black, 0.2);
+  }
 }
-
 
 .project-btn {
+  .open-text {
+    display: block;
 
-    .open-text {
-        display: block;
-
-        .project.open & {
-            display: none;
-        }
+    .project.open & {
+      display: none;
     }
+  }
 
-    .close-text {
-        display: none;
-        
-        .project.open & {
-            display: block;
-        }
+  .close-text {
+    display: none;
+
+    .project.open & {
+      display: block;
     }
+  }
 }
 
-
 .project-anchor {
-    
 }
 
 .project-summary {
-    transition: opacity .8s;
+  transition: opacity 0.8s;
 
-    .project.loading & {
-        opacity: .2;
-    }
+  .project.loading & {
+    opacity: 0.2;
+  }
 }
 
 .project-title {
-    font-size: 24px;
-    font-weight: normal;
+  font-size: 24px;
+  font-weight: normal;
 }
 
 .project-tags {
-    color: $gray-light;
+  color: $gray-light;
 }

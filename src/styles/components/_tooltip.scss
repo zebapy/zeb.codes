@@ -1,15 +1,15 @@
 [data-tooltip],
 .tooltip {
-    position: relative;
+  position: relative;
 
-    &:after {
-        background: $gray-dark;
-        color: $white;
-        content: attr(data-tooltip);
-        position: absolute;
-        position: absolute;
-        bottom: 100%;
-        left: 50%;
-        @include spacecase();
-    }
+  &:after {
+    background: $gray-dark;
+    color: $white;
+    content: attr(data-tooltip);
+    position: absolute;
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    @include spacecase();
+  }
 }

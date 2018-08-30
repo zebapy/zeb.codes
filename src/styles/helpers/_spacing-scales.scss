@@ -2,27 +2,32 @@ $scale: 16px;
 $scale-amount: 3;
 
 $scale-types: (
-    "m": ("margin"),
-    "mt": ("margin-top"),
-    "mb": ("margin-bottom"),
-    "mtb": ("margin-top", "margin-bottom"),
-    "p": ("padding")
+  'm': (
+    'margin'
+  ),
+  'mt': (
+    'margin-top'
+  ),
+  'mb': (
+    'margin-bottom'
+  ),
+  'mtb': (
+    'margin-top',
+    'margin-bottom'
+  ),
+  'p': (
+    'padding'
+  )
 );
 
 @for $i from 0 through $scale-amount {
+  $size: $i * $scale;
 
-    $size: $i * $scale;
-
-    @each $type-name, $declarations in $scale-types {
-
-        .#{$type-name}#{$i} {
-   
-            @each $declaration in $declarations {
-                #{$declaration}: $size;
-            }
-
-        }
-
+  @each $type-name, $declarations in $scale-types {
+    .#{$type-name}#{$i} {
+      @each $declaration in $declarations {
+        #{$declaration}: $size;
+      }
     }
-
+  }
 }

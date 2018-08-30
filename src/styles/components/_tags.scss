@@ -1,18 +1,16 @@
 .tags {
-    @include clearfix();    
+  @include clearfix();
 }
 
 .tag {
-    // display: inline-block;
-    // color: $white;
-    // background: $black;
-    font-size: 14px;
-    // // border: 2px solid $gray-light;
-    // // border-radius: 10em;
-    // margin: 0 .5em;
-    // padding: .5em 1em;
-    // @include spacecase();
-    float: left;
-
-    
+  // display: inline-block;
+  // color: $white;
+  // background: $black;
+  font-size: 14px;
+  // // border: 2px solid $gray-light;
+  // // border-radius: 10em;
+  // margin: 0 .5em;
+  // padding: .5em 1em;
+  // @include spacecase();
+  float: left;
 }
