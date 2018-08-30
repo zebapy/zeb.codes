@@ -1,44 +1,65 @@
 import React from 'react';
+import Helmet from 'react-helmet';
 
-const HomePage = ({ data }) => {
+import '../styles/app.scss';
+
+const HomePage = ({ data, buildTime, email, skills = [] }) => {
   return (
-    <div class="container">
-      <section class="section" id="hero">
-        <div class="">
-          <h1 class="font-huge mb0 color-primary">Hello, I'm Zeb Pykosz</h1>
-          <h2 class="color-primary">
+    <div className="container">
+      <Helmet>
+        <meta name="author" content="{{ site.author }}" />
+        <meta name="description" content="{{ site.description }}" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta property="og:title" content="{{ site.title }}" />
+        <meta property="og:description" content="{{ site.description }}" />
+        <meta property="og:site_name" content="{{ site.author }}" />
+        <meta property="og:image" content="{{site.image_path}}" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="{{ site.url }}" />
+        <meta name="twitter:image" content="{{ site.image_path }}" />
+        <meta name="twitter:title" content="{{ site.title }}" />
+        <meta name="twitter:description" content="{{ site.description }}" />
+        <link rel="stylesheet" href="/css/app.min.css" />
+        <link
+          href="http://fonts.googleapis.com/css?family=Montserrat:400,700"
+          rel="stylesheet"
+          type="text/css"
+        />
+      </Helmet>
+      <section className="section" id="hero">
+        <div className="">
+          <h1 className="font-huge mb0 color-primary">Hello, I'm Zeb Pykosz</h1>
+          <h2 className="color-primary">
             I am a web developer and multidisciplinary designer based in
             Middlebury, Vermont.
           </h2>
-          <a href="#work" class="btn btn-primary">
+          <a href="#work" className="btn btn-primary">
             View my work
           </a>
-          <a href="#about" class="btn btn-secondary">
+          <a href="#about" className="btn btn-secondary">
             Learn more about me
           </a>
         </div>
       </section>
 
-      <section class="section" id="work">
-        <div class="row">
-          <div class="col-xs-12 col-md-2">
-            <h1 class="section-title text-md-right">Work</h1>
+      <section className="section" id="work">
+        <div className="row">
+          <div className="col-md-2">
+            <h1 className="section-title text-md-right">Work</h1>
           </div>
-          <div class="col-xs-12 col-md-10 section-content">
-            {/* projects */}
-          </div>
+          <div className="col-md-10 section-content">{/* projects */}</div>
         </div>
       </section>
 
-      <section class="section" id="about">
-        <div class="row">
-          <div class="col-xs-12 col-md-6 col-lg-8">
-            <div class="row">
-              <div class="col-xs-12 col-md-3">
-                <h1 class="section-title text-md-right">About</h1>
+      <section className="section" id="about">
+        <div className="row">
+          <div className="col-md-6 col-lg-8">
+            <div className="row">
+              <div className="col-md-3">
+                <h1 className="section-title text-md-right">About</h1>
               </div>
-              <div class="col-xs-12 col-md-9 section-content">
-                {/* <!-- <img src="{{site.gravatar}}" alt="{{site.author}}" class="img-round"> --> */}
+              <div className="col-md-9 section-content">
+                {/* <!-- <img src="{{site.gravatar}}" alt="{{site.author}}" className="img-round"> --> */}
                 <p>
                   I&rsquo;m a designer and front-end developer born and raised
                   in rural Vermont. I am primarily self-taught with {buildTime}{' '}
@@ -57,20 +78,20 @@ const HomePage = ({ data }) => {
               </div>
             </div>
           </div>
-          <div class="col-xs-12 col-md-6 col-lg-4">
-            <div class="row">
-              <div class="col-xs-12 col-md-3">
-                <h1 class="section-title text-md-right">Skills</h1>
+          <div className="col-md-6 col-lg-4">
+            <div className="row">
+              <div className="col-md-3">
+                <h1 className="section-title text-md-right">Skills</h1>
               </div>
-              <div class="col-xs-12 col-md-9 section-content">
-                <ul class="skill-list">
+              <div className="col-md-9 section-content">
+                <ul className="skill-list">
                   {skills.map(skill => (
-                    <li class="skill-item" key={skill.name}>
-                      <span class="skill-label" title={skill.name}>
+                    <li className="skill-item" key={skill.name}>
+                      <span className="skill-label" title={skill.name}>
                         {skill.name}
                       </span>
                       <div
-                        class="skill-bar"
+                        className="skill-bar"
                         data-level={skill.level}
                         style={{
                           backgroundColor: skill.color,
@@ -86,58 +107,58 @@ const HomePage = ({ data }) => {
         </div>
       </section>
 
-      <section class="section" id="contact">
-        <div class="row">
-          <div class="col-xs-12 col-md-6 col-lg-8">
-            <div class="row">
-              <div class="col-xs-12 col-md-3">
-                <h1 class="section-title text-md-right">Contact</h1>
+      <section className="section" id="contact">
+        <div className="row">
+          <div className="col-md-6 col-lg-8">
+            <div className="row">
+              <div className="col-md-3">
+                <h1 className="section-title text-md-right">Contact</h1>
               </div>
-              <div class="col-xs-12 col-md-9 section-content">
-                <p class="lead">
+              <div className="col-md-9 section-content">
+                <p className="lead">
                   Want to say hello or talk to me about a project you have? I'd
                   be happy to hear from you. If you prefer, you can also email
                   me at <a href={`mailto:${email}`}>{email}</a>
                 </p>
-                <form name="contact" class="form" netlify>
-                  <div class="row">
-                    <div class="col-xs-12 col-lg-6">
-                      <div class="form-group">
+                <form name="contact" className="form" data-netlify>
+                  <div className="row">
+                    <div className="col-lg-6">
+                      <div className="form-group">
                         <input
                           type="text"
                           name="name"
                           placeholder="Full name"
-                          spellcheck="false"
-                          class="form-control"
+                          spellCheck={false}
+                          className="form-control"
                           required
                         />
                       </div>
                     </div>
-                    <div class="col-xs-12 col-lg-6">
-                      <div class="form-group">
+                    <div className="col-lg-6">
+                      <div className="form-group">
                         <input
                           type="email"
                           name="email"
                           placeholder="Email"
-                          class="form-control"
+                          className="form-control"
                           required
                         />
                       </div>
                     </div>
                   </div>
-                  <div class="form-group">
+                  <div className="form-group">
                     <textarea
                       name="message"
                       placeholder="Message"
-                      class="form-control"
+                      className="form-control"
                       required
                     />
                   </div>
-                  <div class="form-group form-actions">
+                  <div className="form-group form-actions">
                     <input
                       type="submit"
                       value="Send message"
-                      class="btn btn-secondary"
+                      className="btn btn-secondary"
                       data-disable-with="Sending message..."
                     />
                   </div>
@@ -145,12 +166,12 @@ const HomePage = ({ data }) => {
               </div>
             </div>
           </div>
-          <div class="col-xs-12 col-md-6 col-lg-4">
-            <div class="row">
-              <div class="col-xs-12 col-md-3">
-                <h1 class="section-title text-md-right">Elsewhere</h1>
+          <div className="col-md-6 col-lg-4">
+            <div className="row">
+              <div className="col-md-3">
+                <h1 className="section-title text-md-right">Elsewhere</h1>
               </div>
-              <div class="col-xs-12 col-md-9 section-content">
+              <div className="col-md-9 section-content">
                 {/* {% include social.html %} */}
               </div>
             </div>
@@ -158,7 +179,7 @@ const HomePage = ({ data }) => {
         </div>
       </section>
 
-      <footer class="global-footer">
+      <footer className="global-footer">
         {/* <p>{{site.author}} &copy; {{ site.time | date: '%Y' }} &middot; <a href="https://github.com/zebapy/zebapy.github.io">View source</a></p> */}
       </footer>
     </div>

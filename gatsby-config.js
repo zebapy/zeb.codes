@@ -23,6 +23,8 @@ module.exports = {
       options: {
         trackingId: 'UA-33739058-1'
       }
-    }
+    },
+    'gatsby-plugin-sass',
+    'gatsby-plugin-react-helmet'
   ]
 };
