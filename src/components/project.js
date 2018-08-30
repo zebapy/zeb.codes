@@ -6,12 +6,12 @@ const Project = ({ title, date, text, summary, tags, url, color }) => (
       <div className="row">
         <div className="col-md-8">
           <h2 className="project-title mt0">
-            <a href={url}>{{ title }}</a>
+            <a href={url}>{title}</a>
           </h2>
           <p>{summary}</p>
           <p className="project-tags">
             {tags.map(tag => (
-              <span key={tag}>{tag}</span>
+              <span key={tag}>#{tag} </span>
             ))}
           </p>
         </div>

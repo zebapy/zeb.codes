@@ -1,16 +1,22 @@
 import React from 'react';
 import Helmet from 'react-helmet';
+import { graphql } from 'gatsby';
+
+import Project from '../components/project';
 
 import '../styles/app.scss';
 
-const HomePage = ({ data, buildTime, email, social = [], skills = [] }) => {
+const HomePage = ({ data }) => {
+  const { skills, site, work, social } = data;
+  const { buildTime, siteMetadata } = site;
+  const { gravatar, name, email, description } = siteMetadata;
   return (
     <div className="container">
       <Helmet>
-        <meta name="author" content="{{ site.author }}" />
-        <meta name="description" content="{{ site.description }}" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta property="og:title" content="{{ site.title }}" />
+        <meta name="author" content={name} />
+        <meta name="description" content={description} />
+        {/* <meta name="viewport" content="width=device-width, initial-scale=1" /> */}
+        {/* <meta property="og:title" content="{{ site.title }}" />
         <meta property="og:description" content="{{ site.description }}" />
         <meta property="og:site_name" content="{{ site.author }}" />
         <meta property="og:image" content="{{site.image_path}}" />
@@ -18,8 +24,7 @@ const HomePage = ({ data, buildTime, email, social = [], skills = [] }) => {
         <meta property="og:url" content="{{ site.url }}" />
         <meta name="twitter:image" content="{{ site.image_path }}" />
         <meta name="twitter:title" content="{{ site.title }}" />
-        <meta name="twitter:description" content="{{ site.description }}" />
-        <link rel="stylesheet" href="/css/app.min.css" />
+        <meta name="twitter:description" content="{{ site.description }}" /> */}
         <link
           href="http://fonts.googleapis.com/css?family=Montserrat:400,700"
           rel="stylesheet"
@@ -47,7 +52,11 @@ const HomePage = ({ data, buildTime, email, social = [], skills = [] }) => {
           <div className="col-md-2">
             <h1 className="section-title text-md-right">Work</h1>
           </div>
-          <div className="col-md-10 section-content">{/* projects */}</div>
+          <div className="col-md-10 section-content">
+            {work.edges.map(({ node }) => (
+              <Project key={node.id} {...node.frontmatter} />
+            ))}
+          </div>
         </div>
       </section>
 
@@ -59,7 +68,7 @@ const HomePage = ({ data, buildTime, email, social = [], skills = [] }) => {
                 <h1 className="section-title text-md-right">About</h1>
               </div>
               <div className="col-md-9 section-content">
-                {/* <!-- <img src="{{site.gravatar}}" alt="{{site.author}}" className="img-round"> --> */}
+                <img src={gravatar} alt={name} className="img-round" />
                 <p>
                   I&rsquo;m a designer and front-end developer born and raised
                   in rural Vermont. I am primarily self-taught with {buildTime}{' '}
@@ -85,17 +94,17 @@ const HomePage = ({ data, buildTime, email, social = [], skills = [] }) => {
               </div>
               <div className="col-md-9 section-content">
                 <ul className="skill-list">
-                  {skills.map(skill => (
-                    <li className="skill-item" key={skill.name}>
-                      <span className="skill-label" title={skill.name}>
-                        {skill.name}
+                  {skills.edges.map(({ node }) => (
+                    <li className="skill-item" key={node.name}>
+                      <span className="skill-label" title={node.name}>
+                        {node.name}
                       </span>
                       <div
                         className="skill-bar"
-                        data-level={skill.level}
+                        data-level={node.level}
                         style={{
-                          backgroundColor: skill.color,
-                          width: skill.level + '%'
+                          backgroundColor: node.color,
+                          width: node.level + '%'
                         }}
                       />
                     </li>
@@ -172,11 +181,11 @@ const HomePage = ({ data, buildTime, email, social = [], skills = [] }) => {
                 <h1 className="section-title text-md-right">Elsewhere</h1>
               </div>
               <div className="col-md-9 section-content">
-                <ul class="social-list">
-                  {social.map(item => (
-                    <li class="social-item" key={item.place}>
-                      <a href={item.url} class="social-anchor">
-                        {item.place}
+                <ul className="social-list">
+                  {social.edges.map(({ node }) => (
+                    <li className="social-item" key={node.place}>
+                      <a href={node.url} className="social-anchor">
+                        {node.place}
                       </a>
                     </li>
                   ))}
@@ -188,10 +197,59 @@ const HomePage = ({ data, buildTime, email, social = [], skills = [] }) => {
       </section>
 
       <footer className="global-footer">
-        {/* <p>{{site.author}} &copy; {{ site.time | date: '%Y' }} &middot; <a href="https://github.com/zebapy/zebapy.github.io">View source</a></p> */}
+        <p>
+          {name} &copy; {buildTime} &middot;{' '}
+          <a href="https://github.com/zebapy/zeb.codes">View source</a>
+        </p>
       </footer>
     </div>
   );
 };
 
 export default HomePage;
+
+export const pageQuery = graphql`
+  query homeQuery {
+    site {
+      buildTime
+      siteMetadata {
+        name
+        email
+        gravatar
+      }
+    }
+    work: allMarkdownRemark(
+      filter: { fileAbsolutePath: { regex: "/projects/" } }
+    ) {
+      edges {
+        node {
+          id
+          frontmatter {
+            title
+            date
+            tags
+            project_url
+            summary
+          }
+        }
+      }
+    }
+    skills: allSkillsYaml {
+      edges {
+        node {
+          level
+          name
+        }
+      }
+    }
+    social: allSocialYaml {
+      edges {
+        node {
+          place
+          username
+          url
+        }
+      }
+    }
+  }
+`;

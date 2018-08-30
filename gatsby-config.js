@@ -18,6 +18,8 @@ module.exports = {
         name: 'content'
       }
     },
+    'gatsby-transformer-remark',
+    'gatsby-transformer-yaml',
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
