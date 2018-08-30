@@ -3,7 +3,7 @@ import Helmet from 'react-helmet';
 
 import '../styles/app.scss';
 
-const HomePage = ({ data, buildTime, email, skills = [] }) => {
+const HomePage = ({ data, buildTime, email, social = [], skills = [] }) => {
   return (
     <div className="container">
       <Helmet>
@@ -172,7 +172,15 @@ const HomePage = ({ data, buildTime, email, skills = [] }) => {
                 <h1 className="section-title text-md-right">Elsewhere</h1>
               </div>
               <div className="col-md-9 section-content">
-                {/* {% include social.html %} */}
+                <ul class="social-list">
+                  {social.map(item => (
+                    <li class="social-item" key={item.place}>
+                      <a href={item.url} class="social-anchor">
+                        {item.place}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
           </div>
