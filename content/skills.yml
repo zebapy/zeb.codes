@@ -1,24 +1,24 @@
 - name: HTML5
   level: 5
-  color: orange
+  color: "#e3544d"
 - name: CSS3/Sass
   level: 8
-  color: pink
+  color: "#d685cf"
 - name: Javascript/Node.js
   level: 7
-  color: yellow
+  color: "#efda5b"
 - name: ReactJS/GatsbyJS/Redux/ReactRouter/Apollo/Graphql
   level: 7
-  color: blue
+  color: "#61dafb"
 - name: Responsive web design
   level: 8
-  color: gray
+  color: "#e89b9b"
 - name: UI/UX design
   level: 6
-  color: red
+  color: "#9eecd7"
 - name: Sketch.app / Photoshop
   level: 6
-  color: gold
+  color: "#98ddf6"
 - name: Wordpress
   level: 5
-  color: lightblue
+  color: "#21759b"
