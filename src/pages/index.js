@@ -2,12 +2,14 @@ import React from 'react';
 import Helmet from 'react-helmet';
 import { graphql } from 'gatsby';
 
-import Project from '../components/project';
+import ProjectList from '../components/project-list';
+import Skillbar from '../components/skillbar';
+import ContactForm from '../components/contact-form';
 
 import '../styles/app.scss';
 
 const HomePage = ({ data }) => {
-  const { skills, site, work, social } = data;
+  const { site, social } = data;
   const { buildTime, siteMetadata } = site;
   const { gravatar, name, email, description } = siteMetadata;
   return (
@@ -53,9 +55,7 @@ const HomePage = ({ data }) => {
             <h1 className="section-title text-md-right">Work</h1>
           </div>
           <div className="col-md-10 section-content">
-            {work.edges.map(({ node }) => (
-              <Project key={node.id} {...node.frontmatter} />
-            ))}
+            <ProjectList />
           </div>
         </div>
       </section>
@@ -93,23 +93,7 @@ const HomePage = ({ data }) => {
                 <h1 className="section-title text-md-right">Skills</h1>
               </div>
               <div className="col-md-9 section-content">
-                <ul className="skill-list">
-                  {skills.edges.map(({ node }) => (
-                    <li className="skill-item" key={node.name}>
-                      <span className="skill-label" title={node.name}>
-                        {node.name}
-                      </span>
-                      <div
-                        className="skill-bar"
-                        data-level={node.level}
-                        style={{
-                          backgroundColor: node.color,
-                          width: node.level + '%'
-                        }}
-                      />
-                    </li>
-                  ))}
-                </ul>
+                <Skillbar />
               </div>
             </div>
           </div>
@@ -129,49 +113,7 @@ const HomePage = ({ data }) => {
                   be happy to hear from you. If you prefer, you can also email
                   me at <a href={`mailto:${email}`}>{email}</a>
                 </p>
-                <form name="contact" className="form" data-netlify>
-                  <div className="row">
-                    <div className="col-lg-6">
-                      <div className="form-group">
-                        <input
-                          type="text"
-                          name="name"
-                          placeholder="Full name"
-                          spellCheck={false}
-                          className="form-control"
-                          required
-                        />
-                      </div>
-                    </div>
-                    <div className="col-lg-6">
-                      <div className="form-group">
-                        <input
-                          type="email"
-                          name="email"
-                          placeholder="Email"
-                          className="form-control"
-                          required
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <div className="form-group">
-                    <textarea
-                      name="message"
-                      placeholder="Message"
-                      className="form-control"
-                      required
-                    />
-                  </div>
-                  <div className="form-group form-actions">
-                    <input
-                      type="submit"
-                      value="Send message"
-                      className="btn btn-secondary"
-                      data-disable-with="Sending message..."
-                    />
-                  </div>
-                </form>
+                <ContactForm />
               </div>
             </div>
           </div>
@@ -216,30 +158,6 @@ export const pageQuery = graphql`
         name
         email
         gravatar
-      }
-    }
-    work: allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/projects/" } }
-    ) {
-      edges {
-        node {
-          id
-          frontmatter {
-            title
-            date
-            tags
-            project_url
-            summary
-          }
-        }
-      }
-    }
-    skills: allSkillsYaml {
-      edges {
-        node {
-          level
-          name
-        }
       }
     }
     social: allSocialYaml {
