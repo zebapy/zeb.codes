@@ -1,7 +1,0 @@
-// @function palette($palette, $tone: 'base') {
-//     @return map-get(map-get($palettes, $palette), $tone);
-// }
-
-@function em($target, $base:16) {
-    @return $target / $base * 1em;
-}

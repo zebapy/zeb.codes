@@ -1,5 +1,4 @@
-_site
-.sass-cache
-bower_components
+public
+.cache
 node_modules
-*.map
+*.log

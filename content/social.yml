@@ -1,0 +1,12 @@
+- name: github
+  handle: zebapy
+  url: http://github.com/zebapy
+- name: codepen
+  handle: zebapy
+  url: http://codepen.io/zebapy
+- name: twitter
+  handle: '@Zebhdiyah'
+  url: http://twitter.com/zebhdiyah
+- name: instagram
+  handle: zebapy
+  url: http://instagram.com/zebapy
