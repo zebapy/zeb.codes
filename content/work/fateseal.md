@@ -1,23 +1,17 @@
 ---
-layout: project
-date: 2015-05-18
 title: Fateseal
-type: website
+text: MTG deck building app, card database, and social platform
+date: 2015-05-18
 color: "#4a90e2"
-project_url: http://www.fateseal.com
-
-summary: |
-    Responsive social networking website and <abbr title="Magic: The Gathering">MTG</abbr> deck building tool
-
-tags:
-- cofounder
-- design
-- frontend
-- backend
-
-images:
-    desktop: www-fateseal-com.jpg
-    mobile: www-fateseal-com-mobile.jpg
+url: http://www.fateseal.com
+roles: owner
+stack:
+- NodeJS
+- Graphql
+- ReactJS
+- Apollo
+- Styled Components
+- MongoDB
 ---
 
 Fateseal is a [Magic: The Gathering](http://en.wikipedia.org/wiki/Magic:_The_Gathering) deck building website with social networking aspects. Fateseal's ultimate goal is to connect MTG players of all skill levels, introduce the game to new players, and improve existing players' skills through deck building, research and analysis of games, and peer review.

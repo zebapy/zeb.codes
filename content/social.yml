@@ -1,12 +1,12 @@
-- place: github
-  username: zebapy
+- name: github
+  handle: zebapy
   url: http://github.com/zebapy
-- place: codepen
-  username: zebapy
+- name: codepen
+  handle: zebapy
   url: http://codepen.io/zebapy
-- place: twitter
-  username: '@Zebhdiyah'
+- name: twitter
+  handle: '@Zebhdiyah'
   url: http://twitter.com/zebhdiyah
-- place: instagram
-  username: zebapy
+- name: instagram
+  handle: zebapy
   url: http://instagram.com/zebapy

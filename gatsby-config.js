@@ -1,12 +1,13 @@
 module.exports = {
   siteMetadata: {
-    title:
-      'Zeb Pykosz | Designer and Front-end web developer based in Middlebury, Vermont',
+    title: 'Zeb Pykosz',
     name: 'Zebhdiyah Pykosz',
     email: 'hello@zebpykosz.com',
     description:
-      'Portfolio of freelance web developer and designer based in Middlebury, Vermont - passionate about creating valuable experiences for the internet.',
-    intro: '',
+      'Front-end/fullstack JS developer and UI designer. Employed as web developer at Middlebury College.',
+    intro:
+      'Front-end/fullstack JS developer and UI designer. Employed as web developer at [Middlebury College](https://github.com/middlebury). Wanna-be minimalist. Coffee disliker. Creator of [Fateseal](https://www.fateseal.com).',
+    tagline: 'Front-end/fullstack JS developer and UI designer',
     gravatar:
       'https://en.gravatar.com/userimage/14820278/7a7abc448a6f29e03663ea4fb4897054.jpg?size=100'
   },
@@ -26,7 +27,6 @@ module.exports = {
         trackingId: 'UA-33739058-1'
       }
     },
-    'gatsby-plugin-sass',
     'gatsby-plugin-react-helmet'
   ]
 };

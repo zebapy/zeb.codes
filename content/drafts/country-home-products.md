@@ -5,7 +5,7 @@ date: 2014-02-25
 color: '#3c9c35'
 project_url: http://www.chp.com
 
-summary: Static, responsive website for parent company of multiple power equipment child businesses
+text: Static, responsive website for parent company of multiple power equipment child businesses
 
 tags:
   - design

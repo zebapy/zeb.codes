@@ -1,42 +1,39 @@
 import React from 'react';
-import { StaticQuery, graphql } from 'gatsby';
+import { useStaticQuery, graphql } from 'gatsby';
 
-const Skillbar = () => (
-  <StaticQuery
-    query={graphql`
-      query skillbarQuery {
-        skills: allSkillsYaml {
-          edges {
-            node {
-              level
-              name
-              color
-            }
+const Skillbar = () => {
+  const data = useStaticQuery(graphql`
+    query skillbarQuery {
+      skills: allSkillsYaml {
+        edges {
+          node {
+            level
+            name
+            color
           }
         }
       }
-    `}
-  >
-    {data => (
-      <ul className="skill-list">
-        {data.skills.edges.map(({ node }) => (
-          <li className="skill-item" key={node.name}>
-            <span className="skill-label" title={node.name}>
-              {node.name}
-            </span>
-            <div
-              className="skill-bar"
-              data-level={node.level}
-              style={{
-                background: node.color,
-                width: node.level + '%'
-              }}
-            />
-          </li>
-        ))}
-      </ul>
-    )}
-  </StaticQuery>
-);
+    }
+  `);
+
+  return (
+    <ul className="list pl0">
+      {data.skills.edges.map(({ node }) => (
+        <li key={node.name}>
+          <div
+            style={{
+              display: 'block',
+              height: 10,
+              background: node.color,
+              width: node.level + '%'
+            }}
+          >
+            {node.name}
+          </div>
+        </li>
+      ))}
+    </ul>
+  );
+};
 
 export default Skillbar;
