@@ -13,7 +13,14 @@ const Input = props =>
   });
 
 const ContactForm = () => (
-  <form name="contact" data-netlify className="mw5">
+  <form
+    name="contact"
+    method="post"
+    data-netlify="true"
+    data-netlify-honeypot="bot-field"
+    className="mw5"
+  >
+    <input type="hidden" name="bot-field" />
     <FormItem>
       <Label>Name</Label>
       <Input
