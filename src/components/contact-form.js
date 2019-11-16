@@ -65,7 +65,7 @@ const ContactForm = () => {
           type="text"
           name="name"
           placeholder="Your name"
-          value={formData.name}
+          value={name}
           onChange={handleFieldChange}
           spellCheck={false}
           required
@@ -78,7 +78,7 @@ const ContactForm = () => {
           name="email"
           placeholder="hi@you.com"
           onChange={handleFieldChange}
-          value={formData.email}
+          value={email}
           required
         />
       </FormItem>
@@ -88,7 +88,7 @@ const ContactForm = () => {
           name="message"
           placeholder="Some kind words here..."
           onChange={handleFieldChange}
-          value={formData.message}
+          value={message}
           required
           multiline
         />
