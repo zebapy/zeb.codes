@@ -61,7 +61,7 @@ const HomePage = () => {
 
   const { site, social } = data;
   const { buildTime, siteMetadata } = site;
-  const { gravatar, name, description, intro, tagline } = siteMetadata;
+  const { name, description, intro, tagline } = siteMetadata;
 
   return (
     <div className="bg-white sans-serif">
@@ -73,7 +73,7 @@ const HomePage = () => {
         </Helmet>
 
         <section className="pv5">
-          <img src={gravatar} alt="Zeb Pykosz lookin kewl" className="br-100" />
+          <img src={pic} alt="Zeb Pykosz profile photo" className="br-100" />
           <h1 className="f1 mb2">{name}</h1>
           <p className="f3 mt0 lh-copy">
             <Markdownify source={intro} />
