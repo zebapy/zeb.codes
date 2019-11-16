@@ -20,6 +20,8 @@ const encode = data => {
 };
 
 const ContactForm = () => {
+  const [isFormSent, setIsFormSent] = useState(false);
+  const [showFormError, setFormError] = useState(false);
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMsg] = useState('');
@@ -40,14 +42,27 @@ const ContactForm = () => {
   const handleSubmit = e => {
     e.preventDefault();
 
+    setIsFormSent(false);
+
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: encode({ 'form-name': 'contact', name, email, message })
     })
-      .then(() => alert('Success!'))
-      .catch(error => alert(error));
+      .then(() => {
+        setIsFormSent(true);
+        setFormError(false);
+      })
+      .catch(error => {
+        isFormSent(false);
+        setFormError(true);
+        console.log(error);
+      });
   };
+
+  if (isFormSent) {
+    return <p className="pa2 f4 bg-washed-green">📧 Message sent</p>;
+  }
 
   return (
     <form
@@ -58,6 +73,12 @@ const ContactForm = () => {
       className="mw5"
       onSubmit={handleSubmit}
     >
+      {showFormError && (
+        <p className="pa2 f5 bg-light-red white">
+          Oh no! Something went wrong. Refresh and try again?
+        </p>
+      )}
+
       <input type="hidden" name="bot-field" />
       <FormItem>
         <Label>Name</Label>
