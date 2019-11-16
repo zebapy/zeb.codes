@@ -70,11 +70,6 @@ const HomePage = () => {
           <title>{`${name} - ${tagline}`}</title>
           <meta name="author" content={name} />
           <meta name="description" content={description} />
-          <link
-            href="http://fonts.googleapis.com/css?family=Montserrat:400,700"
-            rel="stylesheet"
-            type="text/css"
-          />
         </Helmet>
 
         <section className="pv5">
