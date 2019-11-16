@@ -8,6 +8,8 @@ import Skillbar from '../components/skillbar';
 import ContactForm from '../components/contact-form';
 import Anchor from '../components/anchor';
 
+import pic from './zeb.jpeg';
+
 import 'tachyons';
 
 const Markdownify = props => (
@@ -116,11 +118,10 @@ const HomePage = () => {
         </Section>
 
         <footer className="mt7 mb6">
-          <p className="f5 lh-copy">See ya around</p>
           <p className="gray lh-copy">
             {name} &copy; {new Date(buildTime).getFullYear()} <br />
-            Built with awesome open source projects ❤️like{' '}
-            <Anchor href="https://www.gatsbyjs.org/">Gatsby</Anchor> &amp;{' '}
+            Built with awesome open source projects ❤️{' '}
+            <Anchor href="https://www.gatsbyjs.org/">Gatsby</Anchor> and{' '}
             <Anchor href="https://tachyons.io/">Tachyons</Anchor>
             <br />
             <Anchor href="https://github.com/zebapy/zeb.codes">
