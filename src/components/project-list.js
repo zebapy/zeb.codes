@@ -59,11 +59,11 @@ const ProjectList = () => {
                     text: new Date(date).toLocaleDateString()
                   },
                   {
-                    label: 'Roles',
+                    label: 'Role',
                     text: roles
                   },
                   {
-                    label: 'Stack',
+                    label: 'Tech',
                     text: stack.map((tag, i) => (
                       <span key={tag}>
                         {tag}
