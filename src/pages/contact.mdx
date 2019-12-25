@@ -1,0 +1,34 @@
+---
+title: Contact
+social:
+- icon: codepen
+  name: Codepen
+  url: https://codepen.io/zebapy
+- icon: github
+  name: GitHub
+  url: https://github.com/zebapy
+- icon: twitter
+  name: Twitter
+  url: https://twitter.com/zebhdiyah
+- icon: codesandbox
+  name: Codesandbox
+  url: https://codesandbox.io/u/zebapy
+- icon: linkin
+  name: Linkedin
+  url: https://linkedin.com/in/zebpykosz
+---
+
+import Social from '../components/social'
+import ContactForm from '../components/contact-form'
+import Section from '../components/section'
+
+
+<Section pagetitle='Get in touch' text="If you want to reach out, I'm open to networking but not currently seeking new employment or freelance work. I'll get back to you in 24 hours." >
+
+  <ContactForm />
+
+</Section>
+
+<Section title='Social' text="Connect with me on a handful of other platforms. Collect 'em all.">
+  <Social items={props.pageContext.frontmatter.social} />
+</Section>

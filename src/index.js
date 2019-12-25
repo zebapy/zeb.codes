@@ -3,12 +3,12 @@ import Helmet from 'react-helmet';
 import { graphql, useStaticQuery } from 'gatsby';
 import Markdown from 'react-markdown';
 
-import ProjectList from '../components/project-list';
-import Skillbar from '../components/skillbar';
-import ContactForm from '../components/contact-form';
-import Anchor from '../components/anchor';
+import ProjectList from './components/project-list';
+import Skillbar from './components/skillbar';
+import ContactForm from './components/contact-form';
+import Anchor from './components/anchor';
 
-import pic from './zeb.jpeg';
+import pic from '../images/zeb.jpeg';
 
 import 'tachyons';
 

@@ -1,17 +1,27 @@
 import React, { useState } from 'react';
 import fetch from 'unfetch';
+import cx from 'classnames';
 
-const FormItem = props => <div className="mb3">{props.children}</div>;
-
-const Label = props => (
-  <label className="db f7 mb2 ttu">{props.children}</label>
+const FormItem = props => (
+  <div className={`form-item ${props.className}`}>{props.children}</div>
 );
 
 const Input = props =>
   React.createElement(props.multiline ? 'textarea' : 'input', {
-    className: 'bw0 bg-near-white pa3 f5 w-100 d-block ',
+    className: 'text-input',
     ...props
   });
+
+const FormField = ({ label, id, ...rest }) => {
+  return (
+    <div className={`form-item form-item--${id}`}>
+      <label htmlFor={id} className="label">
+        {label}
+      </label>
+      <Input id={id} {...rest} />
+    </div>
+  );
+};
 
 const encode = data => {
   return Object.keys(data)
@@ -61,7 +71,7 @@ const ContactForm = () => {
   };
 
   if (isFormSent) {
-    return <p className="pa2 f4 bg-washed-green">📧 Message sent</p>;
+    return <p className="alert alert--success">📧 Message sent</p>;
   }
 
   return (
@@ -70,57 +80,50 @@ const ContactForm = () => {
       method="post"
       data-netlify="true"
       data-netlify-honeypot="bot-field"
-      className="mw5"
       onSubmit={handleSubmit}
+      className="contact-form"
     >
       {showFormError && (
-        <p className="pa2 f5 bg-light-red white">
+        <p className="alert alert--error">
           Oh no! Something went wrong. Refresh and try again?
         </p>
       )}
 
       <input type="hidden" name="bot-field" />
-      <FormItem>
-        <Label>Name</Label>
-        <Input
-          type="text"
-          name="name"
-          placeholder="Your name"
-          value={name}
-          onChange={handleFieldChange}
-          spellCheck={false}
-          required
-        />
-      </FormItem>
-      <FormItem>
-        <Label>Email</Label>
-        <Input
-          type="email"
-          name="email"
-          placeholder="hi@you.com"
-          onChange={handleFieldChange}
-          value={email}
-          required
-        />
-      </FormItem>
-      <FormItem>
-        <Label>Message</Label>
-        <Input
-          name="message"
-          placeholder="Some kind words here..."
-          onChange={handleFieldChange}
-          value={message}
-          required
-          multiline
-        />
-      </FormItem>
-      <FormItem>
-        <button
-          type="submit"
-          value="Send message"
-          className="bw1 b--solid b--black bg-white pa2 black grow"
-        >
-          Send it
+      <FormField
+        id="name"
+        label="Name"
+        type="text"
+        name="name"
+        placeholder="Your name"
+        value={name}
+        onChange={handleFieldChange}
+        spellCheck={false}
+        required
+      />
+      <FormField
+        label="Email"
+        id="email"
+        type="email"
+        name="email"
+        placeholder="hi@you.com"
+        onChange={handleFieldChange}
+        value={email}
+        required
+      />
+      <FormField
+        label="Message"
+        id="message"
+        name="message"
+        placeholder="A short message for why you're contacting me..."
+        onChange={handleFieldChange}
+        value={message}
+        required
+        multiline
+      />
+      <FormItem className="form-item--btn">
+        <button type="submit" className="btn">
+          Send message
         </button>
       </FormItem>
     </form>
