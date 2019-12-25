@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'gatsby';
 
 const HeroSection = ({ title, text, avatar, alt }) => {
   return (
@@ -9,13 +10,13 @@ const HeroSection = ({ title, text, avatar, alt }) => {
       <h1 className="hero-title">{title}</h1>
       <p className="hero-text">{text}</p>
       <div className="hero-btns">
-        <a href="#work" className="btn hero-btn">
+        <Link to="/work" className="btn hero-btn">
           See my work
-        </a>
+        </Link>
         <div className="hero-or">or</div>
-        <a href="#contact" className="btn btn--alt hero-btn">
+        <Link to="/contact" className="btn btn--alt hero-btn">
           Get in touch
-        </a>
+        </Link>
       </div>
     </section>
   );

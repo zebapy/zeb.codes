@@ -1,12 +1,14 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 
-import '../styles/index.scss';
-
 import Header from './header';
+import Footer from './footer';
+
+import '../styles/index.scss';
 
 const Layout = ({ children, pageContext }) => {
   const { title } = pageContext.frontmatter;
+
   return (
     <div className="container">
       <Helmet title={title}>
@@ -18,7 +20,7 @@ const Layout = ({ children, pageContext }) => {
 
       <Header />
       <main>{children}</main>
-      <footer>footer</footer>
+      <Footer />
     </div>
   );
 };

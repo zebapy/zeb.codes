@@ -1,25 +1,19 @@
 import React from 'react';
-import { useStaticQuery, graphql } from 'gatsby';
-
-import Anchor from './anchor';
+import { useStaticQuery, graphql, Link } from 'gatsby';
 
 const ProjectList = () => {
   const data = useStaticQuery(graphql`
-    query projectsQuery {
-      work: allMarkdownRemark(
-        sort: { order: ASC, fields: [frontmatter___date] }
-        filter: { fileAbsolutePath: { regex: "/work/" } }
+    query workQuery {
+      work: allSitePage(
+        filter: { context: { frontmatter: { roles: { ne: null } } } }
       ) {
-        edges {
-          node {
-            id
+        nodes {
+          id
+          path
+          context {
             frontmatter {
-              title
               date
-              color
-              stack
-              roles
-              url
+              title
               text
             }
           }
@@ -29,55 +23,16 @@ const ProjectList = () => {
   `);
 
   return (
-    <ul className="list pl0">
-      {data.work.edges.map(({ node }) => {
-        const {
-          title,
-          url,
-          text,
-          stack,
-          date,
-          roles,
-          color
-        } = node.frontmatter;
+    <ul className="work-list">
+      {data.work.nodes.map(node => {
+        const { title, date, text } = node.context.frontmatter;
         return (
-          <li key={node.id} className="mb5">
-            <article
-              className="pl4"
-              style={{
-                borderLeft: `4px solid ${color}`
-              }}
-            >
-              <h2 className="mb1 fw5 mt0">
-                <Anchor href={url}>{title}</Anchor>
+          <li key={node.id} className="work-item">
+            <article className="project">
+              <h2 className="project-title">
+                <Link to={node.path}>{title}</Link>
               </h2>
-              <p className="f4 mt0 lh-copy">{text}</p>
-              <dl>
-                {[
-                  {
-                    label: 'When',
-                    text: new Date(date).toLocaleDateString()
-                  },
-                  {
-                    label: 'Role',
-                    text: roles
-                  },
-                  {
-                    label: 'Tech',
-                    text: stack.map((tag, i) => (
-                      <span key={tag}>
-                        {tag}
-                        {i !== stack.length - 1 ? ', ' : ''}
-                      </span>
-                    ))
-                  }
-                ].map(item => (
-                  <div className="flex mb1 gray" key={item.label}>
-                    <dt className="">{item.label}</dt>
-                    <dd className="">{item.text}</dd>
-                  </div>
-                ))}
-              </dl>
+              <p className="project-text">{text}</p>
             </article>
           </li>
         );

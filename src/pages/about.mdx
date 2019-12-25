@@ -1,24 +1,21 @@
 ---
 title: About
----
+focuses:
+- title: User Experience
+  text: You build sites to serve customers, in some manner or fasion. Users have high expectations created by the big sites these days.
+- title: Performance
+  text: You build sites to serve customers, in some manner or fasion. Users have high expectations created by the big sites these days.
+  # {/* - slower speeds increases bounce rate chance
+  # - speed increases revenue */}
+  # {/* https://www.thinkwithgoogle.com/marketing-resources/data-measurement/mobile-page-speed-new-industry-benchmarks/ */}
+- title: Accessibility
+  text: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed luctus venenatis aliquet. Nullam vehicula nunc eu velit dapibus tempor. Curabitur scelerisque sagittis odio.
+- title: Responsive
+  text: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed luctus venenatis aliquet. Nullam vehicula nunc eu velit dapibus tempor. Curabitur scelerisque sagittis odio.
+- title: <abbr title="Search Engine Optimization">SEO</abbr>
+  text: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed luctus venenatis aliquet. Nullam vehicula nunc eu velit dapibus tempor. Curabitur scelerisque sagittis odio.
 
-
-I'm first and foremost a front-end (whoa) developer with a penchant for UI design, born and raised in rural Vermont, US. I am primarily self-taught with 6 combined years of freelance and professional experience. I have a passion for writing code and tweaking pixels. I'm always hungry to code and learn more.
-
-I am currently employed at Middlebury College as a web developer where I collaborate with my team to build micro sites, Wordpress themes, create frontend design systems (Coming Soon™) for numerous Drupal sites, and develop custom HTML emails. I enjoy working on tooling and finding ways to improve workflows.
-
-I am also the creator/maintainer of a project called Fateseal which has consumed a lot of my free time. Check it out in my projects.
-
-## Focuses
-
-### User Experience
-### Performance
-### Accessibility
-### Responsive
-### <abbr title="Search Engine Optimization">SEO</abbr>
-
-
-### Tech Chops
+tech:
 - HTML5
 - CSS3
 - Sass
@@ -31,9 +28,28 @@ I am also the creator/maintainer of a project called Fateseal which has consumed
 - Apollo
 - WordPress
 
-
-### Preferred Tools
+tools:
 - VSCode & Vim keymap for coding
 - GitHub for version control
 - Figma for design
 - Spotify for flow
+---
+
+import Focuses from '../components/focuses'
+import Skills from '../components/skills'
+
+
+I'm first and foremost a front-end (whoa) developer with a penchant for UI design, born and raised in rural Vermont, US. I am primarily self-taught with 6 combined years of freelance and professional experience. I have a passion for writing code and tweaking pixels. I'm always hungry to code and learn more.
+
+I am currently employed at Middlebury College as a web developer where I collaborate with my team to build micro sites, Wordpress themes, create frontend design systems (Coming Soon™) for numerous Drupal sites, and develop custom HTML emails. I enjoy working on tooling and finding ways to improve workflows.
+
+I am also the creator/maintainer of a project called Fateseal which has consumed a lot of my free time. Check it out in my projects.
+
+<Focuses items={props.pageContext.frontmatter.focuses} />
+
+### Tech Chops
+<Skills items={props.pageContext.frontmatter.tech} />
+
+### Preferred Tools
+<Skills items={props.pageContext.frontmatter.tools} />
+
