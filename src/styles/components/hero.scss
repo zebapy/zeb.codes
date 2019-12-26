@@ -1,0 +1,60 @@
+/* hero */
+
+.hero {
+  padding-top: $space6;
+  padding-bottom: $space6;
+  max-width: 50rem;
+
+  @include media(md) {
+    padding-top: $space9;
+    padding-bottom: $space9;
+  }
+}
+
+.hero-figure {
+  margin-bottom: $space4;
+}
+
+.hero-avatar {
+  border-radius: 100px;
+  overflow: hidden;
+  filter: grayscale(100%);
+}
+
+.hero-title {
+  font-size: $f5;
+  font-family: $font-serif;
+  margin-bottom: $space2;
+  @include media(md) {
+    font-size: $f6;
+  }
+}
+
+.hero-text {
+  font-size: $f4;
+}
+
+.hero-btns {
+  margin-top: $space5;
+  @include media(md) {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.hero-btn {
+  display: block;
+  width: 100%;
+
+  @include media(md) {
+    display: inline-block;
+    width: auto;
+  }
+}
+
+.hero-or {
+  padding: $space2 $space5;
+  font-family: $font-serif;
+  font-style: italic;
+  text-align: center;
+}

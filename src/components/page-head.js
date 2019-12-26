@@ -1,7 +1,8 @@
 import React from 'react';
 
 export default ({ title, text }) => (
-  <header className="page-head">
-    <h1 className="page-head-title">{title}</h1>
+  <header className="pagehead">
+    <h1 className="pagehead-title">{title}</h1>
+    {text && <p className="pagehead-text">{text}</p>}
   </header>
 );

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import fetch from 'unfetch';
-import cx from 'classnames';
 
 const FormItem = props => (
   <div className={`form-item ${props.className}`}>{props.children}</div>
@@ -71,7 +70,7 @@ const ContactForm = () => {
   };
 
   if (isFormSent) {
-    return <p className="alert alert--success">📧 Message sent</p>;
+    return <p className="alert alert--success">Message sent</p>;
   }
 
   return (

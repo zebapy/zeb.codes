@@ -1,7 +1,7 @@
 import React from 'react';
 import { useStaticQuery, graphql, Link } from 'gatsby';
 
-const ProjectList = () => {
+const ProjectList = ({ side: sideProjects }) => {
   const data = useStaticQuery(graphql`
     query workQuery {
       work: allSitePage(
@@ -14,6 +14,7 @@ const ProjectList = () => {
             frontmatter {
               date
               title
+              project
               text
             }
           }
@@ -22,9 +23,17 @@ const ProjectList = () => {
     }
   `);
 
+  // if sideprojects prop is passed, we should get all work pieces that have project frontmatter
+  const filter = node =>
+    sideProjects
+      ? node.context.frontmatter.project === true
+      : node.context.frontmatter.project === null;
+
+  const items = data.work.nodes.filter(filter);
+
   return (
     <ul className="work-list">
-      {data.work.nodes.map(node => {
+      {items.map(node => {
         const { title, date, text } = node.context.frontmatter;
         return (
           <li key={node.id} className="work-item">

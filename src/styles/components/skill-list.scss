@@ -1,0 +1,17 @@
+.skill-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.skill-item {
+  margin-bottom: $space1;
+  margin-right: $space2;
+  flex: 0 0 auto;
+
+  &:not(:last-child) {
+    &:after {
+      content: '/';
+      margin-left: $space2;
+    }
+  }
+}

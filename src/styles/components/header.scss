@@ -1,0 +1,43 @@
+/* site header */
+.header {
+  position: sticky;
+  top: 0;
+  background: $white;
+  border-bottom: 1px solid $gray-light;
+  z-index: 99;
+
+  @include media(md) {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+.header-logo {
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: $f2;
+  line-height: $lh-solid;
+}
+
+/* site nav */
+
+.nav {
+}
+
+.nav-list {
+  display: flex;
+}
+
+.nav-item {
+}
+
+.nav-link {
+  display: block;
+  padding: $space3;
+  border-bottom: 4px solid transparent;
+
+  &.active {
+    border-color: $red;
+  }
+}

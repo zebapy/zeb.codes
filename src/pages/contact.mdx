@@ -1,5 +1,6 @@
 ---
 title: Contact
+text: If you have a project to talk about, you can email me directly at hi@zeb.codes or use this form.
 social:
 - icon: codepen
   name: Codepen
@@ -23,11 +24,7 @@ import ContactForm from '../components/contact-form'
 import Section from '../components/section'
 
 
-<Section pagetitle='Get in touch' text="If you want to reach out, I'm open to networking but not currently seeking new employment or freelance work. I'll get back to you in 24 hours." >
-
-  <ContactForm />
-
-</Section>
+<ContactForm />
 
 <Section title='Social' text="Connect with me on a handful of other platforms. Collect 'em all.">
   <Social items={props.pageContext.frontmatter.social} />

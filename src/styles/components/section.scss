@@ -1,0 +1,32 @@
+.section {
+  margin-top: $space8;
+  margin-bottom: $space8;
+  border-top: 1px solid $gray-light;
+
+  @include media(md) {
+    border-left: 2px solid $gray-light;
+    padding-left: $space5;
+
+    // unset mobile styles
+    border-top: 0;
+  }
+}
+
+.section-header {
+  padding-top: $space4;
+  padding-bottom: $space6;
+}
+
+.section-title {
+  font-size: $f3;
+  font-family: $font-sans;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: $font-bold;
+  margin-bottom: $space2;
+}
+
+.section-text {
+  font-size: $f4;
+  max-width: 40rem;
+}

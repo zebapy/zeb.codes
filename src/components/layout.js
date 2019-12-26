@@ -4,10 +4,12 @@ import Helmet from 'react-helmet';
 import Header from './header';
 import Footer from './footer';
 
+import PageHead from './page-head';
+
 import '../styles/index.scss';
 
 const Layout = ({ children, pageContext }) => {
-  const { title } = pageContext.frontmatter;
+  const { title, is_front, text } = pageContext.frontmatter;
 
   return (
     <div className="container">
@@ -19,7 +21,16 @@ const Layout = ({ children, pageContext }) => {
       </Helmet>
 
       <Header />
-      <main>{children}</main>
+      <main>
+        {is_front ? (
+          children
+        ) : (
+          <article>
+            <PageHead title={title} text={text} />
+            {children}
+          </article>
+        )}
+      </main>
       <Footer />
     </div>
   );
