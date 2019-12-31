@@ -16,8 +16,8 @@
   display: block;
   font-size: $f5;
   padding-bottom: $space3;
-  color: $red;
-  font-family: $font-serif;
+  color: $black;
+  font-weight: $font-bold;
   position: relative;
 
   &:after {
@@ -25,7 +25,7 @@
     display: block;
     width: 3rem;
     height: $space1;
-    background: $red;
+    background: $primary;
     position: absolute;
     left: 0;
     bottom: 0;

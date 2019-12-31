@@ -2,9 +2,10 @@
 
 .label {
   display: block;
-  font-weight: $font-semibold;
-  font-size: $f3;
-  margin-bottom: $space2;
+  font-weight: $font-bold;
+  font-size: $f5;
+  letter-spacing: $tracking-narrow;
+  // margin-bottom: $space2;
 }
 
 .form-item {

@@ -6,23 +6,12 @@
 }
 
 .pagehead-title {
-  font-size: $f5;
+  font-size: $f7;
   position: relative;
-  padding-top: $space3;
+  letter-spacing: $tracking-narrow;
 
   @include media(md) {
-    font-size: $f7;
-  }
-
-  &:before {
-    content: '';
-    display: block;
-    width: 10rem;
-    height: $space2;
-    background: $red;
-    position: absolute;
-    left: 0;
-    top: 0;
+    font-size: $f8;
   }
 }
 

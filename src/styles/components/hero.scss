@@ -22,11 +22,10 @@
 }
 
 .hero-title {
-  font-size: $f5;
-  font-family: $font-serif;
+  font-size: $f6;
   margin-bottom: $space2;
   @include media(md) {
-    font-size: $f6;
+    font-size: $f7;
   }
 }
 

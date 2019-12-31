@@ -1,6 +1,20 @@
 import React from 'react';
 import { useStaticQuery, graphql, Link } from 'gatsby';
 
+const ProjectCard = ({ title, slug, text }) => {
+  return (
+    <article className="work-card">
+      <Link to={slug}>
+        <figure>
+          <img src="//placehold.it/640x360" />
+        </figure>
+        <h2 className="work-card--title">{title}</h2>
+        <p className="work-card-text">{text}</p>
+      </Link>
+    </article>
+  );
+};
+
 const ProjectList = ({ side: sideProjects }) => {
   const data = useStaticQuery(graphql`
     query workQuery {
@@ -37,12 +51,7 @@ const ProjectList = ({ side: sideProjects }) => {
         const { title, date, text } = node.context.frontmatter;
         return (
           <li key={node.id} className="work-item">
-            <article className="project">
-              <h2 className="project-title">
-                <Link to={node.path}>{title}</Link>
-              </h2>
-              <p className="project-text">{text}</p>
-            </article>
+            <ProjectCard title={title} text={text} slug={node.path} />
           </li>
         );
       })}

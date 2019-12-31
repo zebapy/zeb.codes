@@ -14,6 +14,8 @@
 @import 'components/skill-list';
 @import 'components/social';
 @import 'components/section';
+@import 'components/work';
+@import 'components/cursor';
 
 /* focuses */
 
@@ -46,33 +48,21 @@
   font-weight: $font-semibold;
 }
 
-.grid {
-  display: grid;
-  grid-gap: $space5;
+.grid-lines {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
 }
 
-.grid--1-4 {
-  @include media(md) {
-    grid-template-columns: 1fr 4fr;
-  }
-}
+.grid-lines-item {
+  border-left: 1px solid $gray-light;
+  flex: 1;
 
-.grid--2-1 {
-  @include media(md) {
-    grid-template-columns: 2fr 1fr;
-  }
-}
-
-.grid--4-1 {
-  @include media(md) {
-    grid-template-columns: 4fr 1fr;
-  }
-}
-
-.grid-4 {
-  display: grid;
-  grid-gap: $space5;
-  @include media(md) {
-    grid-template-columns: repeat(2, 1fr);
+  &:last-child {
+    border-right: 1px solid $gray-light;
   }
 }

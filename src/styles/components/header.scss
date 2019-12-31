@@ -1,10 +1,10 @@
 /* site header */
 .header {
-  position: sticky;
-  top: 0;
-  background: $white;
-  border-bottom: 1px solid $gray-light;
-  z-index: 99;
+  // position: sticky;
+  // top: 0;
+  // background: $white;
+  // border-bottom: 1px solid $gray-light;
+  // z-index: 99;
 
   @include media(md) {
     display: flex;
@@ -15,9 +15,10 @@
 
 .header-logo {
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: $tracking-wide;
   font-size: $f2;
   line-height: $lh-solid;
+  font-weight: $font-bold;
 }
 
 /* site nav */
@@ -35,9 +36,8 @@
 .nav-link {
   display: block;
   padding: $space3;
-  border-bottom: 4px solid transparent;
-
-  &.active {
-    border-color: $red;
-  }
+  text-transform: uppercase;
+  font-weight: $font-semibold;
+  font-size: $f2;
+  letter-spacing: 0.1em;
 }

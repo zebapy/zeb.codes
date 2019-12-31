@@ -10,11 +10,13 @@ $breakpoints: (
 $white: #fff;
 $black: #000;
 $red: #9a3c47;
+$yellow: #fff500;
 $gray-light: #f6f6f6;
 $gray: #999;
+$primary: $yellow;
 
 $lh-solid: 1;
-$lh-heading: 1.4;
+$lh-heading: 1.1;
 $lh-body: 1.8;
 
 $font-normal: 500;
@@ -42,4 +44,7 @@ $space8: rem(96px);
 $space9: rem(128px);
 
 $font-sans: 'open sans', 'arial', 'helvetica', sans-serif;
-$font-serif: 'merriweather', georgia, 'times new roman', serif;
+$font-serif: georgia, 'times new roman', serif;
+
+$tracking-narrow: -0.05em;
+$tracking-wide: 0.1em;

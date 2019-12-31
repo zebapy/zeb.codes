@@ -3,8 +3,8 @@ import Helmet from 'react-helmet';
 
 import Header from './header';
 import Footer from './footer';
-
 import PageHead from './page-head';
+import Cursor from './cursor';
 
 import '../styles/index.scss';
 
@@ -15,7 +15,7 @@ const Layout = ({ children, pageContext }) => {
     <div className="container">
       <Helmet title={title}>
         <link
-          href="https://fonts.googleapis.com/css?family=Merriweather|Open+Sans&display=swap"
+          href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap"
           rel="stylesheet"
         />
       </Helmet>
@@ -32,6 +32,14 @@ const Layout = ({ children, pageContext }) => {
         )}
       </main>
       <Footer />
+      <div className="grid-lines container">
+        {Array(8)
+          .fill()
+          .map((_, i) => (
+            <div className="grid-lines-item" key={i} />
+          ))}
+      </div>
+      <Cursor />
     </div>
   );
 };

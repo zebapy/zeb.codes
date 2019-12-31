@@ -91,7 +91,7 @@ const ContactForm = () => {
       <input type="hidden" name="bot-field" />
       <FormField
         id="name"
-        label="Name"
+        label="Your name (so I know who's calling)"
         type="text"
         name="name"
         placeholder="Your name"
@@ -101,7 +101,7 @@ const ContactForm = () => {
         required
       />
       <FormField
-        label="Email"
+        label="Your email (so I can get back to you)"
         id="email"
         type="email"
         name="email"
@@ -111,7 +111,7 @@ const ContactForm = () => {
         required
       />
       <FormField
-        label="Message"
+        label="Message (so I know what's up)"
         id="message"
         name="message"
         placeholder="A short message for why you're contacting me..."
@@ -122,7 +122,7 @@ const ContactForm = () => {
       />
       <FormItem className="form-item--btn">
         <button type="submit" className="btn">
-          Send message
+          <span>Send message</span>
         </button>
       </FormItem>
     </form>
