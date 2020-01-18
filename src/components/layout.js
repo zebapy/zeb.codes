@@ -8,6 +8,16 @@ import Cursor from './cursor';
 
 import '../styles/index.scss';
 
+const GridLines = () => (
+  <div className="grid-lines container">
+    {Array(8)
+      .fill()
+      .map((_, i) => (
+        <div className="grid-lines-item" key={i} />
+      ))}
+  </div>
+);
+
 const Layout = ({ children, pageContext }) => {
   const { title, is_front, text } = pageContext.frontmatter;
 
@@ -32,14 +42,7 @@ const Layout = ({ children, pageContext }) => {
         )}
       </main>
       <Footer />
-      <div className="grid-lines container">
-        {Array(8)
-          .fill()
-          .map((_, i) => (
-            <div className="grid-lines-item" key={i} />
-          ))}
-      </div>
-      <Cursor />
+      {/* <Cursor /> */}
     </div>
   );
 };
