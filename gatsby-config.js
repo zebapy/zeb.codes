@@ -22,9 +22,9 @@ module.exports = {
       }
     },
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-source-filesystem',
       options: {
-        name: `pages`,
+        name: 'pages',
         path: `${__dirname}/src/pages`
       }
     },
@@ -37,6 +37,8 @@ module.exports = {
     },
     'gatsby-transformer-remark',
     'gatsby-transformer-yaml',
+    'gatsby-plugin-sharp',
+    'gatsby-transformer-sharp',
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
@@ -44,6 +46,11 @@ module.exports = {
       }
     },
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-sass'
+    {
+      resolve: 'gatsby-plugin-sass',
+      options: {
+        // postCssPlugins: [require('tailwindcss'), require('./tailwind.config')]
+      }
+    }
   ]
 };
