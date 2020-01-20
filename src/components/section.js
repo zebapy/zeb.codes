@@ -1,6 +1,7 @@
 import React from 'react';
+import { Link } from 'gatsby';
 
-export default ({ pagetitle, title, text, children }) => {
+export default ({ pagetitle, title, text, children, link, linkText }) => {
   return (
     <section className="section">
       <header className="section-header">
@@ -9,6 +10,14 @@ export default ({ pagetitle, title, text, children }) => {
         {text && <p className="section-text">{text}</p>}
       </header>
       <div className="section-body">{children}</div>
+
+      {link && linkText && (
+        <div className="section-footer">
+          <Link to={link} className="btn btn--alt">
+            <span>{linkText}</span>
+          </Link>
+        </div>
+      )}
     </section>
   );
 };

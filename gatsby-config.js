@@ -2,40 +2,37 @@ const path = require('path');
 module.exports = {
   siteMetadata: {
     title: 'Zeb Pykosz',
+    titleTemplate: '%s - Zeb Pykosz',
     name: 'Zebhdiyah Pykosz',
     email: 'hello@zebpykosz.com',
+    twitterUsername: '@zebhdiyah',
+    url: 'https://zeb.codes/',
     description:
       'Front-end/fullstack JS developer and UI designer. Employed as web developer at Middlebury College.',
     intro:
       'Front-end/fullstack JS developer and UI designer. Employed as web developer at [Middlebury College](https://github.com/middlebury). Wanna-be minimalist. Coffee disliker. Creator of [Fateseal](https://www.fateseal.com).',
     tagline: 'Front-end/fullstack JS developer and UI designer',
     gravatar:
-      'https://en.gravatar.com/userimage/14820278/7a7abc448a6f29e03663ea4fb4897054.jpg?size=100'
+      'https://en.gravatar.com/userimage/14820278/7a7abc448a6f29e03663ea4fb4897054.jpg?size=100',
+    // TODO: set this default seo image up
+    image: ''
   },
   plugins: [
     {
       resolve: 'gatsby-plugin-mdx',
       options: {
         defaultLayouts: {
-          default: path.resolve('./src/components/layout.js')
+          default: path.resolve('./src/components/layout')
         }
       }
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: 'pages',
-        path: `${__dirname}/src/pages`
+        name: 'content',
+        path: `${__dirname}/content`
       }
     },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        path: `${__dirname}/content`,
-        name: 'content'
-      }
-    },
-    'gatsby-transformer-remark',
     'gatsby-transformer-yaml',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',

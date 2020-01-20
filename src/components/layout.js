@@ -18,12 +18,10 @@ const GridLines = () => (
   </div>
 );
 
-const Layout = ({ children, pageContext }) => {
-  const { title, is_front, text } = pageContext.frontmatter;
-
+const Layout = ({ children }) => {
   return (
     <div className="container">
-      <Helmet title={title}>
+      <Helmet>
         <link
           href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap"
           rel="stylesheet"
@@ -31,17 +29,9 @@ const Layout = ({ children, pageContext }) => {
       </Helmet>
 
       <Header />
-      <main>
-        {is_front ? (
-          children
-        ) : (
-          <article>
-            <PageHead title={title} text={text} />
-            {children}
-          </article>
-        )}
-      </main>
+      <main>{children}</main>
       <Footer />
+      {/* <GridLines /> */}
       {/* <Cursor /> */}
     </div>
   );
