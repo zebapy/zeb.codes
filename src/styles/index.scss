@@ -11,6 +11,7 @@
 @import 'components/forms';
 @import 'components/hero';
 @import 'components/page-head';
+@import 'components/page-actions';
 @import 'components/skill-list';
 @import 'components/social';
 @import 'components/section';
@@ -19,6 +20,16 @@
 @import 'components/page-actions';
 
 /* focuses */
+
+.text-center {
+  text-align: center;
+}
+.text-right {
+  text-align: right;
+}
+.text-left {
+  text-align: left;
+}
 
 .focuses {
   border: 4px solid $red;
@@ -41,12 +52,14 @@
 }
 
 .focus-title {
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  font-size: $f3;
-  font-family: $font-sans;
+  // text-transform: uppercase;
+  // letter-spacing: 0.1em;
+  font-size: $f5;
+  letter-spacing: $tracking-narrow;
+
+  // font-family: $font-sans;
   margin-bottom: $space2;
-  font-weight: $font-semibold;
+  // font-weight: $font-semibold;
 }
 
 .grid-lines {
@@ -65,5 +78,55 @@
 
   &:last-child {
     border-right: 1px solid $gray-light;
+  }
+}
+
+.link {
+  display: inline-block;
+  border-bottom: 2px solid $primary;
+  padding-top: $space2;
+  padding-bottom: $space2;
+}
+
+.work-meta-list {
+}
+
+.about-grid {
+  @include media(lg) {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+}
+
+.about-pic {
+  text-align: center;
+  @include media(md) {
+    padding-left: $space9;
+  }
+}
+
+.diamond-pic {
+  transform: rotate(45deg);
+  overflow: hidden;
+  width: 200px;
+  height: 200px;
+  position: relative;
+  box-shadow: 8px 8px 0 $primary;
+
+  @include media(md) {
+  }
+
+  img {
+    object-fit: contain;
+    position: absolute;
+    top: -50%;
+    filter: grayscale(100%);
+    transform: rotate(-45deg);
+  }
+}
+
+.about-content {
+  p {
+    font-size: $f5;
   }
 }

@@ -23,7 +23,19 @@ module.exports = {
       options: {
         defaultLayouts: {
           default: path.resolve('./src/components/layout')
-        }
+        },
+
+        plugins: ['gatsby-remark-unwrap-images', 'gatsby-remark-images'],
+
+        gatsbyRemarkPlugins: [
+          'gatsby-remark-unwrap-images',
+          {
+            resolve: 'gatsby-remark-images',
+            options: {
+              maxWidth: 1000
+            }
+          }
+        ]
       }
     },
     {

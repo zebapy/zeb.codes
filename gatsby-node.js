@@ -15,6 +15,10 @@ exports.createPages = async ({ graphql, actions }) => {
           edges {
             node {
               id
+              # query title for next/prev usage
+              frontmatter {
+                title
+              }
               fields {
                 slug
               }

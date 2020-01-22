@@ -34,7 +34,8 @@
   padding: $space3 $space5;
   text-align: center;
   font-family: $font-sans;
-  font-weight: $font-bold;
+  font-weight: $font-semibold;
+  font-size: $f2;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   border: 0;
@@ -52,5 +53,10 @@
   background: transparent;
   color: $black;
   border: 1px solid $black;
-  @include hover-fill($yellow, $black);
+  @include hover-fill($primary, $black);
+}
+
+.btn--sm {
+  font-size: $f2;
+  padding: $space2 $space3;
 }

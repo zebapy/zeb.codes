@@ -31,6 +31,10 @@
 
 .hero-text {
   font-size: $f4;
+
+  @include media(lg) {
+    font-size: $f5;
+  }
 }
 
 .hero-btns {

@@ -1,16 +1,160 @@
 .work-list {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  @include media(lg) {
+    // display: grid;
+    // grid-template-columns: repeat(2, 1fr);
+    // grid-gap: $space5;
+  }
 }
 
 .work-item {
+  margin-bottom: $space8;
 }
 
+// work card
+
 .work-card {
+  @include media(md) {
+    display: flex;
+    align-items: center;
+  }
 }
 
 .work-card-figure {
+  margin-bottom: $space4;
+  flex: 1;
+
+  @include media(lg) {
+    margin-right: $space5;
+  }
+}
+
+.work-card-body {
+  flex: 1;
+  // background: $black;
+  // padding: $space3;
+  // color: $white;
+  // border: 1px solid $black;
+}
+
+.work-card-text {
+  font-size: $f4;
 }
 
 .work-card-title {
+  font-weight: bold;
+  font-size: $f5;
+  margin-bottom: $space2;
+
+  @include media(lg) {
+    font-size: $f7;
+  }
+}
+
+.work-card-cta {
+}
+
+.work-nav {
+}
+
+.work-nav-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: $gutter;
+  // display: flex;
+}
+
+.work-nav-item {
+  // flex: 1 0 33.33%;
+  // align-content: end;
+  // width: 33.33%;
+}
+.work-nav-link {
+  // @include hover-fill($black, $white);
+  @extend .link;
+}
+
+.work-nav-title {
+  display: block;
+  font-weight: bold;
+}
+
+.work-nav-text {
+}
+
+.project-page {
+  margin-bottom: $space9;
+}
+
+.project-details {
+  margin-bottom: $space6;
+  > div {
+    display: flex;
+    margin-bottom: $space3;
+  }
+
+  dt {
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: bold;
+    font-size: 14px;
+    margin-right: $space4;
+    width: 100px;
+  }
+
+  dd {
+    margin: 0;
+  }
+}
+
+.project-figure {
+  padding: $space6;
+  background: $gray-light;
+  margin-bottom: $space6;
+
+  img {
+    box-shadow: 8px 8px 8px rgba(black, 0.8);
+  }
+}
+
+.project-wrap {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.project-body {
+  margin-bottom: $space8;
+
+  p {
+    font-size: $f5;
+    margin-bottom: $space5;
+  }
+
+  h1,
+  h2 {
+    font-size: $f7;
+    margin-bottom: $space4;
+  }
+
+  h3 {
+    font-size: $f6;
+    margin-bottom: $space3;
+  }
+
+  > *:not(.gatsby-resp-image-wrapper) {
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .gatsby-resp-image-wrapper {
+    margin-bottom: $space8;
+    margin-top: $space8;
+  }
+}
+
+.project-website-btn {
+  margin-bottom: $space8;
+  text-align: center;
 }

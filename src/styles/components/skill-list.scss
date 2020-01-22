@@ -5,13 +5,13 @@
 
 .skill-item {
   margin-bottom: $space1;
-  margin-right: $space2;
+  margin-right: $space4;
   flex: 0 0 auto;
 
   &:not(:last-child) {
-    &:after {
-      content: '/';
-      margin-left: $space2;
-    }
+    // &:after {
+    // content: '/';
+    // margin-left: $space2;
+    // }
   }
 }

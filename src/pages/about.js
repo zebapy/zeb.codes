@@ -6,6 +6,7 @@ import Skills from '../components/skills';
 import Layout from '../components/layout';
 import PageHead from '../components/page-head';
 import PageActions from '../components/page-actions';
+import SEO from '../components/seo';
 
 const focuses = [
   {
@@ -41,52 +42,68 @@ const tech = [
   'Sass',
   'Styled Components',
   'JavaScript',
-  'NodeJS',
-  'ReactJS',
+  'Node.js',
+  'React',
   'GraphQL',
   'Redux',
   'Apollo',
-  'WordPress'
+  'WordPress',
+  'Gatsby',
+  'Nextjs',
+  'Zeit Now',
+  'VSCode',
+  'GitHub',
+  'Figma',
+  'Mac OS'
 ];
 
-const tools = [
-  'VSCode & Vim keymap for coding',
-  'GitHub for version control',
-  'Figma for design',
-  'Spotify for flow'
-];
+const tools = [];
+
+const title = 'About me';
 
 export default () => (
   <Layout>
-    <PageHead title="About me" />
-    <p>
-      I'm first and foremost a front-end (whoa) developer with a penchant for UI
-      design, born and raised in rural Vermont, US. I am primarily self-taught
-      with 6 combined years of freelance and professional experience. I have a
-      passion for writing code and tweaking pixels. I'm always hungry to code
-      and learn more.
-    </p>
+    <SEO title={title} />
 
-    <p>
-      I am currently employed at Middlebury College as a web developer where I
-      collaborate with my team to build micro sites, Wordpress themes, create
-      frontend design systems (Coming Soon™) for numerous Drupal sites, and
-      develop custom HTML emails. I enjoy working on tooling and finding ways to
-      improve workflows.
-    </p>
+    <div className="about-grid">
+      <div className="about-pic">
+        <figure className="diamond-pic">
+          <img
+            src={require('../images/zeb-portrait.jpg')}
+            alt="Zeb looking like he knows something."
+          />
+        </figure>
+      </div>
+      <div className="about-content">
+        <h1 className="pagehead-title">{title}</h1>
+        <p>
+          I'm first and foremost a front-end (whoa) developer with a penchant
+          for UI design, born and raised in rural Vermont, US. I am primarily
+          self-taught with 7 combined years of freelance and professional
+          experience. I have a passion for writing code and tweaking pixels. I'm
+          always hungry to code and learn more.
+        </p>
 
-    <p>
-      I am also the creator/maintainer of a project called Fateseal which has
-      consumed a lot of my free time. Check it out in my projects.
-    </p>
+        <p>
+          I am currently employed at Middlebury College as a web developer where
+          I collaborate with my team to build micro sites, Wordpress themes,
+          create frontend design systems for numerous Drupal sites, and develop
+          custom HTML emails. I enjoy working on tooling and finding ways to
+          improve workflows.
+        </p>
 
-    <h3>Tech Chops</h3>
+        <p>
+          I am also the creator/maintainer of a project called Fateseal which
+          has consumed a lot of my free time. Check it out in my projects.
+        </p>
 
-    <Skills items={tech} />
+        <h3>Preferred tech and tools</h3>
 
-    <h3>Preferred Tools</h3>
+        <Skills items={tech} />
 
-    <Skills items={tools} />
+        <Skills items={tools} />
+      </div>
+    </div>
 
     <Section
       title="Focuses"

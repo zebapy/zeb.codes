@@ -11,9 +11,10 @@ $white: #fff;
 $black: #000;
 $red: #9a3c47;
 $yellow: #fff500;
+$teal: #3cffa1;
 $gray-light: #f6f6f6;
 $gray: #999;
-$primary: $yellow;
+$primary: $teal;
 
 $lh-solid: 1;
 $lh-heading: 1.1;
@@ -42,6 +43,9 @@ $space6: rem(48px);
 $space7: rem(64px);
 $space8: rem(96px);
 $space9: rem(128px);
+$space10: rem(256px);
+
+$gutter: $space5;
 
 $font-sans: 'open sans', 'arial', 'helvetica', sans-serif;
 $font-serif: georgia, 'times new roman', serif;

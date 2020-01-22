@@ -15,7 +15,7 @@ const ProjectCard = ({ title, date, slug, text, thumb }) => {
         </h2>
         {text && <p className="work-card-text">{text}</p>}
         <p>
-          <Link to={slug} className="work-card-cta">
+          <Link to={slug} className="work-card-cta link">
             View project &rarr;
           </Link>
         </p>

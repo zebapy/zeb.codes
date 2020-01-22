@@ -31,7 +31,7 @@ const Layout = ({ children }) => {
       <Header />
       <main>{children}</main>
       <Footer />
-      {/* <GridLines /> */}
+      <GridLines />
       {/* <Cursor /> */}
     </div>
   );
