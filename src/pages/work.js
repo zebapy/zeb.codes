@@ -4,6 +4,7 @@ import Layout from '../components/layout';
 import PageHead from '../components/page-head';
 import ProjectList from '../components/project-list';
 import Section from '../components/section';
+import PageActions from '../components/page-actions';
 
 export default () => (
   <Layout>
@@ -20,5 +21,7 @@ export default () => (
     >
       <ProjectList side />
     </Section>
+
+    <PageActions about contact />
   </Layout>
 );

@@ -5,6 +5,7 @@ import Section from '../components/section';
 import Skills from '../components/skills';
 import Layout from '../components/layout';
 import PageHead from '../components/page-head';
+import PageActions from '../components/page-actions';
 
 const focuses = [
   {
@@ -93,5 +94,7 @@ export default () => (
     >
       <Focuses items={focuses} />
     </Section>
+
+    <PageActions work contact />
   </Layout>
 );

@@ -21,17 +21,7 @@ export default () => (
     <Section title="Featured work" link="/work" linkText="View more work">
       <ProjectList limit={2} />
     </Section>
-    <PageActions>
-      <PageActions.Item
-        title="Get to know me"
-        text="Learn about my history and what I focus on."
-        link="/about"
-      />
-      <PageActions.Item
-        title="Have a project?"
-        text="Contact me and let's find out how I can help you."
-        link="/contact"
-      />
-    </PageActions>
+
+    <PageActions about contact />
   </Layout>
 );
