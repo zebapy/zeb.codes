@@ -1,39 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
-const PageActions = ({ work, about, contact, children }) => {
-  return (
-    <div className="page-actions">
-      {work && (
-        <PageActions.Item
-          title="View my work"
-          text="See some of my projects"
-          link="/work"
-        />
-      )}
-
-      {about && (
-        <PageActions.Item
-          title="Get to know me"
-          text="Learn about my history and what I focus on."
-          link="/about"
-        />
-      )}
-
-      {contact && (
-        <PageActions.Item
-          title="Have a project?"
-          text="Contact me and let's find out how I can help you."
-          link="/contact"
-        />
-      )}
-
-      {children}
-    </div>
-  );
-};
-
-PageActions.Item = ({ title, text, link }) => {
+const PageActionsItem = ({ title, text, link }) => {
   return (
     <Link to={link} className="page-actions-link">
       <div className="page-actions-item">
@@ -41,6 +9,36 @@ PageActions.Item = ({ title, text, link }) => {
         <p className="page-actions-text">{text}</p>
       </div>
     </Link>
+  );
+};
+
+const PageActions = ({ work, about, contact }) => {
+  return (
+    <div className="page-actions">
+      {work && (
+        <PageActionsItem
+          title="View my work"
+          text="See some of my projects"
+          link="/work"
+        />
+      )}
+
+      {about && (
+        <PageActionsItem
+          title="Get to know me"
+          text="Learn about my history and what I focus on."
+          link="/about"
+        />
+      )}
+
+      {contact && (
+        <PageActionsItem
+          title="Have a project?"
+          text="Contact me and let's find out how I can help you."
+          link="/contact"
+        />
+      )}
+    </div>
   );
 };
 

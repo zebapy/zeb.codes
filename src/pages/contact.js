@@ -38,7 +38,15 @@ export default () => (
   <Layout>
     <PageHead
       title="Contact"
-      text="If you have a project to talk about, you can email me directly at hi@zeb.codes or use this form."
+      text={
+        <span>
+          If you have a project to talk about, you can email me directly at{' '}
+          <a href="mailto:hi@zeb.codes" className="link">
+            hi@zeb.codes
+          </a>{' '}
+          or use this form.
+        </span>
+      }
     />
     <ContactForm />
     <Section

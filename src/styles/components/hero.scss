@@ -3,11 +3,20 @@
 .hero {
   padding-top: $space6;
   padding-bottom: $space6;
-  max-width: 50rem;
 
   @include media(md) {
     padding-top: $space9;
     padding-bottom: $space9;
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.hero-body {
+  // max-width: 50rem;
+  @include media(md) {
+    width: calc(100% / 2 - #{$gutter});
+    // margin-left: calc(1 / 12 * 100%);
   }
 }
 

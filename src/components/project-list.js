@@ -9,16 +9,14 @@ const ProjectCard = ({ title, date, slug, text, thumb }) => {
         <Link to={slug}>{thumb && <Img fluid={thumb} />}</Link>
       </figure>
       <div className="work-card-body">
-        <datetime>{date}</datetime>
+        <time>{date}</time>
         <h2 className="work-card-title">
           <Link to={slug}>{title}</Link>
         </h2>
         {text && <p className="work-card-text">{text}</p>}
-        <p>
-          <Link to={slug} className="work-card-cta link">
-            View project &rarr;
-          </Link>
-        </p>
+        {/* <Link to={slug} className="work-card-cta link">
+          View project &rarr;
+        </Link> */}
       </div>
     </article>
   );

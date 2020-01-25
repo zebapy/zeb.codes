@@ -10,7 +10,7 @@ import '../styles/index.scss';
 
 const GridLines = () => (
   <div className="grid-lines container">
-    {Array(8)
+    {Array(11)
       .fill()
       .map((_, i) => (
         <div className="grid-lines-item" key={i} />

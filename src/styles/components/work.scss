@@ -8,6 +8,24 @@
 
 .work-item {
   margin-bottom: $space8;
+
+  &:nth-child(even) {
+    .work-card {
+      flex-direction: row-reverse;
+    }
+
+    .work-card-body {
+      @include media(md) {
+        padding-right: $gutter * 2;
+        padding-left: 0;
+      }
+    }
+
+    .work-card-figure:before {
+      left: auto;
+      right: 0.5rem;
+    }
+  }
 }
 
 // work card
@@ -23,8 +41,34 @@
   margin-bottom: $space4;
   flex: 1;
 
-  @include media(lg) {
-    margin-right: $space5;
+  a {
+    display: block;
+    position: relative;
+
+    &:before {
+      content: '';
+      display: block;
+      border: 2px solid $primary;
+      width: 100%;
+      height: 100%;
+      z-index: 3;
+      position: absolute;
+      top: -0.5rem;
+      left: 0.5rem;
+      pointer-events: none;
+
+      transition: 0.2s, transform 0.8s;
+    }
+
+    &:hover,
+    &:focus {
+      &:before {
+        right: 0;
+        left: 0;
+        top: 0;
+        // transform: scale(-1, -1);
+      }
+    }
   }
 }
 
@@ -34,6 +78,10 @@
   // padding: $space3;
   // color: $white;
   // border: 1px solid $black;
+
+  @include media(md) {
+    padding-left: $gutter * 2;
+  }
 }
 
 .work-card-text {
@@ -43,7 +91,22 @@
 .work-card-title {
   font-weight: bold;
   font-size: $f5;
-  margin-bottom: $space2;
+  margin-bottom: $space4;
+  line-height: 1.4;
+
+  a {
+    transition: 0.2s;
+    border-bottom: 2px solid $primary;
+
+    &:hover {
+      color: $primary;
+    }
+
+    &:active {
+      background: $primary;
+      color: $black;
+    }
+  }
 
   @include media(lg) {
     font-size: $f7;

@@ -52,7 +52,7 @@ const ProjectTemplate = ({ data, pageContext }) => {
             {[
               {
                 term: 'Date',
-                text: <datetime time={date}>{formattedDate}</datetime>
+                text: <time time={date}>{formattedDate}</time>
               },
               {
                 term: 'Client',
