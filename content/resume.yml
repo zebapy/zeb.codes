@@ -1,0 +1,143 @@
+basics:
+  name: Zeb Pykosz
+  label: Software Engineer
+  picture: https://en.gravatar.com/userimage/14820278/32195afe52a1a37bc55e31a06736dedc.jpg?size=200
+  email: hi@zeb.codes
+  phone:
+  website: https://zeb.codes
+  summary: Expert front-end developer focused on robust device agnostic interfaces, performance, accessibility, modern design and user experience.
+  location:
+    address:
+    postalCode: 05753
+    city: Middlebury
+    countryCode: US
+    region: Vermont
+  profiles:
+    - network: LinkedIn
+      username: Zeb Pykosz
+      url: https://www.linkedin.com/in/zebpykosz/
+    - network: Twitter
+      username: zebhdiyah
+      url: http://twitter.com/zebhdiyah
+    - network: GitHub
+      username: zebapy
+      url: http://github.com/zebapy
+    - network: Codepen
+      username: zebapy
+      url: http://codepen.io/zebapy
+    - network: Codesandbox
+      username: zebapy
+      url: https://codesandbox.io/u/zebapy
+work:
+  - company: Middlebury College
+    position: Web Developer
+    website: http://middlebury.edu
+    startDate: 2015-08-01
+    endDate: false
+    summary: ''
+    highlights:
+      - Architected and maintained large scale component-based front-end design system for massive redesign project touching many of Middlebury's major web entities and applications such as Middlebury College, Middlebury Institute of International Studies at Monterey, Middlebury C.V. Starr Schools Abroad, Bread Loaf School of English, Bread Loaf Writers' Conferences, and 50+ offices and services websites.
+
+      - Developed 5+ static websites for various events and entities utilizing static site generators such as Jekyll and Gatsby
+
+      - Designed and developed Drupal sub theme of dated theme converting it from non-responsive to responsive
+
+      - Built a custom email newsletter tool with NetlifyCMS and Create-React-App for news team to build their weekly newsletter reaching a large alumni group, faculty, staff, and students
+
+      - Built numerous custom marketing emails for various departments such as Office of the President, Advancement, Admissions, and more.
+
+      - Designed and built award winning (UCDA Design Excellence) one-page digital viewbook for Middlebury Institute of International Studies at Monterey
+
+      - Developed custom responsive WordPress theme for award winning Middlebury Magazine
+
+      - Developed custom WordPress themes for various departments and groups such as Center of Careers and Internships, New England Review, Envisioning Middlebury, Crirtital Conversations, and more.
+
+  - company: Country Home Products
+    position: Front-end Developer
+    website: http://chp.com
+    startDate: 2013-05-01
+    endDate: 2015-07-20
+    summary: Description...
+    highlights:
+      - Designed responsive versions of non-responsive website for implementation resulting in Google Usability score increase from 60/100 to 99/100.
+      - Refactored CSS which reduced bundle sizes by 47%
+      - Built static responsive company website and trained HR in CMS
+      - Built custom responsive Wordpress blog theme
+      - Built numerous custom marketing HTML emails
+      - A/B tested lead generation landing pages with Optimizely
+      - Initiated usage of moving to Sass from traditional CSS for better style management
+      - Initiated usage of GitHub version control for various web assets
+volunteer:
+  - organization: Organization
+    position: Volunteer
+    website: http://organization.com/
+    startDate: '2012-01-01'
+    endDate: '2013-01-01'
+    summary: Description...
+    highlights:
+      - Awarded 'Volunteer of the Month'
+education:
+  - institution: Community College of Vermont
+    area: Web Development and Graphic Design
+    studyType: ''
+    startDate: '2011-01-01'
+    endDate: '2013-01-01'
+    gpa: ''
+    courses: []
+awards:
+  - title: Award
+    date: '2014-11-01'
+    awarder: UCA
+    summary: There is no spoon.
+# publications:
+#   - name: Publication
+#     publisher: Company
+#     releaseDate: '2014-10-01'
+#     website: http://publication.com
+#     summary: Description...
+skills:
+  - name: Languages
+    # level: Expert
+    keywords:
+      - HTML
+      - CSS
+      - Sass
+      - JavaScript (ES6+)
+
+  - name: Libraries and frameworks
+    keywords:
+      - React
+      - Node.js
+      - Graphql
+      - Apollo
+      - Gatsby
+      - Jekyll
+      - Next.js
+  - name: Deployment platforms
+    keywords:
+      - Zeit/Now
+      - Netlify
+      - GitHub Pages
+      - Heroku
+  - name: Tools
+    keywords:
+      - Bash
+      - Git/GitHub
+
+  - name: Design Tools
+    level: Advanced
+    keywords:
+      - Figma
+      - Sketch
+      - Photoshop
+# languages:
+# - language: English
+#   fluency: Native speaker
+# interests:
+# - name: Wildlife
+#   keywords:
+#   - Ferrets
+#   - Unicorns
+# references:
+# - name: Jane Doe
+#   reference: Reference...
