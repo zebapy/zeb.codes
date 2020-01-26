@@ -1,10 +1,6 @@
 import React, { useState } from 'react';
 import fetch from 'unfetch';
 
-const FormItem = props => (
-  <div className={`form-item ${props.className}`}>{props.children}</div>
-);
-
 const Input = props =>
   React.createElement(props.multiline ? 'textarea' : 'input', {
     className: 'p-3 w-full block appearance-none text-xl border bg-gray-200',
@@ -93,7 +89,7 @@ const ContactForm = () => {
         <div className="md:w-1/2 px-3">
           <FormField
             id="name"
-            label="Your name (so I know who's calling)"
+            label="Your name"
             type="text"
             name="name"
             value={name}
@@ -104,7 +100,7 @@ const ContactForm = () => {
         </div>
         <div className="md:w-1/2 px-3">
           <FormField
-            label="Your email (so I can get back to you)"
+            label="Your email"
             id="email"
             type="email"
             name="email"
@@ -115,7 +111,7 @@ const ContactForm = () => {
         </div>
       </div>
       <FormField
-        label="Message (so I know what's up)"
+        label="Message"
         id="message"
         name="message"
         onChange={handleFieldChange}
@@ -123,11 +119,11 @@ const ContactForm = () => {
         required
         multiline
       />
-      <FormItem className="form-item--btn">
+      <div className="mb-3">
         <button type="submit" className="btn">
           <span>Send message</span>
         </button>
-      </FormItem>
+      </div>
     </form>
   );
 };

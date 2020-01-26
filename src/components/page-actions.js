@@ -6,11 +6,11 @@ const PageActionsItem = ({ title, text, link }) => {
     <div className="px-3 md:w-1/2">
       <Link
         to={link}
-        className="block p-3 border border-teal bg-black hover:bg-teal hover:text-black transition-colors transition-500"
+        className="block p-6 border border-teal hover:bg-teal transition-colors duration-200"
       >
-        <div className="page-actions-item">
-          <h3 className="page-actions-title">{title}</h3>
-          <p className="page-actions-text">{text}</p>
+        <div className="">
+          <h3 className="text-2xl">{title}</h3>
+          <p className="text-xl">{text}</p>
         </div>
       </Link>
     </div>

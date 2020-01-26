@@ -4,16 +4,18 @@ import Img from 'gatsby-image';
 
 const ProjectCard = ({ title, date, slug, text, thumb }) => {
   return (
-    <article className="work-card">
-      <figure className="work-card-figure">
-        <Link to={slug}>{thumb && <Img fluid={thumb} />}</Link>
+    <article className="">
+      <figure className="mb-3">
+        <Link to={slug} className="block link">
+          {thumb && <Img fluid={thumb} />}
+        </Link>
       </figure>
-      <div className="work-card-body">
-        <time>{date}</time>
-        <h2 className="work-card-title">
+      <div className="">
+        <time dateTime={date}>{date}</time>
+        <h2 className="h2">
           <Link to={slug}>{title}</Link>
         </h2>
-        {text && <p className="work-card-text">{text}</p>}
+        {text && <p className="text-xl">{text}</p>}
         {/* <Link to={slug} className="work-card-cta link">
           View project &rarr;
         </Link> */}
@@ -63,11 +65,11 @@ const ProjectList = ({ limit = 9999, side: sideProjects }) => {
   const limitedItems = items.slice(0, limit);
 
   return (
-    <ul className="work-list">
+    <ul className="">
       {limitedItems.map(node => {
         const { title, date, text, thumb } = node.frontmatter;
         return (
-          <li key={node.id} className="work-item">
+          <li key={node.id} className="mb-24">
             <ProjectCard
               title={title}
               text={text}

@@ -20,7 +20,7 @@ const GridLines = () => (
 
 const Layout = ({ children }) => {
   return (
-    <div className="container">
+    <div className="font-body">
       <Helmet>
         <link
           href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap"
@@ -28,9 +28,11 @@ const Layout = ({ children }) => {
         />
       </Helmet>
 
-      <Header />
-      <main>{children}</main>
-      <Footer />
+      <div>
+        <Header />
+        <main>{children}</main>
+        <Footer />
+      </div>
       {/* <GridLines /> */}
       {/* <Cursor /> */}
     </div>
