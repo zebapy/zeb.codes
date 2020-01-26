@@ -6,7 +6,7 @@ const ProjectCard = ({ title, date, slug, text, thumb }) => {
   return (
     <article className="">
       <figure className="mb-3">
-        <Link to={slug} className="block link">
+        <Link to={slug} className="block">
           {thumb && <Img fluid={thumb} />}
         </Link>
       </figure>
@@ -55,12 +55,8 @@ const ProjectList = ({ limit = 9999, side: sideProjects }) => {
   `);
 
   // if sideprojects prop is passed, we should get all work pieces that have project frontmatter
-  const filter = node =>
-    sideProjects
-      ? node.frontmatter.project === true
-      : node.frontmatter.project === null;
 
-  const items = data.work.nodes.filter(filter);
+  const items = data.work.nodes;
 
   const limitedItems = items.slice(0, limit);
 

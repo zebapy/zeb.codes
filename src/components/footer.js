@@ -14,7 +14,7 @@ export default () => {
   `);
 
   return (
-    <footer className="border-t-2 border-gray-200 py-6 text-gray-700 flex justify-between">
+    <footer className="p-6 text-gray-700 text-xl flex justify-between bg-gray-200">
       <span>
         {data.site.siteMetadata.title} &copy; {data.site.buildTime}
       </span>

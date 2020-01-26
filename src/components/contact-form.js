@@ -85,31 +85,25 @@ const ContactForm = () => {
       )}
 
       <input type="hidden" name="bot-field" />
-      <div className="md:flex -mx-3">
-        <div className="md:w-1/2 px-3">
-          <FormField
-            id="name"
-            label="Your name"
-            type="text"
-            name="name"
-            value={name}
-            onChange={handleFieldChange}
-            spellCheck={false}
-            required
-          />
-        </div>
-        <div className="md:w-1/2 px-3">
-          <FormField
-            label="Your email"
-            id="email"
-            type="email"
-            name="email"
-            onChange={handleFieldChange}
-            value={email}
-            required
-          />
-        </div>
-      </div>
+      <FormField
+        id="name"
+        label="Your name"
+        type="text"
+        name="name"
+        value={name}
+        onChange={handleFieldChange}
+        spellCheck={false}
+        required
+      />
+      <FormField
+        label="Your email"
+        id="email"
+        type="email"
+        name="email"
+        onChange={handleFieldChange}
+        value={email}
+        required
+      />
       <FormField
         label="Message"
         id="message"

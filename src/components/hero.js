@@ -5,7 +5,7 @@ import Revealer from './revealer';
 
 const HeroSection = ({ title, text, avatar, alt }) => {
   return (
-    <section className="flex items-center justify-center py-64">
+    <section className="py-16 lg:py-64">
       <div className="lg:w-2/3">
         {/* <figure className="hero-figure">
           <img src={avatar} alt={alt} className="hero-avatar" />

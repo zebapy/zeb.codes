@@ -15,13 +15,6 @@ export default () => (
 
     <ProjectList />
 
-    <Section
-      title="Side projects"
-      text="Occasionally I do build things to solve a problem of my own or to learn a  new skill."
-    >
-      <ProjectList side />
-    </Section>
-
     <PageActions about contact />
   </Layout>
 );

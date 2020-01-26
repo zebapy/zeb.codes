@@ -9,7 +9,7 @@ import Cursor from './cursor';
 import '../styles/index.scss';
 
 const GridLines = () => (
-  <div className="grid-lines container">
+  <div className="grid-lines">
     {Array(11)
       .fill()
       .map((_, i) => (
@@ -20,7 +20,7 @@ const GridLines = () => (
 
 const Layout = ({ children }) => {
   return (
-    <div className="font-body">
+    <div className="font-sans">
       <Helmet>
         <link
           href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap"
@@ -28,10 +28,12 @@ const Layout = ({ children }) => {
         />
       </Helmet>
 
-      <div>
+      <div className="layout">
         <Header />
-        <main>{children}</main>
-        <Footer />
+        <div className="layout-main">
+          <main className="p-8 lg:p-24 ">{children}</main>
+          <Footer />
+        </div>
       </div>
       {/* <GridLines /> */}
       {/* <Cursor /> */}

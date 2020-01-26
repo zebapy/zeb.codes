@@ -1,37 +1,79 @@
-/* purgecss start ignore */
-@tailwind base;
-
-@tailwind components;
-/* purgecss end ignore */
-
-@tailwind utilities;
+@import '../../node_modules/tailwindcss/dist/tailwind.min.css';
 
 @function rem($px) {
-  @return ($px / $font-size-base) * 1rem;
+  @return ($px / $text-base) * 1rem;
 }
 
-$font-size-base: 16px;
+@mixin media($bp) {
+  @media (min-width: map-get($map: $breakpoints, $key: $bp )) {
+    @content;
+  }
+}
+
+$breakpoints: (
+  sm: 640px,
+  md: 768px,
+  lg: 1024px,
+  xl: 1280px
+);
 
 $white: #fff;
 $black: #000;
 $teal: #3cffa1;
 $primary: $teal;
+$secondary: #f58f8f;
 
-$space0: 0;
-$space1: rem(4px);
-$space2: rem(8px);
-$space3: rem(16px);
-$space4: rem(24px);
-$space5: rem(32px);
-$space6: rem(48px);
-$space7: rem(64px);
-$space8: rem(96px);
-$space9: rem(128px);
-$space10: rem(256px);
+$space-0: 0;
+$space-1: 0.25rem;
+$space-2: 0.5rem;
+$space-3: 0.75rem;
+$space-4: 1rem;
+$space-5: 1.25rem;
+$space-6: 1.5rem;
+$space-8: 2rem;
+$space-10: 2.5rem;
+$space-12: 3rem;
+$space-16: 4rem;
+$space-20: 5rem;
+$space-24: 6rem;
+$space-32: 8rem;
+$space-40: 10rem;
+$space-48: 12rem;
+$space-56: 14rem;
+$space-64: 16rem;
 
-textarea {
-  min-height: 15rem;
-  resize: vertical;
+$text-xs: 0.75rem;
+$text-sm: 0.875rem;
+$text-base: 1rem;
+$text-lg: 1.125rem;
+$text-xl: 1.25rem;
+$text-2xl: 1.5rem;
+$text-3xl: 1.875rem;
+$text-4xl: 2.25rem;
+$text-5xl: 3rem;
+$text-6xl: 4rem;
+
+body {
+  // &:before {
+  //   content: '';
+  //   display: block;
+  //   height: 100%;
+  //   width: 100%;
+  //   position: fixed;
+  //   top: 0;
+  //   bottom: 0;
+  //   background: linear-gradient(to bottom, $primary, $secondary);
+  //   background-size: 100%;
+  //   background-repeat: no-repeat;
+  // }
+}
+
+.font-sans {
+  font-family: 'open sans', helvetica, arial, hesans-serif;
+}
+
+.tracking-tightest {
+  letter-spacing: -0.1em;
 }
 
 h1,
@@ -40,23 +82,25 @@ h3,
 h4,
 h5,
 h6 {
-  @apply font-bold tracking-tighter font-bold leading-tight;
+  @apply font-bold font-bold leading-tight;
+  letter-spacing: -0.1em;
 }
 
 h1 {
   @apply text-3xl mb-6;
+
+  @include media(md) {
+    @apply text-5xl;
+  }
 }
 
 h2 {
   @apply text-2xl mb-4;
-}
 
-@screen md {
-  h1 {
-    @apply text-6xl mb-5;
-  }
-  h2 {
-    @apply text-4xl mb-5;
+  @include media(md) {
+    h2 {
+      @apply text-3xl;
+    }
   }
 }
 
@@ -87,7 +131,7 @@ h2 {
 }
 
 .link {
-  @apply inline-block border-b-2 border-teal;
+  @apply inline-block border-b-2 border-green-500;
 }
 
 .about-pic {
@@ -142,10 +186,6 @@ h2 {
   }
 }
 
-.container {
-  @apply px-3 max-w-5xl mx-auto;
-}
-
 @mixin hover-fill($bg, $color) {
   position: relative;
   overflow: hidden;
@@ -175,8 +215,9 @@ h2 {
 
 .btn {
   @apply inline-block py-3 px-4;
-  @apply bg-teal text-black;
-  @apply text-sm text-center tracking-widest uppercase font-body font-bold;
+  @apply text-black;
+  @apply text-sm text-center tracking-widest uppercase font-sans font-bold;
+  background: $primary;
 
   > span {
     position: relative;
@@ -236,7 +277,7 @@ h2 {
 }
 
 .link-outline {
-  margin-bottom: $space4;
+  margin-bottom: $space-5;
   flex: 1;
 
   a {
@@ -314,5 +355,38 @@ h2 {
 
   .gatsby-resp-image-wrapper {
     @apply mb-24;
+  }
+}
+
+.header {
+  background: linear-gradient(to bottom, $primary, $secondary);
+  padding: $space-4;
+
+  @include media(md) {
+    height: 100vh;
+    width: 400px;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+}
+
+.nav {
+}
+
+.nav-list {
+}
+
+.nav-item {
+}
+
+.nav-link {
+}
+
+.layout-main {
+  @include media(md) {
+    margin-left: 400px;
   }
 }

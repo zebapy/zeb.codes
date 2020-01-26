@@ -2,34 +2,59 @@ import React from 'react';
 
 import { Link } from 'gatsby';
 
-const navLinkClass = 'uppercase tracking-wider font-bold';
+const navItemClass = 'text-right';
+const navLinkClass =
+  'font-bold text-xl md:text-5xl tracking-tightest block p-4';
 
 const Header = () => {
   return (
-    <header className="lg:flex justify-between py-4">
-      <Link to="/" className="block uppercase tracking-wider font-bold mb-2">
+    <header className="header">
+      <Link to="/" className="self-start font-bold tracking-tightest text-2xl">
         Zeb Pykosz
       </Link>
 
-      <nav className="">
-        <ul className="flex">
-          <li className="mr-5">
-            <Link to="/work" className={navLinkClass} activeClassName="link">
+      <nav className="nav">
+        <ul className="flex md:block">
+          <li className={navItemClass}>
+            <Link
+              to="/"
+              className={navLinkClass}
+              activeClassName="nav-link-active"
+            >
+              Hello
+            </Link>
+          </li>
+          <li className={navItemClass}>
+            <Link
+              to="/work"
+              className={navLinkClass}
+              activeClassName="nav-link-active"
+            >
               Work
             </Link>
           </li>
-          <li className="mr-5">
-            <Link to="/about" className={navLinkClass} activeClassName="link">
+          <li className={navItemClass}>
+            <Link
+              to="/about"
+              className={navLinkClass}
+              activeClassName="nav-link-active"
+            >
               About
             </Link>
           </li>
-          <li className="mr-5">
-            <Link to="/contact" className={navLinkClass} activeClassName="link">
+          <li className={navItemClass}>
+            <Link
+              to="/contact"
+              className={navLinkClass}
+              activeClassName="nav-link-active"
+            >
               Contact
             </Link>
           </li>
         </ul>
       </nav>
+
+      <div>social icons</div>
     </header>
   );
 };
