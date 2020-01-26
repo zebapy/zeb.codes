@@ -171,13 +171,30 @@
 }
 
 .project-figure {
-  padding: $space6;
-  background: $gray-light;
+  // padding: $space6;
+  // background: $gray-light;
   margin-bottom: $space6;
+  position: relative;
+}
 
-  img {
-    box-shadow: 8px 8px 8px rgba(black, 0.8);
-  }
+.project-desktop {
+  background: $gray-light;
+  padding: 3rem 1rem 1rem;
+  border-radius: 0.5rem;
+  // box-shadow: 4px 4px 0px rgba($primary, 0.5);
+}
+
+.project-mobile {
+  max-width: 400px;
+  width: 25%;
+  position: absolute;
+  bottom: -1rem;
+  right: -1rem;
+  background: $black;
+  padding: 3rem 1rem 1rem;
+  border-radius: 1rem;
+
+  // box-shadow: 4px 4px 0px rgba($primary, 0.5);
 }
 
 .project-wrap {

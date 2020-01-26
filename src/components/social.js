@@ -2,10 +2,10 @@ import React from 'react';
 
 const Social = ({ items = [] }) => {
   return (
-    <ul className="social-list">
+    <ul className="flex">
       {items.map(({ icon, name, url }) => (
-        <li key={name} className="social-item">
-          <a href={url} className="social-link">
+        <li key={name} className="mr-4">
+          <a href={url} className="link">
             {name}
           </a>
         </li>

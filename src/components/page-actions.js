@@ -3,18 +3,23 @@ import { Link } from 'gatsby';
 
 const PageActionsItem = ({ title, text, link }) => {
   return (
-    <Link to={link} className="page-actions-link">
-      <div className="page-actions-item">
-        <h3 className="page-actions-title">{title}</h3>
-        <p className="page-actions-text">{text}</p>
-      </div>
-    </Link>
+    <div className="px-3 md:w-1/2">
+      <Link
+        to={link}
+        className="block p-3 border border-teal bg-black hover:bg-teal hover:text-black transition-colors transition-500"
+      >
+        <div className="page-actions-item">
+          <h3 className="page-actions-title">{title}</h3>
+          <p className="page-actions-text">{text}</p>
+        </div>
+      </Link>
+    </div>
   );
 };
 
 const PageActions = ({ work, about, contact }) => {
   return (
-    <div className="page-actions">
+    <div className="flex -mx-3 mt-24 my-8">
       {work && (
         <PageActionsItem
           title="View my work"

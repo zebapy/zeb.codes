@@ -1,4 +1,5 @@
 import React from 'react';
+import dayjs from 'dayjs';
 
 import Focuses from '../components/focuses';
 import Section from '../components/section';
@@ -7,6 +8,8 @@ import Layout from '../components/layout';
 import PageHead from '../components/page-head';
 import PageActions from '../components/page-actions';
 import SEO from '../components/seo';
+
+import resume from '../../content/resume.yml';
 
 const focuses = [
   {
@@ -57,25 +60,26 @@ const tech = [
   'Mac OS'
 ];
 
-const tools = [];
-
+const tools = [''];
 const title = 'About me';
 
 export default () => (
   <Layout>
     <SEO title={title} />
 
-    <div className="about-grid">
-      <div className="about-pic">
-        <figure className="diamond-pic">
+    <PageHead title={title} />
+
+    <div className="md:flex md:flex-row-reverse">
+      <div className="md:w-1/2 mb-5 md:ml-5">
+        <figure className="about-pic">
           <img
             src={require('../images/zeb-portrait.jpg')}
             alt="Zeb looking like he knows something."
           />
         </figure>
       </div>
-      <div className="about-content">
-        <h1 className="pagehead-title">{title}</h1>
+      <div className="md:w-1/2 markdown">
+        {/* <h1 className="pagehead-title">{title}</h1> */}
         <p>
           I'm first and foremost a front-end (whoa) developer with a penchant
           for UI design, born and raised in rural Vermont, US. I am primarily
@@ -96,21 +100,64 @@ export default () => (
           I am also the creator/maintainer of a project called Fateseal which
           has consumed a lot of my free time. Check it out in my projects.
         </p>
-
-        <h3>Preferred tech and tools</h3>
-
-        <Skills items={tech} />
-
-        <Skills items={tools} />
       </div>
     </div>
 
+    <div className="flex">
+      <div className="md:w-1/2">
+        <h2 className="h2">Work History</h2>
+
+        <ul className="">
+          {resume.work.map(item => (
+            <li key={item.company} className="mb-3">
+              <h3>
+                {item.position}{' '}
+                <a href={item.website} className="link">
+                  @{item.company}
+                </a>
+              </h3>
+              <p>
+                <time dateTime={item.startDate}>
+                  {dayjs(item.startDate).format('MMMM YYYY')}
+                </time>
+                &ndash;
+                {item.endDate ? (
+                  <time dateTime={item.endDate}>
+                    {dayjs(item.endDate).format('MMMM YYYY')}
+                  </time>
+                ) : (
+                  'Present'
+                )}
+              </p>
+              <p>{item.summary}</p>
+              <ul className="list-square pl-4">
+                {item.highlights.map((text, i) => (
+                  <li key={i} className="mb-1 text-sm text-green-500">
+                    <span className="text-black">{text}</span>
+                  </li>
+                ))}
+              </ul>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div className="md:w-1/2">
+        <h2>Skills</h2>
+
+        <div className="flex">
+          <Skills items={tech} />
+
+          <Skills items={tools} />
+        </div>
+      </div>
+    </div>
+    {/*
     <Section
       title="Focuses"
       text="There are many aspects that build up a successful website. These are just a handful of what I focus on."
     >
       <Focuses items={focuses} />
-    </Section>
+    </Section> */}
 
     <PageActions work contact />
   </Layout>

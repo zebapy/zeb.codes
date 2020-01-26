@@ -5,19 +5,18 @@ import Revealer from './revealer';
 
 const HeroSection = ({ title, text, avatar, alt }) => {
   return (
-    <section className="hero">
-      <div className="hero-body">
+    <section className="flex items-center justify-center py-64">
+      <div className="lg:w-2/3">
         {/* <figure className="hero-figure">
-        <img src={avatar} alt={alt} className="hero-avatar" />
-      </figure> */}
-        <h1 className="hero-title">{title}</h1>
-        <p className="hero-text">{text}</p>
-        <div className="hero-btns">
-          <Link to="/work" className="btn hero-btn">
+          <img src={avatar} alt={alt} className="hero-avatar" />
+        </figure> */}
+        <h1 className="h1">{title}</h1>
+        <p className="text-xl mb-5">{text}</p>
+        <div className="inline-flex">
+          <Link to="/work" className="btn mr-5">
             <span>See my work</span>
           </Link>
-          <div className="hero-or"></div>
-          <Link to="/contact" className="btn btn--alt hero-btn">
+          <Link to="/contact" className="btn btn--alt">
             <span>Get in touch</span>
           </Link>
         </div>

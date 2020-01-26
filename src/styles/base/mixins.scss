@@ -1,5 +1,0 @@
-@mixin media($size) {
-  @media (min-width: map-get($map: $breakpoints, $key: $size )) {
-    @content;
-  }
-}

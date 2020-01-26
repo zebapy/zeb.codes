@@ -15,7 +15,7 @@ const ProjectTemplate = ({ data, pageContext }) => {
     text,
     date,
     roles = [],
-    tags = [],
+    tech = [],
     thumb,
     client,
     url,
@@ -41,17 +41,11 @@ const ProjectTemplate = ({ data, pageContext }) => {
           text={text}
           backLink="/work"
           backLinkText="All Projects"
-        />
-
-        <figure className="project-figure">
-          <Img fluid={thumb.childImageSharp.fluid} />
-        </figure>
-
-        <div className="project-wrap">
+        >
           <dl className="project-details">
             {[
               {
-                term: 'Date',
+                term: 'Year',
                 text: <time time={date}>{formattedDate}</time>
               },
               {
@@ -63,17 +57,35 @@ const ProjectTemplate = ({ data, pageContext }) => {
                 text: roles && roles.join(', ')
               },
               {
-                term: 'Tags',
-                text: tags && tags.join(', ')
+                term: 'tech',
+                text: tech && tech.join(', ')
               }
-            ].map(({ term, text }) => (
-              <div key={term} className="project-details-item">
-                <dt>{term}</dt>
-                <dd>{text}</dd>
-              </div>
-            ))}
+            ].map(
+              ({ term, text }) =>
+                text && (
+                  <div key={term} className="project-details-item">
+                    <dt>{term}</dt>
+                    <dd>{text}</dd>
+                  </div>
+                )
+            )}
           </dl>
-        </div>
+        </PageHead>
+
+        <figure className="project-figure">
+          {desktop && (
+            <div className="project-desktop">
+              <Img fluid={desktop.childImageSharp.fluid} />
+            </div>
+          )}
+          {mobile && (
+            <div className="project-mobile">
+              <Img fluid={mobile.childImageSharp.fluid} />
+            </div>
+          )}
+        </figure>
+
+        <div className="project-wrap"></div>
 
         <div className="project-body">
           <MDXRenderer>{node.body}</MDXRenderer>
@@ -105,7 +117,7 @@ const ProjectTemplate = ({ data, pageContext }) => {
             )}
             <li className="work-nav-item text-center">
               <Link to="/work" className="work-nav-link">
-                <span className="work-nav-title">&uarr; All Projects</span>
+                <span className="work-nav-title">All Projects</span>
               </Link>
             </li>
             {next && (
@@ -134,9 +146,9 @@ export const pageQuery = graphql`
       frontmatter {
         title
         text
-        formattedDate: date(formatString: "MMMM DD, YYYY")
+        formattedDate: date(formatString: "YYYY")
         date
-        tags
+        tech
         client
         roles
         url
@@ -144,6 +156,20 @@ export const pageQuery = graphql`
         thumb {
           childImageSharp {
             fluid(maxWidth: 1000) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        desktop {
+          childImageSharp {
+            fluid(maxWidth: 1000) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+        mobile {
+          childImageSharp {
+            fluid(maxWidth: 400) {
               ...GatsbyImageSharpFluid
             }
           }

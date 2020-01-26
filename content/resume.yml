@@ -57,7 +57,7 @@ work:
     website: http://chp.com
     startDate: 2013-05-01
     endDate: 2015-07-20
-    summary: Description...
+    summary:
     highlights:
       - Designed responsive versions of non-responsive website for implementation resulting in Google Usability score increase from 60/100 to 99/100.
       - Refactored CSS which reduced bundle sizes by 47%

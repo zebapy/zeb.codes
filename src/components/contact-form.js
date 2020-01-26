@@ -7,14 +7,14 @@ const FormItem = props => (
 
 const Input = props =>
   React.createElement(props.multiline ? 'textarea' : 'input', {
-    className: 'text-input',
+    className: 'p-3 w-full block appearance-none text-xl border bg-gray-200',
     ...props
   });
 
 const FormField = ({ label, id, ...rest }) => {
   return (
-    <div className={`form-item form-item--${id}`}>
-      <label htmlFor={id} className="label">
+    <div className="mb-4">
+      <label htmlFor={id} className="block font-bold text-xl tracking-tighter">
         {label}
       </label>
       <Input id={id} {...rest} />
@@ -80,7 +80,7 @@ const ContactForm = () => {
       data-netlify="true"
       data-netlify-honeypot="bot-field"
       onSubmit={handleSubmit}
-      className="contact-form"
+      className="mb-32 xl:w-2/3"
     >
       {showFormError && (
         <p className="alert alert--error">
@@ -89,32 +89,35 @@ const ContactForm = () => {
       )}
 
       <input type="hidden" name="bot-field" />
-      <FormField
-        id="name"
-        label="Your name (so I know who's calling)"
-        type="text"
-        name="name"
-        placeholder="Your name"
-        value={name}
-        onChange={handleFieldChange}
-        spellCheck={false}
-        required
-      />
-      <FormField
-        label="Your email (so I can get back to you)"
-        id="email"
-        type="email"
-        name="email"
-        placeholder="hi@you.com"
-        onChange={handleFieldChange}
-        value={email}
-        required
-      />
+      <div className="md:flex -mx-3">
+        <div className="md:w-1/2 px-3">
+          <FormField
+            id="name"
+            label="Your name (so I know who's calling)"
+            type="text"
+            name="name"
+            value={name}
+            onChange={handleFieldChange}
+            spellCheck={false}
+            required
+          />
+        </div>
+        <div className="md:w-1/2 px-3">
+          <FormField
+            label="Your email (so I can get back to you)"
+            id="email"
+            type="email"
+            name="email"
+            onChange={handleFieldChange}
+            value={email}
+            required
+          />
+        </div>
+      </div>
       <FormField
         label="Message (so I know what's up)"
         id="message"
         name="message"
-        placeholder="A short message for why you're contacting me..."
         onChange={handleFieldChange}
         value={message}
         required
