@@ -8,6 +8,8 @@ import Cursor from './cursor';
 
 import '../styles/index.scss';
 
+import Transition from './transition';
+
 const GridLines = () => (
   <div className="grid-lines">
     {Array(11)
@@ -18,20 +20,22 @@ const GridLines = () => (
   </div>
 );
 
-const Layout = ({ children }) => {
+const Layout = ({ children, location }) => {
   return (
-    <div className="font-sans">
-      <Helmet>
+    <div>
+      {/* <Helmet>
         <link
           href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap"
           rel="stylesheet"
         />
-      </Helmet>
+      </Helmet> */}
 
       <div className="layout">
         <Header />
         <div className="layout-main">
-          <main className="p-8 lg:p-24 ">{children}</main>
+          <main className="main">
+            <Transition location={location}>{children}</Transition>
+          </main>
           <Footer />
         </div>
       </div>

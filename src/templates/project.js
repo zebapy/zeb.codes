@@ -105,7 +105,7 @@ const ProjectTemplate = ({ data, pageContext }) => {
   };
 
   return (
-    <Layout>
+    <>
       <SEO
         title={title}
         description={text}
@@ -150,7 +150,7 @@ const ProjectTemplate = ({ data, pageContext }) => {
       </article>
 
       {hasNextOrPrev && <ProjectNav next={next} prev={prev} />}
-    </Layout>
+    </>
   );
 };
 

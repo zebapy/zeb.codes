@@ -1,12 +1,37 @@
 import React from 'react';
+import { graphql, useStaticQuery } from 'gatsby';
 
-const Social = ({ items = [] }) => {
+import GithubIcon from '../images/github.svg';
+import TwitterIcon from '../images/twitter.svg';
+import LinkedinIcon from '../images/linkedin.svg';
+import EmailIcon from '../images/email.svg';
+
+const icons = {
+  github: GithubIcon,
+  twitter: TwitterIcon,
+  linkedin: LinkedinIcon,
+  email: EmailIcon
+};
+
+const Social = ({ className, variant }) => {
+  const data = useStaticQuery(graphql`
+    query socialQuery {
+      allSocialYaml {
+        nodes {
+          name
+          url
+          handle
+        }
+      }
+    }
+  `);
+
   return (
-    <ul className="flex">
-      {items.map(({ icon, name, url }) => (
-        <li key={name} className="mr-4">
-          <a href={url} className="link">
-            {name}
+    <ul className={`social social--${variant}`}>
+      {data.allSocialYaml.nodes.map(({ name, url, platform, handle }) => (
+        <li key={name}>
+          <a href={url} aria-label={platform}>
+            <img src={icons[name]} alt={platform} />
           </a>
         </li>
       ))}

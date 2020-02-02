@@ -1,0 +1,56 @@
+.project-figure {
+  position: relative;
+  margin-bottom: $space-16;
+}
+
+.project-desktop {
+  background: $white;
+  padding: $space-4;
+  padding-top: $space-16;
+  border-radius: 1rem;
+}
+
+.project-mobile {
+  max-width: 400px;
+  width: 25%;
+  position: absolute;
+  bottom: -1rem;
+  right: -1rem;
+  background: $black;
+  padding: 3rem 1rem 1rem;
+  border-radius: 1rem;
+}
+
+.project-wrap {
+  margin: 0 auto;
+  max-width: 800px;
+}
+
+.project-body {
+  margin-bottom: $space-8;
+
+  p {
+    font-size: $text-xl;
+    margin-bottom: $space-5;
+  }
+
+  h1,
+  h2 {
+    font-size: $text-2xl;
+    margin-bottom: $space-5;
+  }
+
+  h3 {
+    margin-bottom: $space-4;
+    font-size: $text-lg;
+  }
+
+  > *:not(.gatsby-resp-image-wrapper) {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .gatsby-resp-image-wrapper {
+    margin-bottom: $space-24;
+  }
+}

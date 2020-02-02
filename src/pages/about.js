@@ -64,7 +64,7 @@ const tools = [''];
 const title = 'About me';
 
 export default () => (
-  <Layout>
+  <>
     <SEO title={title} />
 
     <PageHead title={title} />
@@ -160,5 +160,5 @@ export default () => (
     </Section> */}
 
     <PageActions work contact />
-  </Layout>
+  </>
 );

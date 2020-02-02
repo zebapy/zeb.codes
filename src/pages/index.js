@@ -10,7 +10,7 @@ import PageHead from '../components/page-head';
 import SEO from '../components/seo';
 
 export default () => (
-  <Layout>
+  <>
     <SEO />
     <Hero
       avatar="https://en.gravatar.com/userimage/14820278/32195afe52a1a37bc55e31a06736dedc.jpg?size=100"
@@ -23,5 +23,5 @@ export default () => (
     </Section>
 
     <PageActions about contact />
-  </Layout>
+  </>
 );

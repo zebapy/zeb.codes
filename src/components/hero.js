@@ -3,16 +3,22 @@ import { Link } from 'gatsby';
 
 import Revealer from './revealer';
 
+import { SlideWords, SlideLetters } from './page-head';
+
 const HeroSection = ({ title, text, avatar, alt }) => {
   return (
-    <section className="py-16 lg:py-64">
-      <div className="lg:w-2/3">
+    <section className="hero">
+      <div className="hero-content">
         {/* <figure className="hero-figure">
           <img src={avatar} alt={alt} className="hero-avatar" />
         </figure> */}
-        <h1 className="h1">{title}</h1>
-        <p className="text-xl mb-5">{text}</p>
-        <div className="inline-flex">
+        <h1 className="fadeInDown h1">
+          <SlideLetters>{title}</SlideLetters>
+        </h1>
+        <p className="fadeInDown delay-500 text-xl mb-5">
+          <SlideWords>{text}</SlideWords>
+        </p>
+        <div className="animated fadeInDown delay-1500 inline-flex">
           <Link to="/work" className="btn mr-5">
             <span>See my work</span>
           </Link>

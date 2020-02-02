@@ -1,0 +1,14 @@
+.markdown {
+  p {
+    font-size: $text-2xl;
+    margin-bottom: $space-4;
+  }
+
+  h3:not(:first-child) {
+    margin-top: $space-4;
+  }
+
+  h3 {
+    margin-bottom: $space-3;
+  }
+}

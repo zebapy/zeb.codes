@@ -1,0 +1,55 @@
+@mixin hover-fill($bg, $color) {
+  position: relative;
+  overflow: hidden;
+  transition: color 0.2s;
+
+  &:after {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 100%;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    transition: top 0.2s;
+    background: $bg;
+    z-index: 1;
+  }
+
+  &:focus,
+  &:hover {
+    color: $color;
+    &:after {
+      top: 0;
+    }
+  }
+}
+
+.btn {
+  display: inline-block;
+  padding: $space-4 $space-6;
+  font-size: $text-lg;
+  text-align: center;
+  color: $black;
+  font-weight: bold;
+  background: $primary;
+
+  > span {
+    position: relative;
+    z-index: 2;
+  }
+
+  @include hover-fill($black, $white);
+}
+
+.btn--alt {
+  background: transparent;
+  color: $black;
+  border: 1px solid $black;
+  @include hover-fill($primary, $black);
+}
+
+.btn--sm {
+  font-size: $text-xs;
+  padding: $space-2 $space-3;
+}

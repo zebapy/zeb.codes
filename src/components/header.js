@@ -1,60 +1,42 @@
 import React from 'react';
-
 import { Link } from 'gatsby';
 
-const navItemClass = 'text-right';
-const navLinkClass =
-  'font-bold text-xl md:text-5xl tracking-tightest block p-4';
+import Social from './social';
+
+import ArrowRight from '../images/arrow-right.svg';
+
+import { SlideLetters } from './page-head';
 
 const Header = () => {
   return (
     <header className="header">
-      <Link to="/" className="self-start font-bold tracking-tightest text-2xl">
+      <Link to="/" className="header-logo">
         Zeb Pykosz
       </Link>
 
       <nav className="nav">
-        <ul className="flex md:block">
-          <li className={navItemClass}>
-            <Link
-              to="/"
-              className={navLinkClass}
-              activeClassName="nav-link-active"
-            >
-              Hello
-            </Link>
-          </li>
-          <li className={navItemClass}>
-            <Link
-              to="/work"
-              className={navLinkClass}
-              activeClassName="nav-link-active"
-            >
-              Work
-            </Link>
-          </li>
-          <li className={navItemClass}>
-            <Link
-              to="/about"
-              className={navLinkClass}
-              activeClassName="nav-link-active"
-            >
-              About
-            </Link>
-          </li>
-          <li className={navItemClass}>
-            <Link
-              to="/contact"
-              className={navLinkClass}
-              activeClassName="nav-link-active"
-            >
-              Contact
-            </Link>
-          </li>
+        <ul className="nav-list">
+          {[
+            { to: '/', text: 'Hello' },
+            { to: '/work', text: 'Work' },
+            { to: '/about', text: 'About' },
+            { to: '/contact', text: 'Contact' }
+          ].map(({ to, text }, index) => (
+            <li className="nav-item" key={to}>
+              <Link
+                to={to}
+                className="nav-link"
+                activeClassName="nav-link--active"
+              >
+                <SlideLetters>{text}</SlideLetters>
+
+                <img src={ArrowRight} alt="arrow" className="nav-arrow" />
+              </Link>
+            </li>
+          ))}
         </ul>
       </nav>
-
-      <div>social icons</div>
+      <Social variant="header" />
     </header>
   );
 };

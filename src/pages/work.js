@@ -7,7 +7,7 @@ import Section from '../components/section';
 import PageActions from '../components/page-actions';
 
 export default () => (
-  <Layout>
+  <>
     <PageHead
       title="What I've worked on"
       text="Professional and side projects consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
@@ -16,5 +16,5 @@ export default () => (
     <ProjectList />
 
     <PageActions about contact />
-  </Layout>
+  </>
 );

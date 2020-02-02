@@ -1,11 +1,20 @@
 import React, { useState } from 'react';
 import fetch from 'unfetch';
 
-const Input = props =>
-  React.createElement(props.multiline ? 'textarea' : 'input', {
-    className: 'p-3 w-full block appearance-none text-xl border bg-gray-200',
+const Input = props => {
+  const _props = {
+    className: 'p-3 w-full block appearance-none text-xl border-4 border-black',
     ...props
-  });
+  };
+
+  let content = <input {..._props} />;
+
+  if (props.multiline) {
+    content = <textarea {..._props} style={{ minHeight: 200 }} />;
+  }
+
+  return content;
+};
 
 const FormField = ({ label, id, ...rest }) => {
   return (

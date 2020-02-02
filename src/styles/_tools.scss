@@ -1,0 +1,40 @@
+@keyframes slideUpDown {
+  0% {
+    transform: translateY(-20%);
+  }
+  50% {
+    transform: translateY(0%);
+  }
+  100% {
+    transform: translateY(20%);
+  }
+}
+
+@keyframes reveal {
+  from {
+    max-width: 0;
+    overflow: hidden;
+  }
+  to {
+    max-width: 9999px;
+  }
+}
+
+@keyframes fadeInleft {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: 0;
+  }
+}
+
+@function rem($px) {
+  @return ($px / $text-base) * 1rem;
+}
+
+@mixin media($bp) {
+  @media (min-width: map-get($map: $breakpoints, $key: $bp )) {
+    @content;
+  }
+}

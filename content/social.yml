@@ -1,12 +1,24 @@
 - name: github
   handle: zebapy
+  platform: GitHub
   url: http://github.com/zebapy
-- name: codepen
-  handle: zebapy
-  url: http://codepen.io/zebapy
+# - name: codepen
+#   handle: zebapy
+#   platform: Codepen
+#   url: http://codepen.io/zebapy
 - name: twitter
+  platform: Twitter
   handle: '@Zebhdiyah'
   url: http://twitter.com/zebhdiyah
-- name: instagram
-  handle: zebapy
-  url: http://instagram.com/zebapy
+- name: linkedin
+  platform: LinkedIn
+  handle: 'Zeb Pykosz'
+  url: https://www.linkedin.com/in/zebpykosz/
+# - name: instagram
+#   platform: Instagram
+#   handle: zebapy
+#   url: http://instagram.com/zebapy
+- name: email
+  platform: Email
+  handle: hi@zeb.codes
+  url: 'mailto:hi@zeb.codes'
