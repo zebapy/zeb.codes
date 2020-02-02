@@ -4,18 +4,25 @@ import Img from 'gatsby-image';
 
 const ProjectCard = ({ title, date, slug, text, thumb }) => {
   return (
-    <article className="">
-      <figure className="mb-3">
+    <article className="work-card">
+      <figure className="work-card-figure">
         <Link to={slug} className="block">
           {thumb && <Img fluid={thumb} />}
         </Link>
       </figure>
-      <div className="">
+      <div className="work-card-body">
         <time dateTime={date}>{date}</time>
-        <h2 className="h2">
-          <Link to={slug}>{title}</Link>
+        <h2 className="work-card-title h2">
+          <Link to={slug} className="work-card-title-link">
+            {title}
+            <img
+              src={require('../images/arrow-right.svg')}
+              alt="right arrow"
+              role="decoration"
+            />
+          </Link>
         </h2>
-        {text && <p className="text-xl">{text}</p>}
+        {text && <p className="work-card-text">{text}</p>}
         {/* <Link to={slug} className="work-card-cta link">
           View project &rarr;
         </Link> */}
