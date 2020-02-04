@@ -9,18 +9,18 @@ const ProjectCard = ({ title, date, slug, text, thumb }) => {
   return (
     <article className="work-card">
       <figure className="work-card-figure">
-        <Link to={slug} className="block">
+        <Link to={slug} className="work-card-figure-link">
           {thumb && <Img fluid={thumb} />}
+          <span className="work-card-icon">
+            <ArrowRight />
+          </span>
         </Link>
       </figure>
       <div className="work-card-body">
-        <time dateTime={date}>{date}</time>
+        {/* <time dateTime={date}>{date}</time> */}
         <h2 className="work-card-title h2">
           <Link to={slug} className="work-card-title-link">
             {title}
-            <span className="work-card-icon">
-              <ArrowRight />
-            </span>
           </Link>
         </h2>
         {text && <p className="work-card-text">{text}</p>}
