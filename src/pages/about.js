@@ -61,7 +61,7 @@ const tech = [
 ];
 
 const tools = [''];
-const title = 'About me';
+const title = 'Get to know me';
 
 export default () => (
   <>

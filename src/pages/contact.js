@@ -6,7 +6,7 @@ import ContactForm from '../components/contact-form';
 export default () => (
   <>
     <PageHead
-      title="Contact"
+      title="Let's talk"
       text={
         <span>
           If you have a project to talk about, you can email me directly at{' '}
