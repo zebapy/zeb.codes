@@ -54,3 +54,84 @@
     margin-bottom: $space-24;
   }
 }
+
+/* work cards */
+
+.work-card {
+}
+
+.work-card-figure {
+  box-shadow: 0 0 10px rgba(black, 0.25);
+}
+
+.work-card-figure-link {
+  display: block;
+  position: relative;
+
+  &:before {
+    content: '';
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(top right, $primary, $secondary);
+    z-index: 999;
+    opacity: 0.9;
+    transition: opacity 1s;
+  }
+
+  &:hover,
+  &:focus {
+    &:before {
+      opacity: 0.5;
+    }
+
+    .work-card-icon {
+      right: -2rem;
+    }
+  }
+}
+
+.work-card-body {
+  @include media(lg) {
+    margin-left: $space-24;
+    margin-top: -$space-24;
+    position: relative;
+    z-index: 9999;
+  }
+}
+
+.work-card-title {
+  font-size: $text-3xl;
+  padding-right: $space-8;
+
+  @include media(lg) {
+    font-size: $text-6xl;
+  }
+}
+
+.work-card-title-link {
+  display: flex;
+}
+
+.work-card-icon {
+  position: absolute;
+  bottom: 2rem;
+  right: -1rem;
+  z-index: 9999;
+  transition: right 1s;
+
+  svg {
+    width: 3rem;
+  }
+}
+
+.work-card-text {
+  font-size: $text-2xl;
+
+  @include media(lg) {
+    font-size: $text-xl;
+  }
+}
