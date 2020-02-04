@@ -5,12 +5,16 @@
   @include media(lg) {
     // background: linear-gradient(bottom left, $primary, $secondary);
     height: 100vh;
-    width: 400px;
+    width: $header-width;
     position: fixed;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: flex-end;
+  }
+
+  @include media(xl) {
+    width: $header-width-lg;
   }
 }
 
@@ -34,7 +38,9 @@
 
 .nav-item {
   &:not(:last-child) {
-    margin-bottom: $space-3;
+    @include media(lg) {
+      margin-bottom: $space-3;
+    }
   }
 }
 

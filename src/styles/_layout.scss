@@ -3,7 +3,10 @@
 
 .layout-main {
   @include media(lg) {
-    margin-left: 400px;
+    margin-left: $header-width;
+  }
+  @include media(xl) {
+    margin-left: $header-width-lg;
   }
 }
 
