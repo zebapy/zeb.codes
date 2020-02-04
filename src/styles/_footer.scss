@@ -1,0 +1,32 @@
+#icon-gradient {
+  --primary: #{$primary};
+  --secondary: #{$secondary};
+}
+
+.footer {
+  background: $black;
+  color: rgba(white, 0.75);
+  padding: $space-8;
+
+  @include media(lg) {
+    padding: $space-24 $space-8;
+  }
+
+  svg {
+    fill: url('#icon-gradient') $white;
+  }
+}
+
+.footer-info-item {
+}
+
+.footer-info {
+  font-size: $text-xl;
+  margin-bottom: $space-8;
+
+  @include media(lg) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

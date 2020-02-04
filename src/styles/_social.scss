@@ -22,18 +22,3 @@
     }
   }
 }
-
-.social--footer {
-  @include media(lg) {
-    display: none;
-  }
-}
-
-.social--header {
-  display: none;
-
-  @include media(lg) {
-    display: flex;
-    align-self: flex-start;
-  }
-}

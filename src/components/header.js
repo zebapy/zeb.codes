@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 
 import Social from './social';
 
-import ArrowRight from '../images/arrow-right.svg';
+import ArrowRight from '../assets/arrow-right.svg';
 
 import { SlideLetters } from './page-head';
 
@@ -30,13 +30,15 @@ const Header = () => {
               >
                 <SlideLetters>{text}</SlideLetters>
 
-                <img src={ArrowRight} alt="arrow" className="nav-arrow" />
+                <ArrowRight className="nav-arrow" />
               </Link>
             </li>
           ))}
         </ul>
       </nav>
-      <Social variant="header" />
+      <div className="hidden lg:block self-start text-black">
+        <Social />
+      </div>
     </header>
   );
 };

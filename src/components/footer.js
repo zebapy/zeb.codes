@@ -18,25 +18,36 @@ export default () => {
   return (
     <footer className="footer">
       <div className="footer-info">
-        <span>
+        <div className="footer-info-item">
           {data.site.siteMetadata.title} &copy; {data.site.buildTime}
-        </span>
-        <span>
-          Site built with{' '}
+        </div>
+        <div className="footer-info-item">
+          Built with awesome open source tools like{' '}
           <a href="https://www.gatsbyjs.org/" className="link">
             Gatsby
           </a>
-        </span>
-        <span>
+        </div>
+        <div className="footer-info-item">
           <a href="https://github.com/zebapy/zeb.codes" className="link">
             View the code
           </a>
-        </span>
+        </div>
       </div>
 
-      <div className="footer-social">
+      <div className="footer-social lg:hidden">
         <Social variant="footer" />
       </div>
+      {/* gradients for footer icons */}
+      <svg
+        style={{ width: 0, height: 0, position: 'absolute' }}
+        aria-hidden="true"
+        focusable="false"
+      >
+        <linearGradient id="icon-gradient" x2="1" y2="1">
+          <stop offset="0%" stopColor="var(--primary)" />
+          <stop offset="100%" stopColor="var(--secondary)" />
+        </linearGradient>
+      </svg>
     </footer>
   );
 };

@@ -3,7 +3,7 @@ import React from 'react';
 import SEO from './seo';
 import { Link } from 'gatsby';
 
-export const SlideLetters = ({ children }) => {
+export const SlideLetters = ({ delay = 1, children }) => {
   const words = children.split(' ');
 
   return words.map((word, wordIdx) => {
@@ -22,7 +22,7 @@ export const SlideLetters = ({ children }) => {
                 key={letterIdx}
                 className="inline-block slide-letter animated fadeInDown"
                 style={{
-                  animationDelay: 20 * letterIdx + 'ms'
+                  animationDelay: 20 * letterIdx * delay + 'ms'
                 }}
               >
                 {l}

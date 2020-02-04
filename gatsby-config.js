@@ -73,6 +73,14 @@ module.exports = {
       options: {
         component: require.resolve('./src/components/layout')
       }
+    },
+    {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        rule: {
+          include: /assets/
+        }
+      }
     }
   ]
 };

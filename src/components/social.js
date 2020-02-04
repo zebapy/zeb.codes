@@ -1,10 +1,10 @@
 import React from 'react';
 import { graphql, useStaticQuery } from 'gatsby';
 
-import GithubIcon from '../images/github.svg';
-import TwitterIcon from '../images/twitter.svg';
-import LinkedinIcon from '../images/linkedin.svg';
-import EmailIcon from '../images/email.svg';
+import GithubIcon from '../assets/github.svg';
+import TwitterIcon from '../assets/twitter.svg';
+import LinkedinIcon from '../assets/linkedin.svg';
+import EmailIcon from '../assets/email.svg';
 
 const icons = {
   github: GithubIcon,
@@ -27,14 +27,17 @@ const Social = ({ className, variant }) => {
   `);
 
   return (
-    <ul className={`social social--${variant}`}>
-      {data.allSocialYaml.nodes.map(({ name, url, platform, handle }) => (
-        <li key={name}>
-          <a href={url} aria-label={platform}>
-            <img src={icons[name]} alt={platform} />
-          </a>
-        </li>
-      ))}
+    <ul className="social">
+      {data.allSocialYaml.nodes.map(({ name, url, platform, handle }) => {
+        const Icon = icons[name];
+        return (
+          <li key={name}>
+            <a href={url} title={platform}>
+              <Icon aria-hidden="true" focusable="false" />
+            </a>
+          </li>
+        );
+      })}
     </ul>
   );
 };

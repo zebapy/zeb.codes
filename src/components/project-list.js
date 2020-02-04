@@ -1,6 +1,9 @@
 import React from 'react';
 import { useStaticQuery, graphql, Link } from 'gatsby';
+
 import Img from 'gatsby-image';
+
+import ArrowRight from '../assets/arrow-right.svg';
 
 const ProjectCard = ({ title, date, slug, text, thumb }) => {
   return (
@@ -15,11 +18,9 @@ const ProjectCard = ({ title, date, slug, text, thumb }) => {
         <h2 className="work-card-title h2">
           <Link to={slug} className="work-card-title-link">
             {title}
-            <img
-              src={require('../images/arrow-right.svg')}
-              alt="right arrow"
-              role="decoration"
-            />
+            <span className="work-card-icon">
+              <ArrowRight />
+            </span>
           </Link>
         </h2>
         {text && <p className="work-card-text">{text}</p>}
