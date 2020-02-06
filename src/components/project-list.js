@@ -5,6 +5,8 @@ import Img from 'gatsby-image';
 
 import ArrowRight from '../assets/arrow-right.svg';
 
+import { SlideLetters } from './page-head';
+
 const ProjectCard = ({ title, date, slug, text, thumb }) => {
   return (
     <article className="work-card">
@@ -20,7 +22,7 @@ const ProjectCard = ({ title, date, slug, text, thumb }) => {
         {/* <time dateTime={date}>{date}</time> */}
         <h2 className="work-card-title h2">
           <Link to={slug} className="work-card-title-link">
-            {title}
+            <SlideLetters>{title}</SlideLetters>
           </Link>
         </h2>
         {text && <p className="work-card-text">{text}</p>}
@@ -73,7 +75,7 @@ const ProjectList = ({ limit = 9999, side: sideProjects }) => {
       {limitedItems.map(node => {
         const { title, date, text, thumb } = node.frontmatter;
         return (
-          <li key={node.id} className="mb-24">
+          <li key={node.id}>
             <ProjectCard
               title={title}
               text={text}

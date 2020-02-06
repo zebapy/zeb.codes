@@ -1,17 +1,15 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
+import ArrowRight from '../assets/arrow-right.svg';
+
 const PageActionsItem = ({ title, text, link }) => {
   return (
-    <div className="px-3 md:w-1/2">
-      <Link
-        to={link}
-        className="block p-6 border border-teal hover:bg-teal transition-colors duration-200"
-      >
-        <div className="">
-          <h3 className="text-2xl">{title}</h3>
-          <p className="text-xl">{text}</p>
-        </div>
+    <div className="page-action">
+      <Link to={link} className="page-action-link">
+        <h3 className="page-action-title">{title}</h3>
+        <p className="page-action-text">{text}</p>
+        <ArrowRight className="page-action-icon" />
       </Link>
     </div>
   );
@@ -19,7 +17,7 @@ const PageActionsItem = ({ title, text, link }) => {
 
 const PageActions = ({ work, about, contact }) => {
   return (
-    <div className="flex -mx-3 mt-24 my-8">
+    <div className="page-actions">
       {work && (
         <PageActionsItem
           title="View my work"

@@ -1,0 +1,58 @@
+.work-nav {
+}
+
+.work-nav-list {
+  display: flex;
+}
+
+.work-nav-item {
+}
+
+.work-nav--all {
+}
+
+.work-nav--prev {
+}
+
+.work-nav--next {
+}
+
+.work-nav-item {
+  flex: 1;
+  height: 100%;
+}
+
+.work-nav-link {
+  height: 100%;
+  text-align: center;
+  display: block;
+  color: $white;
+  padding: $space-8;
+  background: $black;
+  position: relative;
+  transition: background 0.2s, color 0.2s;
+  border: 4px solid transparent;
+
+  &:before {
+    content: '';
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background: linear-gradient(top right, $primary, $secondary);
+    z-index: -1;
+  }
+}
+
+.work-nav-title {
+  font-size: $text-xl;
+  display: block;
+}
+
+.work-nav-text {
+  display: block;
+  font-size: $text-3xl;
+  font-weight: bold;
+}

@@ -8,18 +8,20 @@ import PageHead from '../components/page-head';
 import SEO from '../components/seo';
 import PageActions from '../components/page-actions';
 
+import ArrowRight from '../assets/arrow-right.svg';
+
 const ProjectNavItem = ({ to, title, text }) => (
-  <Link to={to} className="block">
-    <span className="block font-bold">{title}</span>
-    {text && <span className="text-lg">{text}</span>}
+  <Link to={to} className="work-nav-link">
+    <span className="work-nav-title">{title}</span>
+    {text && <span className="work-nav-text">{text}</span>}
   </Link>
 );
 
 const ProjectNav = ({ next, prev }) => (
-  <nav className="mb-4">
-    <ul className="clearfix text-center">
+  <nav className="work-nav">
+    <ul className="work-nav-list">
       {prev && (
-        <li className="float-left text-left">
+        <li className="work-nav-item work-nav--prev">
           <ProjectNavItem
             to={prev.fields.slug}
             title={<span>&larr; Previous Project</span>}
@@ -27,11 +29,11 @@ const ProjectNav = ({ next, prev }) => (
           />
         </li>
       )}
-      <li className="">
-        <ProjectNavItem to="/work" title="All Projects" />
+      <li className="work-nav-item work-nav--all">
+        <ProjectNavItem to="/work" title="All Projects" text="Take me back" />
       </li>
       {next && (
-        <li className="float-right text-right">
+        <li className="work-nav-item work-nav--next">
           <ProjectNavItem
             to={next.fields.slug}
             title={<span>Next Project &rarr;</span>}

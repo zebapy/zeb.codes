@@ -1,0 +1,60 @@
+.page-actions {
+  @include media(lg) {
+    display: flex;
+
+    > .page-action {
+      // flex: 1;
+    }
+
+    > .page-action:first-child {
+      margin-right: $space-24;
+    }
+  }
+}
+
+.page-action {
+  margin-bottom: $space-8;
+}
+
+.page-action-link {
+  display: block;
+  padding: $space-8;
+  color: $white;
+  background: $black;
+  position: relative;
+  transition: background 0.2s, color 0.2s;
+  border: 4px solid transparent;
+
+  &:before {
+    content: '';
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background: linear-gradient(top right, $primary, $secondary);
+    z-index: -1;
+  }
+
+  &:hover,
+  &:focus {
+    .page-action-icon {
+      transform: translateX(1rem);
+    }
+  }
+}
+
+.page-action-title {
+  font-size: $text-3xl;
+  margin-bottom: $space-3;
+}
+
+.page-action-text {
+  font-size: $text-xl;
+  margin-bottom: $space-6;
+}
+
+.page-action-icon {
+  transition: transform 0.2s;
+}
