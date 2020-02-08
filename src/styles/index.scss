@@ -20,6 +20,10 @@
 
 @import 'utils';
 
+svg {
+  fill: currentColor;
+}
+
 .about-pic {
   // transform: rotate(45deg);
   // overflow: hidden;
@@ -41,4 +45,124 @@
     // top: -50%;
     // transform: rotate(-45deg);
   }
+}
+
+.text-gradient {
+  background: linear-gradient(to bottom, $primary, $secondary);
+  background-clip: text;
+  color: transparent;
+}
+
+.text-gradient {
+  background: linear-gradient(to bottom, $primary, $secondary);
+  background-clip: text;
+  color: transparent;
+}
+
+.decor-box {
+  padding: $space-8;
+  color: $white;
+  background: $black;
+  position: relative;
+  transition: background 0.2s, color 0.2s;
+
+  &:before {
+    content: '';
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background: linear-gradient(top right, $primary, $secondary);
+    z-index: -1;
+  }
+}
+
+.togglebox-btn {
+  text-align: center;
+  padding: $space-2;
+  display: block;
+  width: 100%;
+  opacity: 0.5;
+  transition: opacity 0.2s;
+
+  &:hover,
+  &:focus {
+    opacity: 1;
+  }
+}
+
+.togglebox-content {
+  max-height: 100px;
+  position: relative;
+  transition: max-height 0.4s;
+  overflow-y: hidden;
+
+  &:before {
+    content: '';
+    display: block;
+    background: linear-gradient(to bottom, transparent, white);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 0.4s;
+  }
+
+  .togglebox--open & {
+    max-height: 2000px;
+
+    &:before {
+      opacity: 0;
+    }
+  }
+}
+
+.text-primary {
+  color: $primary;
+}
+
+.text-secondary {
+  color: $secondary;
+}
+
+.h1,
+.h2,
+.h3 {
+  font-weight: bold;
+  letter-spacing: $tracking-tighest;
+  line-height: 1.2;
+}
+
+.h1 {
+  font-size: $text-4xl;
+  margin-bottom: $space-6;
+
+  @include media(md) {
+    font-size: $text-6xl;
+  }
+}
+
+.h2 {
+  font-size: $text-2xl;
+  margin-bottom: $space-4;
+
+  @include media(md) {
+    font-size: $text-3xl;
+  }
+}
+
+.h3 {
+  font-size: $text-lg;
+  margin-bottom: $space-3;
+
+  @include media(md) {
+    font-size: $text-xl;
+  }
+}
+
+.grayscale {
+  filter: grayscale(100%);
 }

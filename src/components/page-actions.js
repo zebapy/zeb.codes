@@ -7,7 +7,7 @@ const PageActionsItem = ({ title, text, link }) => {
   return (
     <div className="page-action">
       <Link to={link} className="page-action-link">
-        <h3 className="page-action-title">{title}</h3>
+        <h3 className="h2 page-action-title">{title}</h3>
         <p className="page-action-text">{text}</p>
         <ArrowRight className="page-action-icon" />
       </Link>
@@ -29,14 +29,14 @@ const PageActions = ({ work, about, contact }) => {
       {about && (
         <PageActionsItem
           title="Get to know me"
-          text="Learn about my history and what I focus on."
+          text="Learn about my history and skillset."
           link="/about"
         />
       )}
 
       {contact && (
         <PageActionsItem
-          title="Have a project?"
+          title="Need something built?"
           text="Contact me and let's find out how I can help you."
           link="/contact"
         />

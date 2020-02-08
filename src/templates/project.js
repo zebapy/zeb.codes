@@ -13,7 +13,7 @@ import ArrowRight from '../assets/arrow-right.svg';
 const ProjectNavItem = ({ to, title, text }) => (
   <Link to={to} className="work-nav-link">
     <span className="work-nav-title">{title}</span>
-    {text && <span className="work-nav-text">{text}</span>}
+    {text && <span className="h2">{text}</span>}
   </Link>
 );
 

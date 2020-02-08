@@ -58,7 +58,7 @@ const ContactForm = () => {
 
     setIsFormSent(false);
 
-    fetch('/', {
+    fetch('https://formspree.io/mqkqdnyb', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: encode({ 'form-name': 'contact', name, email, message })
@@ -68,7 +68,7 @@ const ContactForm = () => {
         setFormError(false);
       })
       .catch(error => {
-        isFormSent(false);
+        setIsFormSent(false);
         setFormError(true);
         console.log(error);
       });

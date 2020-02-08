@@ -27,6 +27,7 @@ const Header = () => {
                 to={to}
                 className="nav-link"
                 activeClassName="nav-link--active"
+                partiallyActive={to !== '/'}
               >
                 <SlideLetters>{text}</SlideLetters>
 

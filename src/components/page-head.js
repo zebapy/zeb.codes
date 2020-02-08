@@ -56,8 +56,8 @@ export const SlideWords = ({ children }) => {
   ));
 };
 
-const PageHead = ({ title, text, backLinkText, backLink, children }) => (
-  <header className="pt-6 mb-24 md:mb-32">
+const PageHead = ({ media, title, text, backLinkText, backLink, children }) => (
+  <header className="pt-6 mb-16 md:mb-24 lg:mb-32">
     <SEO title={title} description={text} />
     {backLink && backLinkText && (
       <nav>
@@ -67,11 +67,12 @@ const PageHead = ({ title, text, backLinkText, backLink, children }) => (
       </nav>
     )}
     <div className="">
+      {media}
       <h1 className="h1">
         <SlideLetters>{title}</SlideLetters>
       </h1>
       {text && (
-        <p className="text-3xl mb-5">
+        <p className="text-xl lg:text-3xl mb-5">
           <SlideWords>{text}</SlideWords>
         </p>
       )}

@@ -2,10 +2,13 @@
 }
 
 .work-nav-list {
-  display: flex;
+  @include media(md) {
+    display: flex;
+  }
 }
 
 .work-nav-item {
+  margin-bottom: $space-16;
 }
 
 .work-nav--all {
@@ -53,6 +56,9 @@
 
 .work-nav-text {
   display: block;
-  font-size: $text-3xl;
   font-weight: bold;
+
+  @include media(lg) {
+    font-size: $text-3xl;
+  }
 }

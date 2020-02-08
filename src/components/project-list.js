@@ -20,12 +20,12 @@ const ProjectCard = ({ title, date, slug, text, thumb }) => {
       </figure>
       <div className="work-card-body">
         {/* <time dateTime={date}>{date}</time> */}
-        <h2 className="work-card-title h2">
+        <h2 className="work-card-title h1">
           <Link to={slug} className="work-card-title-link">
             <SlideLetters>{title}</SlideLetters>
           </Link>
         </h2>
-        {text && <p className="work-card-text">{text}</p>}
+        {text && <p className="md:text-xl">{text}</p>}
         {/* <Link to={slug} className="work-card-cta link">
           View project &rarr;
         </Link> */}
@@ -75,7 +75,7 @@ const ProjectList = ({ limit = 9999, side: sideProjects }) => {
       {limitedItems.map(node => {
         const { title, date, text, thumb } = node.frontmatter;
         return (
-          <li key={node.id}>
+          <li key={node.id} className="mb-16 md:mb-24">
             <ProjectCard
               title={title}
               text={text}

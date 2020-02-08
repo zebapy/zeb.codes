@@ -1,7 +1,10 @@
 .markdown {
   p {
-    font-size: $text-2xl;
     margin-bottom: $space-4;
+
+    @include media(md) {
+      font-size: $text-2xl;
+    }
   }
 
   h3:not(:first-child) {

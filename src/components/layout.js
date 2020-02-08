@@ -22,7 +22,7 @@ const GridLines = () => (
 
 const Layout = ({ children, location }) => {
   return (
-    <div>
+    <div className="font-sans text-base">
       {/* <Helmet>
         <link
           href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap"

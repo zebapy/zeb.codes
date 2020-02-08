@@ -15,7 +15,7 @@ const HeroSection = ({ title, text, avatar, alt }) => {
         <h1 className="fadeInDown h1">
           <SlideLetters>{title}</SlideLetters>
         </h1>
-        <p className="fadeInDown delay-500 text-xl mb-5">
+        <p className="fadeInDown delay-500 text-xl lg:text-3xl mb-5">
           <SlideWords>{text}</SlideWords>
         </p>
         <div className="animated fadeInDown delay-1500 inline-flex">
