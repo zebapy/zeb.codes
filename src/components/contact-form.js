@@ -35,10 +35,12 @@ const encode = data => {
 
 const ContactForm = () => {
   const [isFormSent, setIsFormSent] = useState(false);
-  const [showFormError, setFormError] = useState(false);
+  const [formError, setFormError] = useState(null);
+  const [loading, setLoading] = useState(false);
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMsg] = useState('');
+  const [honeypot, setHoneypot] = useState(null);
 
   const handleFieldChange = e => {
     const val = e.target.value;
@@ -50,30 +52,38 @@ const ContactForm = () => {
         return setEmail(val);
       case 'message':
         return setMsg(val);
+      case 'url':
+        return setHoneypot(val);
     }
   };
 
   const ACTION = 'https://formspree.io/mqkqdnyb';
 
-  const handleSubmit = ev => {
-    ev.preventDefault();
-    const form = ev.target;
-    const data = new FormData(form);
-    const xhr = new XMLHttpRequest();
-    xhr.open(form.method, form.action);
-    xhr.setRequestHeader('Accept', 'application/json');
-    xhr.onreadystatechange = () => {
-      if (xhr.readyState !== XMLHttpRequest.DONE) return;
-      if (xhr.status === 200) {
-        form.reset();
-        setIsFormSent(true);
-      } else {
-        setFormError('error');
+  const handleSubmit = async event => {
+    event.preventDefault();
 
-        setIsFormSent(false);
-      }
-    };
-    xhr.send(data);
+    setLoading(true);
+    setFormError(null);
+
+    try {
+      const result = await fetch(ACTION, {
+        method: 'post',
+        headers: { Accept: 'application/json' },
+        body: JSON.stringify({
+          name,
+          email,
+          message,
+          _replyto: email,
+          _gotcha: honeypot
+        })
+      });
+
+      setLoading(false);
+      setIsFormSent(true);
+    } catch (error) {
+      setIsFormSent(false);
+      setFormError('Something went wrong');
+    }
   };
 
   if (isFormSent) {
@@ -92,11 +102,7 @@ const ContactForm = () => {
       onSubmit={handleSubmit}
       className="mb-32 xl:w-2/3"
     >
-      {showFormError && (
-        <p className="bg-primary text-xl p-3">
-          Oh no! Something went wrong. Refresh and try again?
-        </p>
-      )}
+      {formError && <p className="bg-primary text-xl p-3">{formError}</p>}
 
       <FormField
         id="name"
@@ -126,9 +132,16 @@ const ContactForm = () => {
         required
         multiline
       />
+      <input
+        type="text"
+        name="url"
+        onChange={handleFieldChange}
+        value={honeypot}
+        className="hidden"
+      />
       <div className="mb-3">
-        <button type="submit" className="btn">
-          <span>Send message</span>
+        <button type="submit" className="btn" disabled={loading}>
+          <span>{loading ? 'Sending message...' : 'Send message'}</span>
         </button>
       </div>
     </form>
