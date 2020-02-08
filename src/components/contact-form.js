@@ -53,47 +53,51 @@ const ContactForm = () => {
     }
   };
 
-  const handleSubmit = e => {
-    e.preventDefault();
+  const ACTION = 'https://formspree.io/mqkqdnyb';
 
-    setIsFormSent(false);
-
-    fetch('https://formspree.io/mqkqdnyb', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode({ 'form-name': 'contact', name, email, message })
-    })
-      .then(() => {
+  const handleSubmit = ev => {
+    ev.preventDefault();
+    const form = ev.target;
+    const data = new FormData(form);
+    const xhr = new XMLHttpRequest();
+    xhr.open(form.method, form.action);
+    xhr.setRequestHeader('Accept', 'application/json');
+    xhr.onreadystatechange = () => {
+      if (xhr.readyState !== XMLHttpRequest.DONE) return;
+      if (xhr.status === 200) {
+        form.reset();
         setIsFormSent(true);
-        setFormError(false);
-      })
-      .catch(error => {
+      } else {
+        setFormError('error');
+
         setIsFormSent(false);
-        setFormError(true);
-        console.log(error);
-      });
+      }
+    };
+    xhr.send(data);
   };
 
   if (isFormSent) {
-    return <p className="alert alert--success">Message sent</p>;
+    return (
+      <p className="bg-secondary text-xl p-3">
+        Thanks! I'll get back to you as soon as I can.
+      </p>
+    );
   }
 
   return (
     <form
+      action={ACTION}
       name="contact"
       method="post"
-      data-netlify="true"
-      data-netlify-honeypot="bot-field"
       onSubmit={handleSubmit}
       className="mb-32 xl:w-2/3"
     >
       {showFormError && (
-        <p className="alert alert--error">
+        <p className="bg-primary text-xl p-3">
           Oh no! Something went wrong. Refresh and try again?
         </p>
       )}
 
-      <input type="hidden" name="bot-field" />
       <FormField
         id="name"
         label="Your name"
