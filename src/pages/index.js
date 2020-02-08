@@ -114,7 +114,7 @@ const HomePage = () => {
             ))}
           </ul>
 
-          <ContactForm />
+          {/* <ContactForm /> */}
         </Section>
 
         <footer className="mt7 mb6">
