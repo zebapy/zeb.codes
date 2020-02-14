@@ -21,12 +21,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-mdx',
       options: {
-        defaultLayouts: {
-          default: path.resolve('./src/components/layout')
-        },
-
         plugins: ['gatsby-remark-unwrap-images', 'gatsby-remark-images'],
-
         gatsbyRemarkPlugins: [
           'gatsby-remark-unwrap-images',
           {
