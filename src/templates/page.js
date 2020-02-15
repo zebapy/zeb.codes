@@ -14,19 +14,23 @@ const PageTemplate = ({ data }) => {
     imageClassName
   } = data.mdx.frontmatter;
   const { body } = data.mdx;
+
   return (
     <>
-      <PageHead
-        title={title}
-        text={text}
-        media={
-          image && (
-            <figure>
-              <img src={image} alt={''} className={imageClassName} />
-            </figure>
-          )
-        }
-      />
+      {title &&
+        text && (
+          <PageHead
+            title={title}
+            text={text}
+            media={
+              image && (
+                <figure>
+                  <img src={image} alt={''} className={imageClassName} />
+                </figure>
+              )
+            }
+          />
+        )}
       <div className="markdown mb-24">
         <MDXRenderer>{body}</MDXRenderer>
       </div>
