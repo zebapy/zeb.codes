@@ -1,6 +1,7 @@
 import React from 'react';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { graphql } from 'gatsby';
+import cx from 'clsx';
 
 import PageHead from '../components/page-head';
 import PageActions from '../components/page-actions';
@@ -11,27 +12,31 @@ const PageTemplate = ({ data }) => {
     text,
     pageActions,
     image,
-    imageClassName
+    imageClassName,
+    addMarkdownClass
   } = data.mdx.frontmatter;
   const { body } = data.mdx;
 
   return (
     <>
-      {title &&
-        text && (
-          <PageHead
-            title={title}
-            text={text}
-            media={
-              image && (
-                <figure>
-                  <img src={image} alt={''} className={imageClassName} />
-                </figure>
-              )
-            }
-          />
-        )}
-      <div className="markdown mb-24">
+      {title && text && (
+        <PageHead
+          title={title}
+          text={text}
+          media={
+            image && (
+              <figure>
+                <img src={image} alt={''} className={imageClassName} />
+              </figure>
+            )
+          }
+        />
+      )}
+      <div
+        className={cx('mb-24', {
+          markdown: addMarkdownClass
+        })}
+      >
         <MDXRenderer>{body}</MDXRenderer>
       </div>
       <PageActions {...pageActions} />
@@ -51,6 +56,7 @@ export const pageQuery = graphql`
         image
         imageClassName
         imageAlt
+        addMarkdownClass
         pageActions {
           work
           about
