@@ -1,17 +1,74 @@
 .markdown {
   p {
     margin-bottom: $space-4;
+    font-size: $text-lg;
 
     @include media(md) {
-      font-size: $text-2xl;
+      font-size: $text-xl;
     }
   }
 
-  h3:not(:first-child) {
-    margin-top: $space-4;
+  h2 {
+    @extend .h2;
+    margin-bottom: $space-3;
+
+    &:not(:first-child) {
+      margin-top: $space-16;
+      @include media(lg) {
+        margin-top: $space-24;
+      }
+    }
   }
 
   h3 {
     margin-bottom: $space-3;
+    @extend .h3;
+
+    &:not(:first-child) {
+      margin-top: $space-4;
+    }
+  }
+
+  ul {
+    margin-bottom: $space-16;
+  }
+
+  li {
+    position: relative;
+    font-size: $text-base;
+    padding-left: 1rem;
+    margin-bottom: $space-2;
+
+    &:before {
+      content: '';
+      width: 4px;
+      height: 4px;
+      background: $primary;
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0.75rem;
+    }
+
+    @include media(md) {
+      font-size: $text-lg;
+    }
+  }
+}
+
+.skills {
+  ul {
+    @extend .text-gradient;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  li {
+    font-weight: bold;
+    width: 50%;
+    margin-bottom: $space-2;
+    @include media(lg) {
+      width: 33.33%;
+    }
   }
 }
