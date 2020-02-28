@@ -86,7 +86,6 @@ const ProjectTemplate = ({ data, pageContext }) => {
     date,
     roles = [],
     tech = [],
-    thumb,
     client,
     url,
     formattedDate,
@@ -111,7 +110,11 @@ const ProjectTemplate = ({ data, pageContext }) => {
       <SEO
         title={title}
         description={text}
-        image={thumb.childImageSharp.fluid.src}
+        image={
+          desktop && desktop.childImageSharp
+            ? desktop.childImageSharp.fluid.src
+            : ''
+        }
       />
       <article className="mb-24">
         <PageHead
@@ -171,13 +174,6 @@ export const pageQuery = graphql`
         client
         roles
         url
-        thumb {
-          childImageSharp {
-            fluid(maxWidth: 1000) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
         desktop {
           childImageSharp {
             fluid(maxWidth: 1000) {
