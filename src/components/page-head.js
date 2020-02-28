@@ -3,6 +3,8 @@ import React from 'react';
 import SEO from './seo';
 import { Link } from 'gatsby';
 
+
+// FIXME: https://www.htmhell.dev/15-letter-by-letter/
 export const SlideLetters = ({ delay = 1, children }) => {
   const words = children.split(' ');
 
