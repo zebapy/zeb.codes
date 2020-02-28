@@ -6,33 +6,41 @@ import { Link } from 'gatsby';
 export const SlideLetters = ({ delay = 1, children }) => {
   const words = children.split(' ');
 
-  return words.map((word, wordIdx) => {
-    const letters = word.split('');
+  return (
+    <React.Fragment>
+      <span className="sr-only">{children}</span>
 
-    return (
-      <React.Fragment key={wordIdx}>
-        <span
-          style={{
-            whiteSpace: 'nowrap'
-          }}
-        >
-          {letters.map((l, letterIdx) => (
-            <>
+      <span aria-hidden="true">
+        {words.map((word, wordIdx) => {
+          const letters = word.split('');
+
+          return (
+            <React.Fragment key={wordIdx}>
               <span
-                key={letterIdx}
-                className="inline-block slide-letter animated fadeInDown"
                 style={{
-                  animationDelay: 20 * letterIdx * delay + 'ms'
+                  whiteSpace: 'nowrap'
                 }}
               >
-                {l}
-              </span>
-            </>
-          ))}
-        </span>{' '}
-      </React.Fragment>
-    );
-  });
+                {letters.map((l, letterIdx) => (
+                  <>
+                    <span
+                      key={letterIdx}
+                      className="inline-block slide-letter animated fadeInDown"
+                      style={{
+                        animationDelay: 20 * letterIdx * delay + 'ms'
+                      }}
+                    >
+                      {l}
+                    </span>
+                  </>
+                ))}
+              </span>{' '}
+            </React.Fragment>
+          );
+        })}
+      </span>
+    </React.Fragment>
+  );
 };
 
 export const SlideWords = ({ children }) => {
@@ -42,18 +50,26 @@ export const SlideWords = ({ children }) => {
 
   const words = children.split(' ');
 
-  return words.map((l, i) => (
-    <React.Fragment key={i}>
-      <span
-        className="inline-block slide-word animated fadeInDown"
-        style={{
-          animationDelay: 20 * i + 'ms'
-        }}
-      >
-        {l}
-      </span>{' '}
+  return (
+    <React.Fragment>
+      <span className="sr-only">{children}</span>
+
+      <span aria-hidden="true">
+        {words.map((l, i) => (
+          <React.Fragment key={i}>
+            <span
+              className="inline-block slide-word animated fadeInDown"
+              style={{
+                animationDelay: 20 * i + 'ms'
+              }}
+            >
+              {l}
+            </span>{' '}
+          </React.Fragment>
+        ))}
+      </span>
     </React.Fragment>
-  ));
+  );
 };
 
 const PageHead = ({ media, title, text, backLinkText, backLink, children }) => (
