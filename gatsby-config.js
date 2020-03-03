@@ -60,7 +60,13 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-purgecss',
       options: {
-        tailwind: true
+        tailwind: true,
+        content: [
+          path.join(
+            process.cwd(),
+            '{content,src}/**/!(*.d).{ts,js,jsx,tsx,mdx}'
+          )
+        ]
       }
     },
     {
