@@ -34,7 +34,7 @@ const PageTemplate = ({ data }) => {
       )}
       <div
         className={cx('mb-24', {
-          markdown: addMarkdownClass
+          'rich-text': addMarkdownClass
         })}
       >
         <MDXRenderer>{body}</MDXRenderer>
