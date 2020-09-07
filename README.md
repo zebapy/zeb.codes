@@ -1,2 +1,3 @@
 # zeb.codes
-> Personal site built with Gatsbyjs
+
+> personal site built with [eleventy](https://11ty.dev)

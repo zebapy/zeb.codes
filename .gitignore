@@ -1,6 +1,4 @@
-public
-.cache
 node_modules
-*.log
-
-.now
+dist
+.vercel
+_site

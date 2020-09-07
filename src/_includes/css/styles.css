@@ -1,0 +1,38 @@
+@import './markdown.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.title {
+  @apply text-3xl font-bold;
+}
+
+.intro {
+  @apply text-xl font-bold;
+}
+
+.btn {
+  @apply py-3 px-2 text-white bg-black border-black border transition-colors duration-100;
+
+  &:hover {
+    @apply text-yellow-400 bg-transparent;
+  }
+}
+
+.btn--outline {
+  @apply bg-transparent text-black;
+
+  &:hover {
+    @apply bg-black text-white;
+  }
+}
+
+.link {
+  @apply border-b border-black inline-block font-bold
+    transition-colors duration-100;
+
+  &:hover {
+    @apply bg-black text-yellow-400;
+  }
+}

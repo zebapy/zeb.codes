@@ -1,0 +1,41 @@
+.markdown {
+  > :first-child {
+    margin-top: 0;
+  }
+
+  > :last-child {
+    margin-bottom: 0;
+  }
+
+  p {
+    @apply text-xl mb-4;
+  }
+
+  ol {
+    @apply list-decimal;
+  }
+
+  ul {
+    @apply list-disc;
+  }
+
+  ol,
+  ul {
+    @apply mb-4 pl-4;
+  }
+
+  a {
+    @apply border-b border-black inline-block font-bold
+    transition-colors duration-100;
+
+    &:hover {
+      @apply bg-black text-yellow-400;
+    }
+  }
+}
+
+.markdown--base {
+  p {
+    @apply text-base;
+  }
+}
