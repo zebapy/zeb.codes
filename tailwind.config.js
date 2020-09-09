@@ -1,7 +1,7 @@
 module.exports = {
   purge: {
     layers: ['utilities', 'components'],
-    content: ['./src/**/*.html', './src/js/*.js']
+    content: ['./src/**/*.html', './src/js/*.js', './src/_includes/icons/*.svg']
   },
   theme: {
     container: {
