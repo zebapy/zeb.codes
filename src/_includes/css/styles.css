@@ -28,7 +28,6 @@
   }
 }
 
-.markdown a,
 .link {
   @apply border-b border-purple-400 inline-block transition-colors duration-100 text-purple-500 font-bold hover:bg-purple-400 hover:text-gray-800;
 }
