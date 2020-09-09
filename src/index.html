@@ -34,9 +34,7 @@ btns:
     {% for item in roles %}
     <li>
       {{item.text}}
-      <a href="{{item.link}}"
-        >{{item.place}} {% include icons/external-link.svg %}
-      </a>
+      <a href="{{item.link}}">{{item.place}}</a>
     </li>
     {% endfor %}
   </ul>

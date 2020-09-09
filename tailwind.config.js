@@ -1,6 +1,6 @@
 module.exports = {
   purge: {
-    mode: 'all',
+    layers: ['utilities', 'components'],
     content: ['./src/**/*.html', './src/js/*.js']
   },
   theme: {
