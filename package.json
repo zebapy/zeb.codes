@@ -5,7 +5,7 @@
   "description": "Portfolio website",
   "scripts": {
     "dev": "npm run watch",
-    "build": "cross-env NODE_ENV=production run-p build:css build:html",
+    "build": "cross-env NODE_ENV=production run-s build:css build:html",
     "build:css": "postcss src/_includes/css/styles.css -o src/css/styles.css",
     "build:html": "eleventy",
     "watch": "run-p watch:*",

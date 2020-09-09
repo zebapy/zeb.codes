@@ -26,12 +26,10 @@ btns:
     url: /contact
 ---
 
-<div class="py-12 lg:py-64 container">
+<div class="py-8 lg:py-64 container">
   <img src="{{site.pic}}" alt="{{site.pic_alt}}" class="rounded-full mb-6" />
   <h1 class="title">{{site.name}}</h1>
-
-  <p class="intro">{{site.summary}}</p>
-
+  <p class="text-xl">{{site.summary}}</p>
   <ul>
     {% for item in roles %}
     <li>

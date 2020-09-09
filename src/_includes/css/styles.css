@@ -28,11 +28,7 @@
   }
 }
 
+.markdown a,
 .link {
-  @apply border-b border-black inline-block font-bold
-    transition-colors duration-100;
-
-  &:hover {
-    @apply bg-black text-yellow-400;
-  }
+  @apply border-b border-purple-400 inline-block transition-colors duration-100 text-purple-500 font-bold hover:bg-purple-400 hover:text-gray-800;
 }
