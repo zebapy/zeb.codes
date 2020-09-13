@@ -1,22 +1,24 @@
 @import './markdown.css';
+@import './forms.css';
 
 @tailwind base;
 @tailwind components;
-@tailwind utilities;
 
 .title {
-  @apply text-3xl font-bold;
+  @apply text-3xl font-medium leading-tight mb-4;
 }
 
 .intro {
-  @apply text-xl font-bold;
+  @apply text-xl mb-8 text-gray-500;
 }
 
 .btn {
-  @apply py-3 px-2 text-white bg-black border-black border transition-colors duration-100;
+  @apply py-3 px-4 text-lg font-medium text-red-500;
+  @apply border border-red-500;
+  @apply transition-colors duration-100;
 
   &:hover {
-    @apply text-yellow-400 bg-transparent;
+    @apply bg-transparent;
   }
 }
 
@@ -31,3 +33,12 @@
 .link {
   @apply border-b border-purple-400 inline-block transition-colors duration-100 text-purple-500 font-bold hover:bg-purple-400 hover:text-gray-800;
 }
+
+svg {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  fill: currentColor;
+}
+
+@tailwind utilities;

@@ -22,16 +22,18 @@ btns:
 
 <div class="py-8 lg:py-32 container">
   <img src="{{site.pic}}" alt="{{site.pic_alt}}" class="rounded-full mb-6" />
-  <h1 class="title">{{site.name}}</h1>
-  <p class="text-xl">{{site.summary}}</p>
-  <ul>
-    {% for item in roles %}
-    <li>
-      {{item.text}}
-      <a href="{{item.link}}"
-        >{{item.place}} {% include icons/external-link.svg %}
-      </a>
-    </li>
-    {% endfor %}
-  </ul>
+  <p class="title">{{site.intro}}</p>
+  <p class="intro">{{site.summary}}</p>
+  <div class="markdown">
+    <ul class="">
+      {% for item in roles %}
+      <li>
+        {{item.text}}
+        <a href="{{item.link}}"
+          >{{item.place}} {% include icons/external-link.svg %}
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
 </div>

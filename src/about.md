@@ -1,13 +1,11 @@
 ---
-image: https://en.gravatar.com/userimage/14820278/32195afe52a1a37bc55e31a06736dedc.jpg?size=200
-imageAlt: Zeb looking like he knows something.
-imageClassName: 'rounded-full grayscale w-24 md:w-32 mb-8'
+layout: page
 title: About
-text: Frontend developer since 2013 with a penchant for UI/UX design, born and raised in rural Vermont.
+intro: Frontend developer since 2013 with a penchant for UI/UX design, born and raised in rural Vermont.
 pageActions:
   work: true
   contact: true
-addMarkdownClass: true
+markdown: true
 ---
 
 I'm a front-end focused developer with some fullstack experience and a penchant for UI design, born and raised in rural Vermont, US. I am primarily self-taught with 7 combined years of freelance and professional experience. I have a passion for writing code and tweaking pixels. I'm always hungry to code and learn more.

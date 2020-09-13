@@ -4,6 +4,8 @@ module.exports = function (config) {
   config.addPassthroughCopy('src/js');
   config.addPassthroughCopy('src/favicon.ico');
 
+  config.addLayoutAlias('page', 'layouts/page.html');
+
   config.setBrowserSyncConfig({
     open: true
   });

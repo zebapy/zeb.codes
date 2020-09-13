@@ -1,0 +1,10 @@
+---
+layout: layouts/base.html
+---
+
+<article>
+  <h1 class="title">{{title}}</h1>
+  <p class="intro">{{intro}}</p>
+
+  <div class="{% if markdown %}markdown{% endif %}">{{content | safe}}</div>
+</article>

@@ -1,5 +1,13 @@
 ---
-markdown: true
+nav:
+  - url: /
+    text: Hello
+  - url: /about
+    text: About
+  - url: /work
+    text: Work
+  - url: /contact
+    text: Contact
 ---
 
 <!DOCTYPE html>
@@ -12,10 +20,14 @@ markdown: true
     <link rel="stylesheet" href="/css/styles.css" />
   </head>
   <body class="bg-gray-900 text-gray-400">
-    <!-- {% include header.html %} -->
-    <main class="container {% if markdown %}markdown{% endif %}">
-      {{ content | safe }}
-    </main>
-    {% include footer.html %}
+    <div class="container">
+      <div class="lg:flex lg:py-20">
+        <div class="lg:w-2/6">{% include header.html %}</div>
+        <div class="lg:w-4/6 lg:pl-20">
+          <main class="mb-20">{{ content | safe }}</main>
+          {% include footer.html %}
+        </div>
+      </div>
+    </div>
   </body>
 </html>

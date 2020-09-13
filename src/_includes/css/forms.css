@@ -1,0 +1,16 @@
+.form-item {
+  @apply mb-4;
+}
+
+.label {
+  @apply font-bold text-lg block w-full mb-1;
+}
+
+.text-area,
+.text-input {
+  @apply bg-gray-800 p-3 block w-full;
+}
+
+.text-area {
+  min-height: 400px;
+}

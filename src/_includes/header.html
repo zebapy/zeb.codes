@@ -1,13 +1,37 @@
-<header class="p-6">
-  <div class="container flex justify-between">
-    <div class="">
-      <a href="/" class="font-bold text-lg">{{site.name}}</a>
+<header
+  class="lg:flex lg:flex-col justify-between lg:text-right lg:border-r-4 border-gray-700 lg:pr-20"
+>
+  <div class="flex justify-between items-center lg:block">
+    <div class="lg:mb-20">
+      <a
+        href="/"
+        class="font-bold text-gray-700 uppercase tracking-wide text-sm"
+        >{{site.name_short}}</a
+      >
     </div>
+    <div class="lg:mb-4">
+      <button class="text-gray-700">{% include icons/sun.svg %}</button>
+    </div>
+  </div>
 
-    <nav class="font-bold text-lg space-x-2">
-      <a href="/about">About</a>
-      <a href="/work">Work</a>
-      <a href="/contact">Contact</a>
-    </nav>
+  <nav class="font-bold text-lg lg:mb-32">
+    <ul class="flex space-x-4 lg:space-x-0 lg:block lg:space-y-4">
+      {% for item in nav %}
+      <li>
+        <a href="{{item.url}}">{{item.text}}</a>
+      </li>
+      {% endfor %}
+    </ul>
+  </nav>
+
+  <div class="hidden lg:block">
+    <ul class="inline-flex space-x-2 text-gray-700">
+      <li>
+        <a href="{{site.twitter}}">{% include icons/twitter.svg %}</a>
+      </li>
+      <li>
+        <a href="{{site.github}}">{% include icons/github.svg %}</a>
+      </li>
+    </ul>
   </div>
 </header>

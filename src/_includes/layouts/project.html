@@ -1,0 +1,21 @@
+---
+layout: layouts/base.html
+---
+
+<article>
+  <header>
+    <a href="/work" class="btn">
+      Back to work {% include icons/arrow-left.svg %}
+    </a>
+    <h1 class="title">{{title}}</h1>
+    <p class="intro">{{intro}}</p>
+
+    {% for tag in tags %}
+    <a href=""> {{tag}} </a>
+    {% endfor %}
+  </header>
+
+  <div class="{% if markdown %}markdown{% endif %}">{{content | safe}}</div>
+</article>
+
+markdown: true
