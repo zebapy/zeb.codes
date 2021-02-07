@@ -18,16 +18,18 @@
   },
   "author": "Zeb Pykosz",
   "dependencies": {
-    "@11ty/eleventy": "^0.11.0",
-    "autoprefixer": "^9.8.6",
-    "cross-env": "^7.0.2",
+    "@11ty/eleventy": "^0.11.1",
+    "@tailwindcss/typography": "^0.4.0",
+    "autoprefixer": "^10.2.4",
+    "cross-env": "^7.0.3",
     "cssnano": "^4.1.10",
     "markdown-it": "^11.0.0",
     "npm-run-all": "^4.1.5",
-    "postcss-cli": "^7.1.2",
-    "postcss-import": "^12.0.1",
-    "postcss-nested": "^4.2.3",
+    "postcss": "^8.2.5",
+    "postcss-cli": "^8.3.1",
+    "postcss-import": "^14.0.0",
+    "postcss-nested": "^5.0.3",
     "rimraf": "^3.0.2",
-    "tailwindcss": "^1.8.5"
+    "tailwindcss": "^2.0.3"
   }
 }

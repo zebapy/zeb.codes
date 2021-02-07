@@ -19,12 +19,5 @@ module.exports = {
     borderOpacity: false,
     backgroundOpacity: false,
     keyframes: false
-  },
-  future: {
-    removeDeprecatedGapUtilities: true,
-    purgeLayersByDefault: true
-  },
-  experimental: {
-    applyComplexClasses: true
   }
 };
