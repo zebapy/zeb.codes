@@ -7,13 +7,22 @@ module.exports = {
     container: {
       center: true,
       padding: '1rem'
+    },
+    extend: {
+      typography: {
+        DEFAULT: {
+          css: {
+            color: 'white'
+          }
+        }
+      }
     }
   },
   variants: {
     margin: ['responsive', 'last'],
     padding: ['responsive', 'last']
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/typography')],
   corePlugins: {
     textOpacity: false,
     borderOpacity: false,
