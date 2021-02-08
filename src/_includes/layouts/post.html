@@ -2,11 +2,36 @@
 layout: layouts/base.html
 ---
 
-
 <article>
- 
 
-    <div class="prose">
+  <header class="pt-16 mb-8 max-w-4xl">
+    <nav class="mb-2">
+      <a href="/blog" class="btn btn-alt">&larr; All posts </a>
+    </nav>
+    <h1 class="font-bold text-5xl leading-tight text-gray-100">{{title}}</h1>
+    <p class="text-2xl">{{intro}}</p>
+    <p>
+
+    </p>
+
+    <p>
+      <span>
+        Posted <time>{{date |date: "%b %d, %Y"}}</time>
+      </span>
+      <span>
+        &bull;
+      </span>
+      <span>
+        {% for tag in categories %}
+        <a href="/blog/{{tag}}" class="text-purple-400 underline inline-block mr-1">
+          #{{tag}}
+        </a>
+        {% endfor %}
+      </span>
+    </p>
+  </header>
+
+  <div class="prose">
     {{content | safe}}
-    </div>
+  </div>
 </article>

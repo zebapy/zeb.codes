@@ -1,6 +1,7 @@
 ---
 title: Blog
 intro: Small tutorials and mostly harmless thoughts on code
+layout: layouts/page.html
 ---
 
 <div class="container max-w-lg">
@@ -8,7 +9,7 @@ intro: Small tutorials and mostly harmless thoughts on code
     {% for post in collections.posts %}
 
     <li class="mb-16">
-      <h3 class="font-semibold text-xl text-white mb-3">
+      <h3 class="font-semibold text-2xl text-white mb-3">
         <a href="{{post.url}}" class="border-b-2 border-purple-400 hover:border-transparent"> {{ post.data.title }} </a>
       </h3>
       <p class="mb-2">
