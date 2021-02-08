@@ -1,0 +1,30 @@
+---
+title: Blog
+intro: Small tutorials and mostly harmless thoughts on code
+---
+
+<div class="container max-w-lg">
+  <ul>
+    {% for post in collections.posts %}
+
+    <li class="mb-16">
+      <h3 class="font-semibold text-xl text-white mb-3">
+        <a href="{{post.url}}" class="border-b-2 border-purple-400 hover:border-transparent"> {{ post.data.title }} </a>
+      </h3>
+      <p class="mb-2">
+        <time datetime="{{post.date}}">{{post.date | date: "%b %d, %Y" }}</time>
+      </p>
+
+      <p>{{post.data.intro}}</p>
+
+      <p>{% for tag in post.data.categories %}
+        <a href="/blog/{{tag}}" class="text-purple-400">
+          #{{tag}}
+        </a>
+        {% endfor %}
+      </p>
+    </li>
+
+    {% endfor %}
+  </ul>
+</div>
