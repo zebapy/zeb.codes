@@ -4,11 +4,11 @@ front: true
 
 roles:
   - text: |
-      Currently: Front-end engineer at	
-    link: https://faraday.io	
+      Currently: Front-end engineer at
+    link: https://faraday.io
     place: Faraday.io
 
-  - text: "Previously: Web developer at"
+  - text: 'Previously: Web developer at'
     place: Middlebury College
     link: https://www.middlebury.edu
 
@@ -26,18 +26,27 @@ btns:
     url: /contact
 ---
 
-<div class="py-8 lg:py-32 container prose">
-  <img src="{{site.pic}}" alt="{{site.pic_alt}}" class="rounded-full mb-6" />
-  <h1 class="title">{{site.name}}</h1>
-  <p class="text-xl">{{site.summary}}</p>
-  <ul>
+<section class="py-8 lg:py-32 container">
+  <div class="mb-8">
+    <img src="{{site.pic}}" alt="{{site.pic_alt}}" class="rounded-full mb-6" />
+    <p class="h1">Hi there, I'm Zeb Pykosz</p>
+    <p class="lead">{{site.summary}}</p>
+  </div>
+  <ul class="list-disc pl-6 text-lg">
     {% for item in roles %}
     <li>
       {{item.text}}
-      <a href="{{item.link}}"
+      <a href="{{item.link}}" class="link"
         >{{item.place}} {% include icons/external-link.svg %}
       </a>
     </li>
     {% endfor %}
   </ul>
-</div>
+</section>
+
+<!-- todo sections
+
+- hero with about cta
+- some work pieces / side projects teased
+- few blog posts
+- contact stuff -->

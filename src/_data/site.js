@@ -6,6 +6,12 @@ module.exports = {
   summary: 'Frontend developer with a penchant for UI/UX design, located in Middlebury, Vermont.', // prettier-ignore
   repo: 'https://github.com/zebapy/zeb.codes',
   email: 'hi@zeb.codes',
+  nav: [
+    { text: 'About', url: '/about' },
+    { text: 'Work', url: '/work' },
+    { text: 'Contact', url: '/contact' },
+    { text: 'Blog', url: '/blog' }
+  ],
   social: [
     { name: 'GitHub', url: 'http://github.com/zebapy' },
     { name: 'Codepen', url: 'http://codepen.io/zebapy' },

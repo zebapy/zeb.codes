@@ -2,17 +2,14 @@
 layout: layouts/base.html
 ---
 
-<article>
+<article class="max-w-2xl mx-auto">
 
-  <header class="pt-16 mb-8 max-w-4xl">
+  <header class="py-16">
     <nav class="mb-2">
       <a href="/blog" class="btn btn-alt">&larr; All posts </a>
     </nav>
-    <h1 class="font-bold text-5xl leading-tight text-gray-100">{{title}}</h1>
-    <p class="text-2xl">{{intro}}</p>
-    <p>
-
-    </p>
+    <h1 class="h1">{{title}}</h1>
+    <p class="lead">{{intro}}</p>
 
     <p>
       <span>
@@ -31,7 +28,7 @@ layout: layouts/base.html
     </p>
   </header>
 
-  <div class="prose">
+  <div class="markdown">
     {{content | safe}}
   </div>
 </article>

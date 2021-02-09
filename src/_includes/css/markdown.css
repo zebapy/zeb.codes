@@ -1,0 +1,39 @@
+.markdown {
+  @apply text-gray-200;
+
+  h1 {
+    color: red; /* dont use h1 in post content */
+  }
+
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    line-height: 1.2;
+    font-weight: 600;
+    margin-bottom: 1.5em;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
+
+  h4 {
+    font-size: 1.25rem;
+  }
+
+  a {
+    @appy inline-block;
+  }
+
+  ol,
+  ul,
+  p {
+    margin-bottom: 1.5em;
+  }
+}

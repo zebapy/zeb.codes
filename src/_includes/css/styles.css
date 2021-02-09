@@ -1,13 +1,15 @@
-@tailwind base;
+@import './markdown.css';
 
+@tailwind base;
 @tailwind components;
 
-.title {
-  @apply text-3xl font-bold;
+.h1 {
+  @apply font-bold  leading-tight text-white;
+  @apply text-2xl lg:text-5xl;
 }
 
-.intro {
-  @apply text-xl font-bold;
+.lead {
+  @apply text-xl text-gray-400;
 }
 
 .btn {
@@ -22,9 +24,7 @@
 }
 
 .link {
-  @apply border-b border-purple-400
-  @apply inline-block;
-  @apply text-purple-500 font-bold
+  @apply border-b-2 border-purple-400 text-white;
   @apply transition-colors duration-100;
   @apply hover:bg-purple-400 hover:text-gray-800;
 }
