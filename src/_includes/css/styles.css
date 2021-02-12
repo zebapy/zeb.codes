@@ -4,7 +4,7 @@
 @tailwind components;
 
 .h1 {
-  @apply font-bold  leading-tight text-white;
+  @apply font-bold  leading-snug text-white;
   @apply text-2xl lg:text-5xl;
 }
 
