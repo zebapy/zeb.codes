@@ -1,17 +1,19 @@
 ---
 layout: layouts/base.html
+head_link: https://unpkg.com/dracula-prism/css/dracula-prism.css
+
 ---
 
 <article class="max-w-2xl mx-auto">
 
   <header class="py-16">
-    <nav class="mb-2">
+    <nav class="mb-8">
       <a href="/blog" class="btn btn-alt">&larr; All posts </a>
     </nav>
-    <h1 class="h1">{{title}}</h1>
-    <p class="lead">{{intro}}</p>
 
-    <p>
+    <h1 class="h1 mb-4">{{title}}</h1>
+
+    <p class="mb-8">
       <span>
         Posted <time>{{date |date: "%b %d, %Y"}}</time>
       </span>
@@ -26,7 +28,22 @@ layout: layouts/base.html
         {% endfor %}
       </span>
     </p>
+
+
+    {% if image %}
+    <figure class="mb-16">
+      <img src="/img/blog/{{image|url('img/blog')}}" alt="{{alt}}" class="rounded-lg" />
+      {% if caption %}
+      <figcaption class="pt-3 text-sm">{{caption}}</figcaption>
+      {% endif %}
+    </figure>
+    {% endif %}
+
+
   </header>
+
+
+  <p class="lead">{{intro}}</p>
 
   <div class="markdown">
     {{content | safe}}

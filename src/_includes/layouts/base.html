@@ -7,6 +7,9 @@
   <meta name="description" content="{{site.summary}}" />
   <title>{{title}}{% if title %} - {% endif %}{{site.name}}</title>
   <link rel="stylesheet" href="/css/styles.css" />
+  {% if head_link %}
+  <link rel="stylesheet" href="{{head_link}}">
+  {% endif %}
 </head>
 
 <body class="bg-gray-900 text-gray-400">

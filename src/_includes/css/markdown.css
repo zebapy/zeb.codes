@@ -1,5 +1,14 @@
 .markdown {
   @apply text-gray-200;
+  @apply text-lg;
+
+  > *:first-child {
+    margin-top: 0;
+  }
+
+  > *:last-child {
+    margin-bottom: 0;
+  }
 
   h1 {
     color: red; /* dont use h1 in post content */
@@ -13,6 +22,7 @@
     line-height: 1.2;
     font-weight: 600;
     margin-bottom: 1.5em;
+    margin-top: 3em;
   }
 
   h2 {
@@ -28,12 +38,38 @@
   }
 
   a {
-    @appy inline-block;
+    @apply link;
   }
 
   ol,
   ul,
   p {
     margin-bottom: 1.5em;
+  }
+
+  ol,
+  ul {
+    padding-left: 2rem;
+  }
+
+  ol {
+    list-style-type: decimal;
+  }
+
+  ul {
+    list-style-type: disc;
+  }
+
+  li {
+    margin-bottom: 0.5rem;
+  }
+
+  pre {
+    @apply text-base;
+
+    mark {
+      color: inherit;
+      @apply bg-gray-700;
+    }
   }
 }
