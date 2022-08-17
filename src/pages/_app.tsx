@@ -5,10 +5,10 @@ import cx from "clsx";
 import { useRouter } from "next/router";
 
 const pages = [
-  {
-    href: "/",
-    text: "Hello",
-  },
+  // {
+  //   href: "/",
+  //   text: "Hello",
+  // },
   {
     href: "/work",
     text: "Work",
@@ -25,6 +25,13 @@ const pages = [
     href: "/contact",
     text: "Contact",
   },
+
+  // FIXME: move somewhere else, under about?
+  {
+    href: "/uses",
+    text: "Uses",
+  },
+
   // {
   //   href: "/blog",
   //   text: "Blog",
@@ -33,51 +40,53 @@ const pages = [
 
 const Bubble = () => (
   <span
-    className="w-2 h-2 border-2 border-purple-400 block rounded-full absolute top-0 "
+    className="w-2 h-2 border-2 border-purple-400 block rounded-full absolute top-0  "
     style={{
-      left: "calc(100% + .5rem)",
+      right: "-.5rem",
     }}
     aria-hidden="true"
   />
 );
 
-function MyApp({ Component, pageProps }) {
+function Nav() {
   const { pathname } = useRouter();
   return (
-    <div>
-      <div className="mb-32 p-8">
+    <nav className="">
+      <ul className="flex gap-4">
+        {pages.map((page) => {
+          const active = pathname === page.href;
+          return (
+            <li key={page.href} className="mb-4 relative">
+              <Link href={page.href} passHref>
+                <a
+                  className={cx("font-semibold text-lg", {
+                    "text-purple-400": active,
+                  })}
+                >
+                  {active && <Bubble />}
+                  {page.text}
+                </a>
+              </Link>
+            </li>
+          );
+        })}
+      </ul>
+    </nav>
+  );
+}
+
+function MyApp({ Component, pageProps }) {
+  return (
+    <div className="">
+      <header className="container py-8 lg:flex justify-between">
         <a href="/" className="font-semibold text-md p-4">
           Zeb Pykosz
         </a>
-      </div>
-      <div className="grid grid-cols-4">
-        <header className="col-span-1">
-          <nav className="text-right pr-24 border-r-4 border-gray-800 py-48">
-            <ul>
-              {pages.map((page) => {
-                const active = pathname === page.href;
-                return (
-                  <li key={page.href} className="mb-4 relative">
-                    <Link href={page.href} passHref>
-                      <a
-                        className={cx("font-semibold text-lg", {
-                          "text-purple-400": active,
-                        })}
-                      >
-                        {active && <Bubble />}
-                        {page.text}
-                      </a>
-                    </Link>
-                  </li>
-                );
-              })}
-            </ul>
-          </nav>
-        </header>
-        <main className="col-span-3 px-16">
-          <Component {...pageProps} />
-        </main>
-      </div>
+        <Nav />
+      </header>
+      <main className="container">
+        <Component {...pageProps} />
+      </main>
     </div>
   );
 }

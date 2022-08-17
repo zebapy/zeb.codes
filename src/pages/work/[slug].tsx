@@ -1,9 +1,9 @@
-import { allProjects, Project } from "contentlayer/generated";
+import { allWorks, Work } from "contentlayer/generated";
 import { InferGetStaticPropsType } from "next";
 import { PageHeader } from "src/components/PageHeader";
 
 export async function getStaticPaths() {
-  const paths: string[] = allProjects.map((p) => p.url);
+  const paths: string[] = allWorks.map((p) => p.url);
   return {
     paths,
     fallback: false,
@@ -11,24 +11,24 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params }) {
-  const project: Project = allProjects.find(
-    (p) => p._raw.flattenedPath === "projects/" + params.slug
+  const work: Work = allWorks.find(
+    (p) => p._raw.flattenedPath === "work/" + params.slug
   );
 
   return {
     props: {
-      project,
+      work,
     },
   };
 }
 
 export default function ProjectLayout({
-  project,
+  work,
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <article>
-      <PageHeader title={project.title} />
-      <div dangerouslySetInnerHTML={{ __html: project.body.html }} />
+      <PageHeader title={work.title} />
+      <div dangerouslySetInnerHTML={{ __html: work.body.html }} />
     </article>
   );
 }

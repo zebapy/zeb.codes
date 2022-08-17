@@ -2,18 +2,22 @@ import Head from "next/head";
 import Image from "next/image";
 import site from "../data/site.json";
 
+import { ArrowRightIcon } from "@heroicons/react/solid";
+
 import { allProjects, allWorks, Project, Work } from "contentlayer/generated";
 import Link from "next/link";
 import { Section } from "../components/Section";
+import { PageHeader } from "src/components/PageHeader";
+import React from "react";
 
 type FolioItem = Work | Project;
 
-function FolioList({ items }: { items: FolioItem[] }) {
+export function FolioList({ items }: { items: FolioItem[] }) {
   return (
-    <ul>
+    <ul className="grid grid-cols-4 gap-4">
       {items.slice(0, 3).map((item) => {
         return (
-          <div key={item._id}>
+          <div key={item._id} className="bg-gray-800 p-8 rounded-xl">
             <h3 className="text-2xl font-bold">
               <Link href={item.url}>{item.title}</Link>
             </h3>
@@ -25,37 +29,74 @@ function FolioList({ items }: { items: FolioItem[] }) {
   );
 }
 
-function LinkButton({ href, children }) {
+function LinkButton({
+  href,
+  children,
+  icon,
+}: {
+  href: string;
+  children: React.ReactNode;
+  icon?: React.ReactElement;
+}) {
   return (
     <Link href={href}>
-      <a className="btn">{children}</a>
+      <a className="btn">
+        {children}
+        {icon && React.cloneElement(icon, { className: "w-4 h-4" })}
+      </a>
     </Link>
   );
 }
 
 export default function Home() {
+  const job = site.career[0];
+
   return (
     <div>
+      <Head>
+        <title>
+          {site.name} - {site.description}
+        </title>
+      </Head>
       <h1 className="h1">Hello, I'm Zeb 👋</h1>
+
       <p className="text-intro">{site.description}</p>
 
-      <p className="text-intro">
-        Currently, I'm a frontend engineer, currently working at{" "}
-        <a href="https://faraday.ai">Faraday.ai</a>, working on our web app
-        which enables businesses to create no-code predictions from their
-        consumer data.
-      </p>
+      <div className="my-12"></div>
 
-      <Section title="Work" intro="What I've built throughout my career">
+      <Section
+        title="Work"
+        intro="What I've built throughout my career"
+        footer={<LinkButton href="/work">All work</LinkButton>}
+      >
         <FolioList items={allWorks} />
-        <LinkButton href="/work">All work</LinkButton>
       </Section>
-      <Section title="Projects" intro="Sometimes I build a few hobby app ideas">
+      <Section
+        title="Projects"
+        intro="Sometimes I build a few hobby app ideas"
+        footer={<LinkButton href="/projects">All projects</LinkButton>}
+      >
         <FolioList items={allProjects} />
-        <LinkButton href="/projects">All projects</LinkButton>
       </Section>
       <Section title="Connect with me elsewhere">
         GitHub, Linkedin, or Twitter
+      </Section>
+
+      {/* TODO: maybe use careers[0] to make a little teaser card  */}
+      <Section
+        title="Currently building"
+        footer={
+          <LinkButton href="/about" icon={<ArrowRightIcon />}>
+            More about me
+          </LinkButton>
+        }
+      >
+        <div className="p-4 rounded-lg bg-gray-800">
+          <p>{job.start_year}</p>
+          <p>{job.company}</p>
+          <p>{job.role}</p>
+          <p className="text-intro">{job.company_blurb}</p>
+        </div>
       </Section>
     </div>
   );

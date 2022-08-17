@@ -1,6 +1,6 @@
 .btn {
-  @apply inline-flex px-5 py-2 rounded-full gap-2;
-  @apply font-bold;
+  @apply inline-flex items-center gap-2;
+  @apply font-bold px-5 py-2 rounded-full;
   @apply bg-purple-400 text-purple-900 transition-colors;
   @apply hover:bg-purple-300 hover:text-purple-600;
   @apply active:top-1 relative;

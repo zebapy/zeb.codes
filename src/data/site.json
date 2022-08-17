@@ -26,6 +26,7 @@
       "role": "Frontend Engineer",
       "company": "Faraday.ai",
       "url": "https://faraday.ai",
+      "company_blurb": "Faraday enables customer-centric growth teams to optimize experiences with predictive marketing and personalization at scale.",
       "start_year": 2020,
       "end_year": null,
       "highlights": [
@@ -49,6 +50,7 @@
       "role": "Web Developer",
       "company": "Middlebury College",
       "url": "https://middlebury.edu",
+      "company_blurb": "",
       "start_year": 2015,
       "end_year": 2020,
       "highlights": [
@@ -76,6 +78,7 @@
     {
       "role": "Frontend Developer",
       "company": "Country Home Products",
+      "company_blurb": "",
       "url": "https://countryhomeproducts.com",
       "highlights": [
         "Designed and built custom wordpress theme for company blog",

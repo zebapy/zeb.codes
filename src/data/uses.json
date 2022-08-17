@@ -1,0 +1,225 @@
+{
+  "services": [
+    {
+      "name": "GitHub",
+      "text": "Version control and collaboration for code",
+      "url": "https://github.com/"
+    },
+    {
+      "name": "Vercel",
+      "text": "Usually ship hobby projects and a few production apps to vercel.",
+      "url": "https://vercel.com/"
+    },
+    {
+      "name": "Netlify",
+      "text": "I ship some client sites here, especially when I want to easily integerate with netlify-cms",
+      "url": "https://netlify.com/"
+    },
+    {
+      "name": "Render",
+      "text": "To be fair, I haven't deployed here yet, but I plan to for the next hobby project.",
+      "url": "https://render.com/"
+    }
+  ],
+  "editor": [
+    {
+      "name": "Visual Studio Code",
+      "url": "https://code.visualstudio.com/"
+    },
+    {
+      "name": "Vim bindings",
+      "url": "https://marketplace.visualstudio.com/items?itemName=vscodevim.vim"
+    },
+    {
+      "name": "GitHub Dark Theme",
+      "url": "https://marketplace.visualstudio.com/items?itemName=GitHub.github-vscode-theme"
+    },
+    {
+      "name": "GitHub Copilot",
+      "url": "https://copilot.github.com/"
+    }
+  ],
+  "tech": [
+    {
+      "name": "React",
+      "text": "My choice and expertise for UI framework",
+      "url": "https://reactjs.org/"
+    },
+    {
+      "name": "Sass",
+      "text": "For more traditional sites, scaling CSS with Sass is a breeze",
+      "url": "https://sass-lang.com/"
+    },
+    {
+      "name": "Styled components",
+      "text": "A decent css-in-js solution for web apps, but I like other flavors of css-in-js too",
+      "url": "https://styled-components.com/"
+    },
+
+    {
+      "name": "Chakra-UI",
+      "text": "My current favorite react UI kit",
+      "url": "https://chakra-ui.com/"
+    },
+    {
+      "name": "Postgres",
+      "text": "my rdbs of choice for most side projects (and use it for work now)",
+      "url": "https://www.postgresql.org/"
+    },
+    {
+      "name": "NextJS",
+      "text": "The ideal way to get a React app up, running, and deployed quickly.",
+      "url": "https://nextjs.org/"
+    },
+    {
+      "name": "Prisma",
+      "text": "database ORM for JS-land. I usually use Postgres or sqlite as the database.",
+      "url": "https://www.prisma.io/"
+    },
+    {
+      "name": "TypeScript",
+      "text": "I cannot go back to vanilla js.",
+      "url": "https://www.typescriptlang.org/"
+    },
+    {
+      "name": "Jest",
+      "text": "A little bloated but one stop shop for testing.",
+      "url": "https://jestjs.io/"
+    },
+    {
+      "name": "Prettier",
+      "text": "arguably one of my top 5 of tools that has come out in the past 10 years.",
+      "url": "https://prettier.io/"
+    },
+    {
+      "name": "Postcss",
+      "text": "Mostly used these days to get autoprefixer and tailwind running.",
+      "url": "https://postcss.org/"
+    },
+    {
+      "name": "Tailwindcss",
+      "text": "I often use tailwind for hobby projects or small clients. Have yet to use it for a major work project but I would entertain it.",
+      "url": "https://tailwindcss.com/"
+    },
+    {
+      "name": "Heroicons",
+      "text": "Hands down easiest and cleanest icons to quickly use in Figma designs and import into code",
+      "url": "https://heroicons.com/"
+    },
+    {
+      "name": "Docker",
+      "text": "I'm not a pro yet but for some easy database setup, I can rely on docker",
+      "url": "https://www.docker.com/"
+    }
+  ],
+  "desktop apps": [
+    {
+      "name": "Chrome",
+      "text": "Sometimes I try to swap to FireFox or Brave browser, but I'm so used to Chrome at this point",
+      "url": "https://www.google.com/chrome/"
+    },
+    {
+      "name": "Raycast",
+      "text": "Mac OS spotlight on steriods. My favorate app for quickly searching and opening files, apps, and more. Replaced Alfred instant I found it. The plugin/extension DX is so approachable, given my skillset.",
+      "url": "https://raycast.com/"
+    },
+    {
+      "name": "Bitwarden",
+      "text": "Password manager of choice",
+      "url": "https://bitwarden.com/"
+    },
+    {
+      "name": "iTerm2",
+      "text": "A slight step above default terminal (mainly for split pane management), but I'm not a power user",
+      "url": "https://iterm2.com/"
+    },
+    {
+      "name": "Rectangles",
+      "text": "Hotkeys for resizing and moving apps between monitors",
+      "url": "https://rectangleapp.com/"
+    },
+    {
+      "name": "Figma",
+      "text": "Tool of choice for UI designs. Previously was using Sketch (and photoshop long ago) but Figma is just so much better.",
+      "url": "https://www.figma.com/"
+    },
+    {
+      "name": "GitHub Desktop",
+      "text": "I can use git cli, but like to have a gui for quick commits and visualizing diffs faster",
+      "url": "https://desktop.github.com/"
+    },
+    {
+      "name": "TablePlus",
+      "text": "Desktop interface for databases",
+      "url": "https://tableplus.com/"
+    },
+    {
+      "name": "Spotify",
+      "text": "I always feel more productive with music to code to",
+      "url": "https://www.spotify.com/"
+    },
+    {
+      "name": "Slack",
+      "text": "Work communication and a few support channels",
+      "url": "https://slack.com/"
+    },
+    {
+      "name": "Discord",
+      "text": "Messaging my social circle, joining tech communities, and gaming",
+      "url": "https://discord.com/"
+    }
+  ],
+  "home office": [
+    {
+      "name": "Macbook Pro 16\" 2019",
+      "text": "My currently provided work laptop"
+    },
+    {
+      "name": "Custom PC",
+      "text": "GTX 2060 GPU, Intel Core i7-9700k 3.6ghz CPU, 16gb DDR4 RAM, 3tb SSD/HDD, NZXT Kraken AIO, NZXT H510 matte black case"
+    },
+    {
+      "name": "Custom 60% mechnical keyboard",
+      "text": "Lubed zealios zilent switches, brass plate, tofu60 case, lubed stabs. I finally built a fully custom keyboard and already thinking about the next build"
+    },
+    {
+      "name": "Logitech G Pro Wireless mouse",
+      "text": "For gaming and work, the wireless latency is not noticeable for my casual use"
+    },
+    {
+      "name": "LG 34\" Curved Ultrawide 144hz IPS monitor (3440x1440)",
+      "text": "For work and gaming"
+    },
+    {
+      "name": "Sony WH1000XM4 noise canceling headphones",
+      "text": "A quiet environment (or consistent music) is a must for my focus"
+    },
+    {
+      "name": "Autonomous ErgoChair 2",
+      "text": "Switching from a 'gamer' chair to a proper office chair was a nice step up, but there are still some features I wish the chair had"
+    },
+    {
+      "name": "Jarvis standing desk legs + custom built pine wood desktop",
+      "text": "In 2019, though I wasn't 100% WFH, I commited to getting a proper desk set up for home, so I built a wood desktop and bought motorized standing desk legs from Fully. I don't stand as much as I should, but it's nice to have available when I need it.",
+      "url": ""
+    },
+    {
+      "name": "Phillips hue light bars",
+      "text": "I need some lighting to offset the bright screens, and I like being able to control these from Raycast or other devices"
+    },
+
+    {
+      "name": "Google Home WiFi",
+      "text": "For consistent wifi throughout the living quarters."
+    },
+
+    {
+      "name": "Google Pixel phone",
+      "text": "I appreciate the vanilla-ish Android experience of Pixels, having come from an iPhone before. I use the google ecosystem so Android was a logical switch."
+    },
+    {
+      "name": "Amazon Nest security camera",
+      "text": "For keeping an eye on things"
+    }
+  ]
+}
