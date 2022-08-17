@@ -1,0 +1,94 @@
+{
+  "name": "Zeb Pykosz",
+  "description": "Frontend engineer with a penchant for UI/UX design, located in Middlebury, Vermont.",
+  "url": "https://zeb.codes",
+  "email": "hi@zeb.codes",
+  "repo": "https://github.com/zebapy/zeb.codes",
+  "social": [
+    {
+      "name": "Twitter",
+      "slug": "twitter",
+      "url": "https://twitter.com/zebcodes"
+    },
+    {
+      "name": "GitHub",
+      "slug": "github",
+      "url": "https://github.com/zebapy"
+    },
+    {
+      "name": "LinkedIn",
+      "slug": "linkedin",
+      "url": "https://www.linkedin.com/in/zebpykosz/"
+    }
+  ],
+  "career": [
+    {
+      "role": "Frontend Engineer",
+      "company": "Faraday.ai",
+      "url": "https://faraday.ai",
+      "start_year": 2020,
+      "end_year": null,
+      "highlights": [
+        "Built shopify plugin UI using company's existing React web app codebase",
+        "Built a number of CRUD UIs to enable users to create and manage their own custom data",
+        "Migrated existing components to typescript and styled-components",
+        "Tested UIs using testing-library, jest, and playwright"
+      ],
+      "tools": [
+        "Reactjs",
+        "GraphQL",
+        "Apollo",
+        "NodeJS",
+        "TypeScript",
+        "REST",
+        "Docker",
+        "Nextjs"
+      ]
+    },
+    {
+      "role": "Web Developer",
+      "company": "Middlebury College",
+      "url": "https://middlebury.edu",
+      "start_year": 2015,
+      "end_year": 2020,
+      "highlights": [
+        "Built custom wordpress theme for award winning Middlebury Magazine",
+        "Designed and built award winning single-page marketing website for Monterey institute using gatsbyjs",
+        "Architected and managed frontend design systems for large scale site redesign project",
+        "Built numerous static websites for various departments and offices",
+        "Worked with clients to fulfill feature or bug fix requests",
+        "worked closely with designers to implement web project using their specs"
+      ],
+      "tools": [
+        "HTML",
+        "CSS",
+        "JS",
+        "Gulp",
+        "Sass",
+        "TypeScript",
+        "WordPress",
+        "Drupal",
+        "PHP",
+        "Jekyll",
+        "Gatsby"
+      ]
+    },
+    {
+      "role": "Frontend Developer",
+      "company": "Country Home Products",
+      "url": "https://countryhomeproducts.com",
+      "highlights": [
+        "Designed and built custom wordpress theme for company blog",
+        "Established modern frontend dev workflows using github, gulp, and sass",
+        "Built static company website using jekyll",
+        "Managed html content stored in cms",
+        "Designed, built, and A/B tested landing pages",
+        "Worked with other departments to manage their department specific content",
+        "Built html emails for marketing campaigns"
+      ],
+      "start_year": 2013,
+      "end_year": 2015,
+      "tools": ["HTML", "CSS", "JS", "Sass", "WordPress", "Jekyll"]
+    }
+  ]
+}

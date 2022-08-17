@@ -2,7 +2,7 @@ import "tailwindcss/tailwind.css";
 import "../styles/index.css";
 import Link from "next/link";
 import cx from "clsx";
-import { useRouter } from "next/dist/client/router";
+import { useRouter } from "next/router";
 
 const pages = [
   {
@@ -12,6 +12,10 @@ const pages = [
   {
     href: "/work",
     text: "Work",
+  },
+  {
+    href: "/projects",
+    text: "Projects",
   },
   {
     href: "/about",
@@ -29,7 +33,7 @@ const pages = [
 
 const Bubble = () => (
   <span
-    className="w-2 h-2 border-2 border-red-400 block rounded-full absolute top-0 "
+    className="w-2 h-2 border-2 border-purple-400 block rounded-full absolute top-0 "
     style={{
       left: "calc(100% + .5rem)",
     }}
@@ -57,7 +61,7 @@ function MyApp({ Component, pageProps }) {
                     <Link href={page.href} passHref>
                       <a
                         className={cx("font-semibold text-lg", {
-                          "text-red-400": active,
+                          "text-purple-400": active,
                         })}
                       >
                         {active && <Bubble />}

@@ -1,0 +1,4 @@
+---
+title: Middlebury Magazine
+intro: ""
+---
