@@ -18,11 +18,10 @@ export function Section({
           <h3 className="text-4xl font-bold text-purple-100">{title}</h3>
           <p className="text-xl text-gray-400">{intro}</p>
         </div>
-
-        {footer && <div className="">{footer}</div>}
       </header>
 
       {children}
+      {footer && <div className="pt-10">{footer}</div>}
     </section>
   );
 }

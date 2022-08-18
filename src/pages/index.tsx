@@ -1,14 +1,10 @@
 import Head from "next/head";
 import Image from "next/image";
 import site from "../data/site.json";
-
-import { ArrowRightIcon } from "@heroicons/react/solid";
-
 import { allProjects, allWorks, Project, Work } from "contentlayer/generated";
 import Link from "next/link";
-import { Section } from "../components/Section";
-import { PageHeader } from "src/components/PageHeader";
 import React from "react";
+import { Section } from "../components/Section";
 
 type FolioItem = Work | Project;
 
@@ -58,14 +54,50 @@ export default function Home() {
           {site.name} - {site.description}
         </title>
       </Head>
-      <h1 className="h1">Hello, I'm Zeb 👋</h1>
 
-      <p className="text-intro">{site.description}</p>
+      <div className="py-8 min-h-[600px] flex items-center">
+        <div>
+          <div className="mb-3">
+            <Image
+              src="/zeb-pykosz.jpg"
+              width={64}
+              height={64}
+              className="rounded-2xl"
+              style={{
+                filter: "grayscale(100%)",
+              }}
+            />
+          </div>
+
+          <div>
+            <p className="h1">
+              <span className="animate-in">Nice to meet you. I’m Zeb.</span>
+              <br />
+
+              <span>I build things on the internet for a living.</span>
+            </p>
+
+            {/* <p className="text-intro">{site.description}</p> */}
+
+            {/* <p className="text-intro">
+            I’m a coder, usually building web things, located in Middlebury,
+            Vermont. My passion is for making peoples lives easier through
+            software.
+          </p> */}
+
+            <p className="text-intro">
+              Currently I'm a frontend engineer at{" "}
+              <a href="https://faraday.ai">Faraday.ai</a>, where we build
+              prediction infrastructure for commerce.
+            </p>
+          </div>
+        </div>
+      </div>
 
       <div className="my-12"></div>
 
       <Section
-        title="What I've worked on"
+        title="Feature work"
         intro="What I've built throughout my career"
         footer={<LinkButton href="/work">All work</LinkButton>}
       >
@@ -83,7 +115,7 @@ export default function Home() {
       </Section>
 
       {/* TODO: maybe use careers[0] to make a little teaser card  */}
-      <Section
+      {/* <Section
         title="Currently building"
         footer={
           <LinkButton href="/about" icon={<ArrowRightIcon />}>
@@ -97,7 +129,7 @@ export default function Home() {
           <p>{job.role}</p>
           <p className="text-intro">{job.company_blurb}</p>
         </div>
-      </Section>
+      </Section> */}
     </div>
   );
 }

@@ -7,7 +7,7 @@ interface PageHeaderProps {
 
 export function PageHeader({ title, intro }: PageHeaderProps) {
   return (
-    <header>
+    <header className="py-12">
       <Head>
         <title>{title}</title>
       </Head>

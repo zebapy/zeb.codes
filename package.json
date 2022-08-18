@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@heroicons/react": "^1.0.6",
+    "@sendgrid/mail": "^7.7.0",
     "clsx": "^1.2.1",
     "contentlayer": "^0.2.7",
     "next": "^12.2.5",

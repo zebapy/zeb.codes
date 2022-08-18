@@ -44,3 +44,22 @@ p > a,
   @apply text-purple-400 border-b-2 border-purple-400 transition-colors;
   @apply hover:text-purple-100 hover:border-purple-100;
 }
+
+.form-item {
+  @apply mb-6;
+}
+
+.label {
+  @apply block mb-2 text-lg font-semibold text-gray-400;
+}
+
+.input {
+  @apply block w-full px-4 py-2 rounded;
+  @apply bg-gray-800 text-lg text-white;
+  @apply focus:outline-none focus:ring-2 focus:ring-purple-400;
+}
+
+textarea {
+  min-height: 6rem;
+  resize: vertical;
+}
