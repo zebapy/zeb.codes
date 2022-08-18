@@ -90,7 +90,7 @@ export default function ContactPage() {
     <Alert
       status="error"
       title="Uh oh!"
-      message="Something went wrong sending your message. Please try again another time."
+      message="Something went wrong. Please try again another time."
     />
   );
 
