@@ -57,6 +57,30 @@
     },
 
     {
+      "name": "Testing Library",
+      "text": "I use this for testing React components",
+      "url": "https://testing-library.com/"
+    },
+
+    {
+      "name": "Cypress",
+      "text": "Handy client for end to end tests",
+      "url": "https://www.cypress.io/"
+    },
+
+    {
+      "name": "Apollo",
+      "text": "Prod ready GraphQL client for web apps",
+      "url": "https://www.apollographql.com/"
+    },
+
+    {
+      "name": "GraphQL",
+      "text": "Im familiar with graphql, when its suitable for your app",
+      "url": "https://graphql.org/"
+    },
+
+    {
       "name": "Chakra-UI",
       "text": "My current favorite react UI kit",
       "url": "https://chakra-ui.com/"
