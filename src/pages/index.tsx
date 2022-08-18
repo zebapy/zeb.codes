@@ -65,14 +65,14 @@ export default function Home() {
       <div className="my-12"></div>
 
       <Section
-        title="Work"
+        title="What I've worked on"
         intro="What I've built throughout my career"
         footer={<LinkButton href="/work">All work</LinkButton>}
       >
         <FolioList items={allWorks} />
       </Section>
       <Section
-        title="Projects"
+        title="Side projects"
         intro="Sometimes I build a few hobby app ideas"
         footer={<LinkButton href="/projects">All projects</LinkButton>}
       >
