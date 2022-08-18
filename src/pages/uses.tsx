@@ -7,7 +7,7 @@ import uses from "../data/uses.json";
 export default function UsesPage() {
   return (
     <div>
-      <PageHeader title="Uses" intro="A list of the tools I use" />
+      <PageHeader title="Uses" intro="The gizmos and gadgets I prefer to use" />
 
       {Object.entries(uses).map(([category, items]) => (
         <div key={category} className="mb-8">
