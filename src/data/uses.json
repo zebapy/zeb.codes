@@ -33,10 +33,6 @@
     {
       "name": "GitHub Dark Theme",
       "url": "https://marketplace.visualstudio.com/items?itemName=GitHub.github-vscode-theme"
-    },
-    {
-      "name": "GitHub Copilot",
-      "url": "https://copilot.github.com/"
     }
   ],
   "tech": [
@@ -76,7 +72,7 @@
 
     {
       "name": "GraphQL",
-      "text": "Im familiar with graphql, when its suitable for your app",
+      "text": "A great option for typed APIs unless you already have one in REST",
       "url": "https://graphql.org/"
     },
 
@@ -87,22 +83,22 @@
     },
     {
       "name": "Postgres",
-      "text": "my rdbs of choice for most side projects (and use it for work now)",
+      "text": "Database of choice for most side projects (and I use it at work)",
       "url": "https://www.postgresql.org/"
     },
     {
       "name": "NextJS",
-      "text": "The ideal way to get a React app up, running, and deployed quickly.",
+      "text": "The ideal way to get a React site up, running, and deployed quickly.",
       "url": "https://nextjs.org/"
     },
     {
       "name": "Prisma",
-      "text": "database ORM for JS-land. I usually use Postgres or sqlite as the database.",
+      "text": "Database ORM for JS-land. I usually use Postgres or sqlite as the database.",
       "url": "https://www.prisma.io/"
     },
     {
       "name": "TypeScript",
-      "text": "I cannot go back to vanilla js.",
+      "text": "I cannot go back to vanilla JavaScript.",
       "url": "https://www.typescriptlang.org/"
     },
     {
@@ -144,7 +140,7 @@
     },
     {
       "name": "Raycast",
-      "text": "Mac OS spotlight on steriods. My favorate app for quickly searching and opening files, apps, and more. Replaced Alfred instant I found it. The plugin/extension DX is so approachable, given my skillset.",
+      "text": "Mac OS spotlight on steriods. My favorite app for quickly searching and opening files, apps, and more. Replaced Alfred instant I found it. The plugin/extension DX is so approachable, given my skillset.",
       "url": "https://raycast.com/"
     },
     {
@@ -208,14 +204,14 @@
     },
     {
       "name": "Logitech G Pro Wireless mouse",
-      "text": "For gaming and work, the wireless latency is not noticeable for my casual use"
+      "text": "for clicking on things :)"
     },
     {
       "name": "LG 34\" Curved Ultrawide 144hz IPS monitor (3440x1440)",
       "text": "For work and gaming"
     },
     {
-      "name": "Sony WH1000XM4 noise canceling headphones",
+      "name": "Sony WH1000XM4 headphones",
       "text": "A quiet environment (or consistent music) is a must for my focus"
     },
     {
