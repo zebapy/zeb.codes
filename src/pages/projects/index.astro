@@ -1,15 +1,11 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
-import Layout from "../layouts/Main.astro";
+import Layout from "../../layouts/Main.astro";
 import { getCollection } from "astro:content";
 
 const projects = await getCollection("projects");
 ---
 
-<Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+<Layout title={"projects"} description={"all projects"}>
   <h1>Projects</h1>
   <ul>
     {
