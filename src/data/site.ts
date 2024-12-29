@@ -1,6 +1,7 @@
 export const site = {
   name: "Zebhdiyah Pykosz",
   role: "Frontend developer",
+  avatar: "https://avatars.githubusercontent.com/u/2199845?v=4",
   pic: "/img/zeb.jpg",
   pic_alt: "Zeb Pykosz profile picture",
   summary:

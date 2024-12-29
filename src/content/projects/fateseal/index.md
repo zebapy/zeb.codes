@@ -6,4 +6,10 @@ tags:
   - graphql
 ---
 
-![fateseal](fateseal-home.jpg)
+## Early evolutions
+
+- handlebars and express MVC server with mongoDB
+
+Converted to React + Redux + REST API
+
+Eventually converted API to Apollo and GraphQL

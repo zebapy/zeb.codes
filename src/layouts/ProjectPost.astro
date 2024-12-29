@@ -12,10 +12,14 @@ const { title } = Astro.props;
 ---
 
 <Layout title={title} description="">
-  <ul>
-    <li>
-      <a href="/projects"> &larr; all projects </a>
-    </li>
-  </ul>
-  <slot />
+  <div>
+    <ul>
+      <li>
+        <a href="/projects"> &larr; all projects </a>
+      </li>
+    </ul>
+  </div>
+  <div class="prose">
+    <slot />
+  </div>
 </Layout>

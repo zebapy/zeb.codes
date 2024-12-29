@@ -5,22 +5,46 @@ import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import Layout from "../layouts/Main.astro";
 import { getCollection } from "astro:content";
+import { site } from "../data/site";
 
 const projects = await getCollection("projects");
 ---
 
 <Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
-  <h1>Projects</h1>
-  <ul>
-    {
-      projects.map((project) => (
-        <li>
-          <a href={`/projects/${project.id}`}>
-            <h2>{project.data.title}</h2>
-          </a>
-          {/* <p>{project.description}</p> */}
-        </li>
-      ))
-    }
-  </ul>
+  <section>
+    <img src={site.avatar} alt={site.pic_alt} class="rounded-full size-36" />
+    <h1>
+      {site.name}
+    </h1>
+    <p>{site.summary}</p>
+  </section>
+
+  <section>
+    <header>
+      <h2>Work</h2>
+      <p>Professional work for clients and employers</p>
+    </header>
+  </section>
+
+  <section>
+    <header>
+      <h1>Side projects</h1>
+      <p>
+        Web things I've designed and built to solve my own problems or serve
+        hobbies
+      </p>
+    </header>
+    <ul>
+      {
+        projects.map((project) => (
+          <li>
+            <a href={`/projects/${project.id}`}>
+              <h2>{project.data.title}</h2>
+            </a>
+            {/* <p>{project.description}</p> */}
+          </li>
+        ))
+      }
+    </ul>
+  </section>
 </Layout>
