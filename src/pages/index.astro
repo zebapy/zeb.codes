@@ -4,8 +4,9 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import Layout from "../layouts/Main.astro";
-import { getCollection } from "astro:content";
+import { getCollection, type CollectionEntry } from "astro:content";
 import { site } from "../data/site";
+import HomeSection from "../components/HomeSection.astro";
 
 const projects = await getCollection("projects");
 ---
@@ -19,21 +20,14 @@ const projects = await getCollection("projects");
     <p>{site.summary}</p>
   </section>
 
-  <section>
-    <header>
-      <h2>Work</h2>
-      <p>Professional work for clients and employers</p>
-    </header>
-  </section>
+  <HomeSection title="Work" text="What I've built for clients and employers">
+    test
+  </HomeSection>
 
-  <section>
-    <header>
-      <h1>Side projects</h1>
-      <p>
-        Web things I've designed and built to solve my own problems or serve
-        hobbies
-      </p>
-    </header>
+  <HomeSection
+    title="Side projects"
+    text="'Web things I've designed and built to solve my own problems or serve hobbies"
+  >
     <ul>
       {
         projects.map((project) => (
@@ -46,5 +40,5 @@ const projects = await getCollection("projects");
         ))
       }
     </ul>
-  </section>
+  </HomeSection>
 </Layout>
