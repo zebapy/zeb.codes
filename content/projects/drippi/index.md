@@ -1,9 +1,12 @@
 ---
 title: Drippi
-url: https://drippi.gg
-logo: x
-start_date: 2023
-end_date: 2024
+description: A platform for Super Smash Bros Melee character mod uploads with 3D previews, search, and community features.
+tags: ['nextjs', 'react', 'gaming', 'community']
+tech: ['Next.js', 'React', 'TRPC', 'Tailwind CSS', 'PostgreSQL', 'DigitalOcean Spaces']
+liveUrl: https://drippi.gg
+startDate: 2023-01-01
+endDate: 2024-12-31
+featured: true
 ---
 
 Drippi was a project I started with a friend who was an avid SSBM character skin creator (they had a skin used by one of the top SSBM slippi players - FIXME link to video and skin) and SSBM player via Slippi. We started it over 2023 christmas break when I was itching for a code project. I led design and development while they handled marketing/community management/roadmap. I completed most of the MVP in a week, and then we spent the next few months polishing it up.
