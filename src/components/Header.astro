@@ -1,0 +1,97 @@
+---
+import { site } from '@/data/site.ts';
+
+const navItems = [
+  { label: 'Home', href: '/' },
+  { label: 'Blog', href: '/blog' },
+  { label: 'Projects', href: '/projects' },
+  { label: 'Work', href: '/work' },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="bg-background border-b border-current-line sticky top-0 z-50">
+  <nav class="container">
+    <div class="flex items-center justify-between py-4">
+      <a href="/" class="text-xl font-bold text-purple hover:text-pink transition-colors no-underline">
+        {site.name}
+      </a>
+
+      <button class="md:hidden p-2 z-50" aria-label="Toggle navigation" aria-expanded="false" id="mobile-toggle">
+        <span class="hamburger block w-6 h-0.5 bg-foreground relative transition-colors">
+          <span class="absolute w-6 h-0.5 bg-foreground -translate-y-2 transition-transform"></span>
+          <span class="absolute w-6 h-0.5 bg-foreground translate-y-2 transition-transform"></span>
+        </span>
+      </button>
+
+      <ul class="hidden md:flex gap-8 list-none m-0 p-0" id="nav-links">
+        {
+          navItems.map((item) => (
+            <li>
+              <a
+                href={item.href}
+                class:list={[
+                  'text-foreground font-medium transition-colors hover:text-purple relative',
+                  {
+                    'text-purple after:content-[""] after:absolute after:-bottom-2 after:left-0 after:right-0 after:h-0.5 after:bg-purple':
+                      currentPath === item.href || (item.href !== '/' && currentPath.startsWith(item.href)),
+                  },
+                ]}
+                aria-current={currentPath === item.href ? 'page' : undefined}
+              >
+                {item.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<style>
+  @media (max-width: 768px) {
+    #nav-links {
+      @apply flex fixed top-0 right-0 bottom-0 w-64 bg-background border-l border-current-line flex-col p-16 gap-4 translate-x-full transition-transform;
+    }
+
+    #nav-links.open {
+      @apply translate-x-0;
+    }
+
+    #nav-links a::after {
+      @apply hidden;
+    }
+
+    #mobile-toggle[aria-expanded='true'] .hamburger {
+      @apply bg-transparent;
+    }
+
+    #mobile-toggle[aria-expanded='true'] .hamburger span:first-child {
+      @apply rotate-45 translate-y-0;
+    }
+
+    #mobile-toggle[aria-expanded='true'] .hamburger span:last-child {
+      @apply -rotate-45 translate-y-0;
+    }
+  }
+</style>
+
+<script>
+  const toggle = document.getElementById('mobile-toggle');
+  const navLinks = document.getElementById('nav-links');
+
+  toggle?.addEventListener('click', () => {
+    const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+    toggle.setAttribute('aria-expanded', String(!isExpanded));
+    navLinks?.classList.toggle('open');
+  });
+
+  navLinks?.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      toggle?.setAttribute('aria-expanded', 'false');
+      navLinks?.classList.remove('open');
+    });
+  });
+</script>

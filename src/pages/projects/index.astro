@@ -1,0 +1,71 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '@/components/BaseLayout.astro';
+import ProjectCard from '@/components/ProjectCard.astro';
+
+const allProjects = await getCollection('projects');
+const sortedProjects = allProjects.sort(
+  (a, b) => (b.data.order || 0) - (a.data.order || 0)
+);
+---
+
+<BaseLayout
+  title="Projects"
+  description="Personal projects and experiments in frontend development and Node.js."
+>
+  <div class="container">
+    <header class="page-header">
+      <h1>Projects</h1>
+      <p>Personal projects and experiments in frontend development and Node.js.</p>
+    </header>
+
+    {
+      sortedProjects.length === 0 ? (
+        <p class="no-projects">No projects yet. Check back soon!</p>
+      ) : (
+        <div class="projects-list">
+          {sortedProjects.map((project) => (
+            <ProjectCard
+              title={project.data.title}
+              description={project.data.description}
+              tags={project.data.tags}
+              image={project.data.image}
+              slug={project.slug}
+            />
+          ))}
+        </div>
+      )
+    }
+  </div>
+</BaseLayout>
+
+<style>
+  .page-header {
+    padding: var(--spacing-xl) 0;
+    border-bottom: var(--border-width) solid var(--color-border);
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .page-header h1 {
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .page-header p {
+    color: var(--color-text-muted);
+    font-size: var(--font-size-lg);
+    margin-bottom: 0;
+  }
+
+  .projects-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .no-projects {
+    text-align: center;
+    color: var(--color-text-muted);
+    padding: var(--spacing-xl);
+  }
+</style>

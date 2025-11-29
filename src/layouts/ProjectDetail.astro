@@ -1,0 +1,160 @@
+---
+import BaseLayout from '@/components/BaseLayout.astro';
+import TagList from '@/components/TagList.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  tags: string[];
+  tech: string[];
+  image?: string;
+  liveUrl?: string;
+  githubUrl?: string;
+  npmUrl?: string;
+}
+
+const { title, description, tags, tech, image, liveUrl, githubUrl, npmUrl } = Astro.props;
+---
+
+<BaseLayout title={title} description={description} image={image}>
+  <article class="container">
+    <header class="project-header">
+      {image && (
+        <div class="project-image">
+          <img src={image} alt={title} />
+        </div>
+      )}
+      <h1>{title}</h1>
+      <p class="project-description">{description}</p>
+
+      <div class="project-meta">
+        <div class="meta-section">
+          <h3>Tags</h3>
+          <TagList tags={tags} />
+        </div>
+        <div class="meta-section">
+          <h3>Tech Stack</h3>
+          <TagList tags={tech} />
+        </div>
+      </div>
+
+      <div class="project-links">
+        {liveUrl && (
+          <a href={liveUrl} target="_blank" rel="noopener noreferrer" class="project-link">
+            Live Demo &rarr;
+          </a>
+        )}
+        {githubUrl && (
+          <a href={githubUrl} target="_blank" rel="noopener noreferrer" class="project-link">
+            GitHub &rarr;
+          </a>
+        )}
+        {npmUrl && (
+          <a href={npmUrl} target="_blank" rel="noopener noreferrer" class="project-link">
+            npm &rarr;
+          </a>
+        )}
+      </div>
+    </header>
+
+    <div class="project-content content">
+      <slot />
+    </div>
+  </article>
+</BaseLayout>
+
+<style>
+  .project-header {
+    padding: var(--spacing-xl) 0;
+    border-bottom: var(--border-width) solid var(--color-border);
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .project-image {
+    margin-bottom: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+  }
+
+  .project-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .project-header h1 {
+    font-size: var(--font-size-4xl);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .project-description {
+    font-size: var(--font-size-lg);
+    color: var(--color-text-muted);
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .project-meta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .meta-section h3 {
+    font-size: var(--font-size-base);
+    margin-bottom: var(--spacing-sm);
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .project-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+  }
+
+  .project-link {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    background-color: var(--color-accent);
+    color: var(--background);
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    transition: background-color var(--transition-fast);
+  }
+
+  .project-link:hover {
+    background-color: var(--pink);
+    color: var(--background);
+  }
+
+  .project-content {
+    margin: 0 auto;
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .project-content :global(h2) {
+    margin-top: var(--spacing-xl);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .project-content :global(h3) {
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .project-content :global(img) {
+    margin: var(--spacing-lg) 0;
+    border-radius: var(--border-radius);
+  }
+
+  @media (max-width: 640px) {
+    .project-header h1 {
+      font-size: var(--font-size-3xl);
+    }
+
+    .project-meta {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

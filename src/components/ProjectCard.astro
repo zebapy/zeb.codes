@@ -1,0 +1,28 @@
+---
+import TagList from './TagList.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  tags: string[];
+  image?: string;
+  slug: string;
+}
+
+const { title, description, tags, image, slug } = Astro.props;
+---
+
+<article class="bg-current-line rounded overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl h-full flex flex-col">
+  <a href={`/projects/${slug}`} class="flex flex-col h-full no-underline">
+    {image && (
+      <div class="aspect-video overflow-hidden">
+        <img src={image} alt={title} class="w-full h-full object-cover transition-transform duration-300 hover:scale-105" />
+      </div>
+    )}
+    <div class="p-8 flex-1 flex flex-col">
+      <h3 class="text-xl font-bold mb-2 text-foreground">{title}</h3>
+      <p class="text-foreground mb-4 flex-1">{description}</p>
+      <TagList tags={tags} />
+    </div>
+  </a>
+</article>

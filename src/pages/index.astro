@@ -1,0 +1,137 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '@/components/BaseLayout.astro';
+import BlogCard from '@/components/BlogCard.astro';
+import ProjectCard from '@/components/ProjectCard.astro';
+import WorkCard from '@/components/WorkCard.astro';
+import { site } from '@/data/site.ts';
+
+// Get recent blog posts (latest 3)
+const allBlogPosts = await getCollection('blog', ({ data }) => !data.draft);
+const recentPosts = allBlogPosts
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
+  .slice(0, 3);
+
+// Get featured work (up to 3)
+const allWork = await getCollection('work');
+const featuredWork = allWork
+  .filter((item) => item.data.featured)
+  .sort((a, b) => (b.data.order || 0) - (a.data.order || 0))
+  .slice(0, 3);
+
+// Get featured projects (up to 3)
+const allProjects = await getCollection('projects');
+const featuredProjects = allProjects
+  .filter((item) => item.data.featured)
+  .sort((a, b) => (b.data.order || 0) - (a.data.order || 0))
+  .slice(0, 3);
+---
+
+<BaseLayout>
+  <div class="container">
+    <!-- Hero Section -->
+    <section class="py-16 border-b border-current-line mb-16">
+      <div class="flex flex-col md:flex-row items-center gap-16 text-center md:text-left">
+        <img src={site.pic} alt={site.pic_alt} class="w-36 h-36 rounded-full object-cover border-3 border-purple" />
+        <div class="flex-1">
+          <h1 class="text-4xl md:text-5xl font-bold mb-2">{site.name}</h1>
+          <p class="text-xl text-purple mb-4">{site.role}</p>
+          <p class="text-comment mb-4 max-w-2xl mx-auto md:mx-0">{site.summary}</p>
+          <div class="flex gap-4 flex-wrap justify-center md:justify-start">
+            {
+              site.social.map((link) => (
+                <a
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="px-4 py-2 bg-current-line rounded text-sm transition-colors hover:bg-purple hover:text-background"
+                >
+                  {link.name}
+                </a>
+              ))
+            }
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Recent Blog Posts -->
+    {
+      recentPosts.length > 0 && (
+        <section class="mb-16">
+          <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
+            <h2 class="text-3xl md:text-4xl font-bold mb-0">Recent Posts</h2>
+            <a href="/blog" class="text-cyan text-lg font-medium hover:text-pink">
+              View all &rarr;
+            </a>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {recentPosts.map((post) => (
+              <BlogCard
+                title={post.data.title}
+                description={post.data.description}
+                pubDate={post.data.pubDate}
+                heroImage={post.data.heroImage}
+                tags={post.data.tags}
+                slug={post.slug}
+              />
+            ))}
+          </div>
+        </section>
+      )
+    }
+
+    <!-- Featured Work -->
+    {
+      featuredWork.length > 0 && (
+        <section class="mb-16">
+          <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
+            <h2 class="text-3xl md:text-4xl font-bold mb-0">Featured Work</h2>
+            <a href="/work" class="text-cyan text-lg font-medium hover:text-pink">
+              View all &rarr;
+            </a>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {featuredWork.map((work) => (
+              <WorkCard
+                title={work.data.title}
+                description={work.data.description}
+                client={work.data.client}
+                tags={work.data.tags}
+                image={work.data.image}
+                slug={work.slug}
+                startDate={work.data.startDate}
+                endDate={work.data.endDate}
+              />
+            ))}
+          </div>
+        </section>
+      )
+    }
+
+    <!-- Featured Projects -->
+    {
+      featuredProjects.length > 0 && (
+        <section class="mb-16">
+          <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
+            <h2 class="text-3xl md:text-4xl font-bold mb-0">Featured Projects</h2>
+            <a href="/projects" class="text-cyan text-lg font-medium hover:text-pink">
+              View all &rarr;
+            </a>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {featuredProjects.map((project) => (
+              <ProjectCard
+                title={project.data.title}
+                description={project.data.description}
+                tags={project.data.tags}
+                image={project.data.image}
+                slug={project.slug}
+              />
+            ))}
+          </div>
+        </section>
+      )
+    }
+  </div>
+</BaseLayout>

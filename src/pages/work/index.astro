@@ -1,0 +1,74 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '@/components/BaseLayout.astro';
+import WorkCard from '@/components/WorkCard.astro';
+
+const allWork = await getCollection('work');
+const sortedWork = allWork.sort(
+  (a, b) => b.data.startDate.valueOf() - a.data.startDate.valueOf()
+);
+---
+
+<BaseLayout
+  title="Work"
+  description="Professional work and client projects in frontend development and full-stack applications."
+>
+  <div class="container">
+    <header class="page-header">
+      <h1>Work</h1>
+      <p>Professional work and client projects in frontend development and full-stack applications.</p>
+    </header>
+
+    {
+      sortedWork.length === 0 ? (
+        <p class="no-work">No work entries yet. Check back soon!</p>
+      ) : (
+        <div class="work-list">
+          {sortedWork.map((work) => (
+            <WorkCard
+              title={work.data.title}
+              description={work.data.description}
+              client={work.data.client}
+              tags={work.data.tags}
+              image={work.data.image}
+              slug={work.slug}
+              startDate={work.data.startDate}
+              endDate={work.data.endDate}
+            />
+          ))}
+        </div>
+      )
+    }
+  </div>
+</BaseLayout>
+
+<style>
+  .page-header {
+    padding: var(--spacing-xl) 0;
+    border-bottom: var(--border-width) solid var(--color-border);
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .page-header h1 {
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .page-header p {
+    color: var(--color-text-muted);
+    font-size: var(--font-size-lg);
+    margin-bottom: 0;
+  }
+
+  .work-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .no-work {
+    text-align: center;
+    color: var(--color-text-muted);
+    padding: var(--spacing-xl);
+  }
+</style>

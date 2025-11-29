@@ -1,0 +1,33 @@
+---
+import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
+import WorkDetail from '@/layouts/WorkDetail.astro';
+
+export async function getStaticPaths() {
+  const work = await getCollection('work');
+  return work.map((item) => ({
+    params: { slug: item.slug },
+    props: item,
+  }));
+}
+
+type Props = CollectionEntry<'work'>;
+
+const work = Astro.props;
+const { Content } = await work.render();
+---
+
+<WorkDetail
+  title={work.data.title}
+  description={work.data.description}
+  client={work.data.client}
+  tags={work.data.tags}
+  tech={work.data.tech}
+  image={work.data.image}
+  liveUrl={work.data.liveUrl}
+  caseStudyUrl={work.data.caseStudyUrl}
+  startDate={work.data.startDate}
+  endDate={work.data.endDate}
+>
+  <Content />
+</WorkDetail>
