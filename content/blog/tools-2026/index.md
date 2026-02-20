@@ -34,7 +34,11 @@ If you're still using Spotlight, just switch. It's not close.
 
 ## Linear
 
-I resisted proper project management tooling for years because everything felt like overhead. Linear is the first tool that actually gets out of the way. Issues are fast to create, the keyboard shortcuts are good, and it doesn't try to be a wiki or a CRM on the side.
+I've been switching from Asana to Linear and the difference is immediate. Asana is incredibly flexible — almost too flexible. You end up building your own system on top of it, which is fine until you realize you're spending energy maintaining the system instead of doing the work. Linear just gives you projects and issues and gets out of the way. For everyday development work, that's exactly the right model.
+
+The developer-specific features are what really set it apart. Creating a PR with a Linear issue ID in the branch name automatically links it to the issue — it just works, no setup required. The MCP integration is excellent too, which means it slots right into LLM-based workflows without any friction.
+
+The other thing I use constantly is the keyboard shortcuts. Command-K menus everywhere, quick issue creation, navigating between projects — it's the kind of keyboard-first UX that makes you realize how much time you lose clicking around in tools that weren't designed that way.
 
 I use it for personal projects too now, not just client work. There's something clarifying about having a single place where work lives, even when you're working alone.
 
