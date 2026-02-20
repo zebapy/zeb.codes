@@ -73,7 +73,7 @@ const featuredProjects = allProjects
                 pubDate={post.data.pubDate}
                 heroImage={post.data.heroImage}
                 tags={post.data.tags}
-                slug={post.slug}
+                slug={post.id}
               />
             ))}
           </div>
@@ -99,7 +99,7 @@ const featuredProjects = allProjects
                 client={work.data.client}
                 tags={work.data.tags}
                 image={work.data.image}
-                slug={work.slug}
+                slug={work.id}
                 startDate={work.data.startDate}
                 endDate={work.data.endDate}
               />
@@ -126,7 +126,7 @@ const featuredProjects = allProjects
                 description={project.data.description}
                 tags={project.data.tags}
                 image={project.data.image}
-                slug={project.slug}
+                slug={project.id}
               />
             ))}
           </div>

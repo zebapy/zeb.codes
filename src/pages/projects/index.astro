@@ -14,23 +14,23 @@ const sortedProjects = allProjects.sort(
   description="Personal projects and experiments in frontend development and Node.js."
 >
   <div class="container">
-    <header class="page-header">
-      <h1>Projects</h1>
-      <p>Personal projects and experiments in frontend development and Node.js.</p>
+    <header class="py-16 border-b border-current-line mb-16">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Projects</h1>
+      <p class="text-xl text-comment">Personal projects and experiments in frontend development and Node.js.</p>
     </header>
 
     {
       sortedProjects.length === 0 ? (
-        <p class="no-projects">No projects yet. Check back soon!</p>
+        <p class="text-center text-comment py-16">No projects yet. Check back soon!</p>
       ) : (
-        <div class="projects-list">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {sortedProjects.map((project) => (
             <ProjectCard
               title={project.data.title}
               description={project.data.description}
               tags={project.data.tags}
               image={project.data.image}
-              slug={project.slug}
+              slug={project.id}
             />
           ))}
         </div>
@@ -38,34 +38,3 @@ const sortedProjects = allProjects.sort(
     }
   </div>
 </BaseLayout>
-
-<style>
-  .page-header {
-    padding: var(--spacing-xl) 0;
-    border-bottom: var(--border-width) solid var(--color-border);
-    margin-bottom: var(--spacing-xl);
-  }
-
-  .page-header h1 {
-    margin-bottom: var(--spacing-sm);
-  }
-
-  .page-header p {
-    color: var(--color-text-muted);
-    font-size: var(--font-size-lg);
-    margin-bottom: 0;
-  }
-
-  .projects-list {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-lg);
-    margin-bottom: var(--spacing-xl);
-  }
-
-  .no-projects {
-    text-align: center;
-    color: var(--color-text-muted);
-    padding: var(--spacing-xl);
-  }
-</style>

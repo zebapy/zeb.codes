@@ -17,100 +17,28 @@ const { title, description, pubDate, updatedDate, heroImage, tags } = Astro.prop
 
 <BaseLayout title={title} description={description} image={heroImage}>
   <article class="container">
-    <header class="post-header">
+    <header class="py-16 border-b border-current-line mb-16">
       {heroImage && (
-        <div class="hero-image">
-          <img src={heroImage} alt={title} />
+        <div class="mb-8 rounded overflow-hidden">
+          <img src={heroImage} alt={title} class="w-full h-auto block" />
         </div>
       )}
-      <h1>{title}</h1>
-      <div class="post-meta">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">{title}</h1>
+      <div class="text-sm text-comment mb-4">
         <time datetime={pubDate.toISOString()}>
           <FormattedDate date={pubDate} />
         </time>
-        {
-          updatedDate && (
-            <span class="updated">
-              (Updated: <FormattedDate date={updatedDate} />)
-            </span>
-          )
-        }
+        {updatedDate && (
+          <span class="ml-2 italic">
+            (Updated: <FormattedDate date={updatedDate} />)
+          </span>
+        )}
       </div>
       {tags && <TagList tags={tags} />}
     </header>
 
-    <div class="post-content content">
+    <div class="content mx-auto mb-16">
       <slot />
     </div>
   </article>
 </BaseLayout>
-
-<style>
-  .post-header {
-    padding: var(--spacing-xl) 0;
-    border-bottom: var(--border-width) solid var(--color-border);
-    margin-bottom: var(--spacing-xl);
-  }
-
-  .hero-image {
-    margin-bottom: var(--spacing-lg);
-    border-radius: var(--border-radius);
-    overflow: hidden;
-  }
-
-  .hero-image img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
-
-  .post-header h1 {
-    font-size: var(--font-size-4xl);
-    margin-bottom: var(--spacing-md);
-  }
-
-  .post-meta {
-    color: var(--color-text-muted);
-    font-size: var(--font-size-sm);
-    margin-bottom: var(--spacing-md);
-  }
-
-  .updated {
-    margin-left: var(--spacing-sm);
-    font-style: italic;
-  }
-
-  .post-content {
-    margin: 0 auto;
-    margin-bottom: var(--spacing-xl);
-  }
-
-  .post-content :global(h2) {
-    margin-top: var(--spacing-xl);
-    margin-bottom: var(--spacing-md);
-  }
-
-  .post-content :global(h3) {
-    margin-top: var(--spacing-lg);
-    margin-bottom: var(--spacing-md);
-  }
-
-  .post-content :global(img) {
-    margin: var(--spacing-lg) 0;
-    border-radius: var(--border-radius);
-  }
-
-  .post-content :global(blockquote) {
-    border-left: 4px solid var(--color-accent);
-    padding-left: var(--spacing-md);
-    margin: var(--spacing-lg) 0;
-    color: var(--color-text-muted);
-    font-style: italic;
-  }
-
-  @media (max-width: 640px) {
-    .post-header h1 {
-      font-size: var(--font-size-3xl);
-    }
-  }
-</style>

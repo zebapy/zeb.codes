@@ -11,16 +11,16 @@ const sortedPosts = allPosts.sort(
 
 <BaseLayout title="Blog" description="Articles and thoughts on frontend development, design, and technology.">
   <div class="container">
-    <header class="page-header">
-      <h1>Blog</h1>
-      <p>Articles and thoughts on frontend development, design, and technology.</p>
+    <header class="py-16 border-b border-current-line mb-16">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Blog</h1>
+      <p class="text-xl text-comment">Articles and thoughts on frontend development, design, and technology.</p>
     </header>
 
     {
       sortedPosts.length === 0 ? (
-        <p class="no-posts">No blog posts yet. Check back soon!</p>
+        <p class="text-center text-comment py-16">No blog posts yet. Check back soon!</p>
       ) : (
-        <div class="blog-list">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {sortedPosts.map((post) => (
             <BlogCard
               title={post.data.title}
@@ -28,7 +28,7 @@ const sortedPosts = allPosts.sort(
               pubDate={post.data.pubDate}
               heroImage={post.data.heroImage}
               tags={post.data.tags}
-              slug={post.slug}
+              slug={post.id}
             />
           ))}
         </div>
@@ -36,34 +36,3 @@ const sortedPosts = allPosts.sort(
     }
   </div>
 </BaseLayout>
-
-<style>
-  .page-header {
-    padding: var(--spacing-xl) 0;
-    border-bottom: var(--border-width) solid var(--color-border);
-    margin-bottom: var(--spacing-xl);
-  }
-
-  .page-header h1 {
-    margin-bottom: var(--spacing-sm);
-  }
-
-  .page-header p {
-    color: var(--color-text-muted);
-    font-size: var(--font-size-lg);
-    margin-bottom: 0;
-  }
-
-  .blog-list {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-lg);
-    margin-bottom: var(--spacing-xl);
-  }
-
-  .no-posts {
-    text-align: center;
-    color: var(--color-text-muted);
-    padding: var(--spacing-xl);
-  }
-</style>
