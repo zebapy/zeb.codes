@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '@/components/BaseLayout.astro';
 import BlogCard from '@/components/BlogCard.astro';
+import PageHeader from '@/components/PageHeader.astro';
 
 const allPosts = await getCollection('blog', ({ data }) => !data.draft);
 const sortedPosts = allPosts.sort(
@@ -11,16 +12,17 @@ const sortedPosts = allPosts.sort(
 
 <BaseLayout title="Blog" description="Articles and thoughts on frontend development, design, and technology.">
   <div class="container">
-    <header class="py-16 border-b border-current-line mb-16">
-      <h1 class="text-4xl md:text-5xl font-bold mb-4">Blog</h1>
-      <p class="text-xl text-comment">Articles and thoughts on frontend development, design, and technology.</p>
-    </header>
+    <PageHeader
+      kicker="Writing"
+      title="Blog"
+      description="Articles and thoughts on frontend development, design, and technology."
+    />
 
     {
       sortedPosts.length === 0 ? (
         <p class="text-center text-comment py-16">No blog posts yet. Check back soon!</p>
       ) : (
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
           {sortedPosts.map((post) => (
             <BlogCard
               title={post.data.title}

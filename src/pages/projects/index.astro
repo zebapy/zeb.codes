@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '@/components/BaseLayout.astro';
 import ProjectCard from '@/components/ProjectCard.astro';
+import PageHeader from '@/components/PageHeader.astro';
 
 const allProjects = await getCollection('projects');
 const sortedProjects = allProjects.sort(
@@ -14,16 +15,17 @@ const sortedProjects = allProjects.sort(
   description="Personal projects and experiments in frontend development and Node.js."
 >
   <div class="container">
-    <header class="py-16 border-b border-current-line mb-16">
-      <h1 class="text-4xl md:text-5xl font-bold mb-4">Projects</h1>
-      <p class="text-xl text-comment">Personal projects and experiments in frontend development and Node.js.</p>
-    </header>
+    <PageHeader
+      kicker="Side quests"
+      title="Projects"
+      description="Personal projects and experiments in frontend development and Node.js."
+    />
 
     {
       sortedProjects.length === 0 ? (
         <p class="text-center text-comment py-16">No projects yet. Check back soon!</p>
       ) : (
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
           {sortedProjects.map((project) => (
             <ProjectCard
               title={project.data.title}

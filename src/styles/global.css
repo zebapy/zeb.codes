@@ -4,31 +4,59 @@
 
 @layer base {
   html {
-    @apply bg-background text-foreground font-sans antialiased;
+    @apply bg-base text-foreground font-sans antialiased;
+    scroll-behavior: smooth;
+    color-scheme: dark;
   }
 
   body {
-    @apply min-h-screen flex flex-col;
+    @apply min-h-screen flex flex-col relative overflow-x-hidden;
+  }
+
+  /* Atmosphere: layered radial glow + faint dot-grid behind everything */
+  body::before {
+    content: '';
+    @apply fixed inset-0 -z-10 pointer-events-none;
+    background:
+      radial-gradient(60rem 40rem at 78% -8%, rgba(189, 147, 249, 0.16), transparent 60%),
+      radial-gradient(50rem 36rem at 8% 6%, rgba(139, 233, 253, 0.1), transparent 55%),
+      radial-gradient(44rem 44rem at 50% 118%, rgba(255, 121, 198, 0.1), transparent 60%);
+  }
+
+  body::after {
+    content: '';
+    @apply fixed inset-0 -z-10 pointer-events-none opacity-[0.18];
+    background-image:
+      radial-gradient(rgba(98, 114, 164, 0.4) 1px, transparent 1px);
+    background-size: 26px 26px;
+    mask-image: radial-gradient(ellipse 100% 80% at 50% 0%, #000 30%, transparent 80%);
+    -webkit-mask-image: radial-gradient(ellipse 100% 80% at 50% 0%, #000 30%, transparent 80%);
   }
 
   main {
     @apply flex-1;
   }
 
+  h1,
+  h2,
+  h3 {
+    @apply font-display font-bold tracking-tight text-balance;
+  }
+
   h1 {
-    @apply text-4xl md:text-5xl font-bold mb-4;
+    @apply text-4xl md:text-5xl mb-4 leading-[1.05];
   }
 
   h2 {
-    @apply text-3xl md:text-4xl font-bold mb-4;
+    @apply text-2xl md:text-3xl mb-4 leading-tight;
   }
 
   h3 {
-    @apply text-2xl md:text-3xl font-bold mb-4;
+    @apply text-xl md:text-2xl font-semibold mb-4;
   }
 
   h4 {
-    @apply text-xl font-bold mb-3;
+    @apply text-lg font-display font-semibold mb-3;
   }
 
   h5 {
@@ -40,23 +68,27 @@
   }
 
   p {
-    @apply mb-4;
+    @apply mb-4 leading-relaxed;
   }
 
   a {
-    @apply text-cyan hover:text-pink transition-colors duration-150;
+    @apply text-cyan transition-colors duration-150;
+  }
+
+  a:hover {
+    @apply text-pink;
   }
 
   code {
-    @apply font-mono text-sm px-1 py-0.5 bg-current-line rounded;
+    @apply font-mono text-sm px-1.5 py-0.5 bg-current-line/70 text-yellow rounded;
   }
 
   pre {
-    @apply mb-4 p-4 bg-current-line rounded overflow-x-auto;
+    @apply mb-6 p-5 bg-base border border-current-line/60 rounded-lg overflow-x-auto;
   }
 
   pre code {
-    @apply p-0 bg-transparent;
+    @apply p-0 bg-transparent text-foreground;
   }
 
   ul,
@@ -65,7 +97,7 @@
   }
 
   li {
-    @apply mb-2;
+    @apply mb-2 leading-relaxed;
   }
 
   img {
@@ -73,16 +105,117 @@
   }
 
   hr {
-    @apply border-0 border-t border-current-line my-8;
+    @apply border-0 border-t border-current-line/60 my-10;
+  }
+
+  ::selection {
+    @apply bg-purple/40 text-foreground;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-purple ring-offset-2 ring-offset-base rounded-sm;
+  }
+}
+
+@layer components {
+  /* Mono kicker / eyebrow label used across sections */
+  .kicker {
+    @apply font-mono text-xs uppercase tracking-[0.22em] text-comment;
+  }
+
+  /* Editorial section index number, e.g. (01) */
+  .section-index {
+    @apply font-mono text-sm text-purple/70;
+  }
+
+  /* Animated underline link for inline / "view all" navigation */
+  .link-underline {
+    @apply relative no-underline;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 0% 1.5px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .link-underline:hover {
+    background-size: 100% 1.5px;
+  }
+
+  /* Long-form article content */
+  .prose {
+    @apply text-[1.0625rem] leading-relaxed text-foreground/90;
+  }
+
+  .prose > h2 {
+    @apply mt-12 mb-4;
+  }
+
+  .prose > h3 {
+    @apply mt-10 mb-3;
+  }
+
+  .prose a {
+    @apply text-cyan underline decoration-cyan/30 underline-offset-4 transition-colors hover:text-pink hover:decoration-pink/50;
+  }
+
+  .prose blockquote {
+    @apply my-8 rounded-r-md border-l-2 border-purple/60 bg-surface/40 py-3 pl-5 pr-4 text-comment;
+  }
+
+  .prose img {
+    @apply my-8 rounded-xl border border-current-line/50;
+  }
+
+  .prose strong {
+    @apply font-semibold text-foreground;
+  }
+
+  /* Raised, bordered card surface with hover lift + accent edge */
+  .card {
+    @apply relative rounded-lg border border-current-line/50 bg-surface/70 overflow-hidden;
+    @apply transition-[transform,border-color] duration-300 ease-out;
+    backdrop-filter: blur(2px);
+  }
+
+  .card::before {
+    content: '';
+    @apply absolute inset-x-0 top-0 h-px opacity-0 transition-opacity duration-300;
+    background: linear-gradient(90deg, transparent, theme('colors.purple'), theme('colors.cyan'), transparent);
+  }
+
+  .card:hover {
+    @apply -translate-y-1.5 border-purple/50;
+  }
+
+  .card:hover::before {
+    @apply opacity-100;
   }
 }
 
 @layer utilities {
   .container {
-    @apply max-w-7xl mx-auto px-4;
+    @apply max-w-6xl mx-auto px-5 sm:px-8;
   }
 
   .content {
     @apply max-w-content;
+  }
+
+  /* Reveal-on-load stagger helper */
+  .reveal {
+    @apply animate-fade-up;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal,
+    .animate-fade-up,
+    .animate-glow-drift {
+      animation: none !important;
+    }
+
+    html {
+      scroll-behavior: auto;
+    }
   }
 }

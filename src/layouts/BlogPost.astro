@@ -17,14 +17,14 @@ const { title, description, pubDate, updatedDate, heroImage, tags } = Astro.prop
 
 <BaseLayout title={title} description={description} image={heroImage}>
   <article class="container">
-    <header class="py-16 border-b border-current-line mb-16">
-      {heroImage && (
-        <div class="mb-8 rounded overflow-hidden">
-          <img src={heroImage} alt={title} class="w-full h-auto block" />
-        </div>
-      )}
-      <h1 class="text-4xl md:text-5xl font-bold mb-4">{title}</h1>
-      <div class="text-sm text-comment mb-4">
+    <header class="content mx-auto pt-16 pb-12">
+      <a
+        href="/blog"
+        class="link-underline mb-8 inline-flex items-center gap-2 font-mono text-xs uppercase tracking-widest text-comment hover:text-purple"
+      >
+        &larr; All posts
+      </a>
+      <div class="mb-5 font-mono text-xs text-comment group">
         <time datetime={pubDate.toISOString()}>
           <FormattedDate date={pubDate} />
         </time>
@@ -34,10 +34,18 @@ const { title, description, pubDate, updatedDate, heroImage, tags } = Astro.prop
           </span>
         )}
       </div>
-      {tags && <TagList tags={tags} />}
+      <h1 class="mb-6">{title}</h1>
+      <p class="mb-6 text-lg leading-relaxed text-comment">{description}</p>
+      {tags && <div class="group"><TagList tags={tags} /></div>}
     </header>
 
-    <div class="content mx-auto mb-16">
+    {heroImage && (
+      <div class="content mx-auto mb-12 overflow-hidden rounded-xl border border-current-line/50">
+        <img src={heroImage} alt={title} class="block h-auto w-full" />
+      </div>
+    )}
+
+    <div class="prose content mx-auto mb-16">
       <slot />
     </div>
   </article>

@@ -2,6 +2,7 @@
 import { getCollection } from 'astro:content';
 import BaseLayout from '@/components/BaseLayout.astro';
 import WorkCard from '@/components/WorkCard.astro';
+import PageHeader from '@/components/PageHeader.astro';
 
 const allWork = await getCollection('work');
 const sortedWork = allWork.sort(
@@ -14,16 +15,17 @@ const sortedWork = allWork.sort(
   description="Professional work and client projects in frontend development and full-stack applications."
 >
   <div class="container">
-    <header class="py-16 border-b border-current-line mb-16">
-      <h1 class="text-4xl md:text-5xl font-bold mb-4">Work</h1>
-      <p class="text-xl text-comment">Professional work and client projects in frontend development and full-stack applications.</p>
-    </header>
+    <PageHeader
+      kicker="Experience"
+      title="Work"
+      description="Professional work and client projects in frontend development and full-stack applications."
+    />
 
     {
       sortedWork.length === 0 ? (
         <p class="text-center text-comment py-16">No work entries yet. Check back soon!</p>
       ) : (
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
           {sortedWork.map((work) => (
             <WorkCard
               title={work.data.title}

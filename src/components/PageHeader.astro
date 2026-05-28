@@ -1,0 +1,27 @@
+---
+interface Props {
+  kicker?: string;
+  title: string;
+  description?: string;
+}
+
+const { kicker, title, description } = Astro.props;
+---
+
+<header class="relative py-16 md:py-20">
+  {kicker && (
+    <p class="kicker reveal mb-5 flex items-center gap-3" style="animation-delay: 0ms">
+      <span class="inline-block h-px w-8 bg-purple/60"></span>
+      {kicker}
+    </p>
+  )}
+  <h1 class="reveal mb-5 lowercase" style="animation-delay: 80ms">{title}</h1>
+  {
+    description && (
+      <p class="reveal max-w-2xl text-lg leading-relaxed text-comment" style="animation-delay: 160ms">
+        {description}
+      </p>
+    )
+  }
+  <div class="mt-10 h-px w-full bg-gradient-to-r from-current-line/60 via-current-line/30 to-transparent"></div>
+</header>

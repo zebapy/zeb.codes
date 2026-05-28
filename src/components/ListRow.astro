@@ -1,0 +1,42 @@
+---
+interface Props {
+  href: string;
+  title: string;
+  meta?: string;
+  description?: string;
+}
+
+const { href, title, meta, description } = Astro.props;
+---
+
+<li class="border-b border-current-line/40 last:border-b-0">
+  <a
+    href={href}
+    class="group flex items-baseline gap-5 py-5 no-underline transition-colors sm:gap-8"
+  >
+    {meta && (
+      <span class="hidden w-32 shrink-0 pt-0.5 font-mono text-xs text-comment sm:block">
+        {meta}
+      </span>
+    )}
+
+    <span class="min-w-0 flex-1">
+      <span class="block font-display text-lg font-semibold leading-snug text-foreground transition-colors group-hover:text-purple">
+        {title}
+      </span>
+      {meta && (
+        <span class="mt-1 block font-mono text-xs text-comment sm:hidden">{meta}</span>
+      )}
+      {description && (
+        <span class="mt-1.5 block text-sm leading-relaxed text-comment">{description}</span>
+      )}
+    </span>
+
+    <span
+      class="shrink-0 pt-1 text-comment transition-transform duration-200 group-hover:translate-x-1 group-hover:text-purple"
+      aria-hidden="true"
+    >
+      &rarr;
+    </span>
+  </a>
+</li>
