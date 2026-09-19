@@ -4,32 +4,28 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Dracula palette — the soul of the site
-        background: '#282a36',
-        base: '#1d1e26', // deeper base for atmospheric layering
-        surface: '#30323e', // raised card surface
-        'current-line': '#44475a',
-        foreground: '#f8f8f2',
-        comment: '#6272a4',
-        cyan: '#8be9fd',
-        green: '#50fa7b',
-        orange: '#ffb86c',
-        pink: '#ff79c6',
-        purple: '#bd93f9',
-        red: '#ff5555',
-        yellow: '#f1fa8c',
+        // "The Index" — monospace editorial. Near-black canvas, single amber accent.
+        background: '#0c0c0d', // canvas
+        base: '#0c0c0d', // canvas (alias)
+        surface: '#141416', // faintly raised surface
+        'current-line': '#3a3a42', // hairline / border base (used at low opacity)
+        foreground: '#e9e9ec', // ink
+        comment: '#8a8a92', // muted / label text
+        // Accent — amber. purple/cyan/pink all collapse to one accent, used sparingly.
+        purple: '#e0a05e',
+        cyan: '#e0a05e',
+        pink: '#e0a05e',
+        orange: '#e0a05e',
+        // Retained for code syntax / status
+        green: '#7dcf8a',
+        red: '#e0715e',
+        yellow: '#e0c05e',
       },
       fontFamily: {
-        // Mono-first, dev-tool aesthetic
+        // Single typeface — JetBrains Mono. Hierarchy by weight, not family.
         display: ['JetBrains Mono', 'SF Mono', 'Menlo', 'monospace'],
         mono: ['JetBrains Mono', 'SF Mono', 'Menlo', 'Consolas', 'monospace'],
-        sans: [
-          'Schibsted Grotesk',
-          '-apple-system',
-          'BlinkMacSystemFont',
-          'Segoe UI',
-          'sans-serif',
-        ],
+        sans: ['JetBrains Mono', 'SF Mono', 'Menlo', 'Consolas', 'monospace'],
       },
       maxWidth: {
         content: '68ch',

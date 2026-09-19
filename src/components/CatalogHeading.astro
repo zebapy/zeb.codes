@@ -1,0 +1,22 @@
+---
+interface Props {
+  label: string;
+  href?: string;
+  meta?: string;
+}
+
+const { label, href, meta = 'Year' } = Astro.props;
+---
+
+<div class="mb-1 flex items-baseline justify-between font-mono text-xs uppercase tracking-[0.18em] text-comment">
+  {
+    href ? (
+      <a href={href} class="no-underline hover:text-purple">
+        {label}
+      </a>
+    ) : (
+      <span>{label}</span>
+    )
+  }
+  <span>{meta}</span>
+</div>

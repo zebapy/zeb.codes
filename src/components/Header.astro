@@ -2,85 +2,71 @@
 import { site } from '@/data/site.ts';
 
 const navItems = [
-  { label: 'Home', href: '/', index: '01' },
-  { label: 'Blog', href: '/blog', index: '02' },
-  { label: 'Projects', href: '/projects', index: '03' },
-  { label: 'Work', href: '/work', index: '04' },
+  { label: 'work', href: '/work' },
+  { label: 'projects', href: '/projects' },
+  { label: 'blog', href: '/blog' },
 ];
 
 const currentPath = Astro.url.pathname;
 
 const isActive = (href: string) =>
   currentPath === href || (href !== '/' && currentPath.startsWith(href));
-
-// Compact initials mark for the logo, e.g. "Zebhdiyah Pykosz" -> "ZP"
-const initials = site.name
-  .split(' ')
-  .map((part) => part[0])
-  .join('')
-  .slice(0, 2)
-  .toUpperCase();
 ---
 
 <header
-  class="sticky top-0 z-50 border-b border-current-line/40 bg-base/70 backdrop-blur-xl supports-[backdrop-filter]:bg-base/55"
+  class="sticky top-0 z-50 border-b border-current-line/50 bg-base/80 backdrop-blur-xl supports-[backdrop-filter]:bg-base/60"
 >
-  <nav class="container">
+  <nav class="container" aria-label="Primary">
     <div class="flex items-center justify-between py-4">
       <a
         href="/"
-        class="group flex items-center gap-3 no-underline"
+        class="group flex min-h-11 items-center no-underline"
         aria-label={`${site.name} — home`}
       >
         <span
-          class="grid h-9 w-9 place-items-center rounded-lg border border-purple/40 bg-purple/10 font-mono text-sm font-semibold text-purple transition-colors group-hover:border-purple group-hover:bg-purple/20"
+          class="font-display text-sm font-extrabold tracking-tight text-foreground transition-colors group-hover:text-purple"
         >
-          {initials}
-        </span>
-        <span class="font-display text-lg font-semibold tracking-tight text-foreground transition-colors group-hover:text-purple">
           zeb<span class="text-purple">.</span>codes
         </span>
       </a>
 
       <button
-        class="md:hidden p-2 z-50"
+        class="z-50 grid min-h-11 min-w-11 place-items-center md:hidden"
         aria-label="Toggle navigation"
         aria-expanded="false"
         id="mobile-toggle"
       >
-        <span class="hamburger block w-6 h-0.5 bg-foreground relative transition-colors">
-          <span class="absolute w-6 h-0.5 bg-foreground -translate-y-2 transition-transform"></span>
-          <span class="absolute w-6 h-0.5 bg-foreground translate-y-2 transition-transform"></span>
+        <span class="hamburger relative block h-0.5 w-5 bg-foreground transition-colors">
+          <span class="absolute left-0 top-0 h-0.5 w-5 -translate-y-1.5 bg-foreground transition-transform"></span>
+          <span class="absolute left-0 top-0 h-0.5 w-5 translate-y-1.5 bg-foreground transition-transform"></span>
         </span>
       </button>
 
-      <ul class="hidden md:flex items-center gap-1 list-none m-0 p-0" id="nav-links">
+      <ul class="m-0 hidden list-none items-center gap-8 p-0 md:flex" id="nav-links">
         {
           navItems.map((item) => (
             <li>
               <a
                 href={item.href}
                 class:list={[
-                  'group flex items-center gap-1.5 rounded-md px-3 py-2 text-sm font-medium no-underline transition-colors',
-                  isActive(item.href)
-                    ? 'text-purple'
-                    : 'text-comment hover:text-foreground',
+                  'inline-flex min-h-11 items-center font-mono text-sm no-underline transition-colors',
+                  isActive(item.href) ? 'text-purple' : 'text-comment hover:text-foreground',
                 ]}
                 aria-current={isActive(item.href) ? 'page' : undefined}
               >
-                <span
-                  class:list={[
-                    'font-mono text-xs transition-colors',
-                    isActive(item.href) ? 'text-purple/70' : 'text-current-line group-hover:text-comment',
-                  ]}
-                >
-                  {item.index}
-                </span>
                 {item.label}
               </a>
             </li>
           ))
         }
+        <li>
+          <a
+            href={`mailto:${site.email}`}
+            class="inline-flex min-h-11 items-center font-mono text-sm text-comment no-underline hover:text-purple"
+          >
+            {site.email}
+          </a>
+        </li>
       </ul>
     </div>
   </nav>
@@ -89,7 +75,7 @@ const initials = site.name
 <style>
   @media (max-width: 768px) {
     #nav-links {
-      @apply flex fixed top-0 right-0 bottom-0 w-72 bg-base border-l border-current-line/60 flex-col p-16 gap-2 translate-x-full transition-transform duration-300 ease-out;
+      @apply fixed bottom-0 right-0 top-0 flex w-72 translate-x-full flex-col gap-1 border-l border-current-line/60 bg-base p-16 transition-transform duration-300 ease-out;
     }
 
     #nav-links.open {
@@ -101,11 +87,11 @@ const initials = site.name
     }
 
     #mobile-toggle[aria-expanded='true'] .hamburger span:first-child {
-      @apply rotate-45 translate-y-0;
+      @apply translate-y-0 rotate-45;
     }
 
     #mobile-toggle[aria-expanded='true'] .hamburger span:last-child {
-      @apply -rotate-45 translate-y-0;
+      @apply translate-y-0 -rotate-45;
     }
   }
 </style>

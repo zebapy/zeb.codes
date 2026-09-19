@@ -1,39 +1,45 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '@/components/BaseLayout.astro';
-import BlogCard from '@/components/BlogCard.astro';
+import CatalogHeading from '@/components/CatalogHeading.astro';
+import ListRow from '@/components/ListRow.astro';
 import PageHeader from '@/components/PageHeader.astro';
 
 const allPosts = await getCollection('blog', ({ data }) => !data.draft);
 const sortedPosts = allPosts.sort(
   (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 );
+
+const postDate = (date: Date) =>
+  `${date.getFullYear()}·${String(date.getMonth() + 1).padStart(2, '0')}`;
 ---
 
 <BaseLayout title="Blog" description="Articles and thoughts on frontend development, design, and technology.">
-  <div class="container">
+  <div class="container pb-16">
     <PageHeader
       kicker="Writing"
-      title="Blog"
+      title="Field notes"
       description="Articles and thoughts on frontend development, design, and technology."
     />
 
     {
       sortedPosts.length === 0 ? (
-        <p class="text-center text-comment py-16">No blog posts yet. Check back soon!</p>
+        <p class="py-16 text-comment">No posts yet. Check back soon.</p>
       ) : (
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-          {sortedPosts.map((post) => (
-            <BlogCard
-              title={post.data.title}
-              description={post.data.description}
-              pubDate={post.data.pubDate}
-              heroImage={post.data.heroImage}
-              tags={post.data.tags}
-              slug={post.id}
-            />
-          ))}
-        </div>
+        <>
+          <CatalogHeading label="Index" meta="Date" />
+          <ul class="m-0 list-none p-0">
+            {sortedPosts.map((post, i) => (
+              <ListRow
+                index={String(i + 1).padStart(2, '0')}
+                href={`/blog/${post.id}`}
+                title={post.data.title}
+                description={post.data.description}
+                meta={postDate(post.data.pubDate)}
+              />
+            ))}
+          </ul>
+        </>
       )
     }
   </div>

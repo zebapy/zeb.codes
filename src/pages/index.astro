@@ -1,103 +1,101 @@
 ---
 import { getCollection } from 'astro:content';
 import BaseLayout from '@/components/BaseLayout.astro';
+import CatalogHeading from '@/components/CatalogHeading.astro';
 import ListRow from '@/components/ListRow.astro';
-import SectionHeader from '@/components/SectionHeader.astro';
 import { site } from '@/data/site.ts';
 
-const formatDate = (date: Date) =>
-  date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' });
+const yearOf = (date?: Date) => (date ? String(date.getFullYear()) : 'ongoing');
 
-const formatRange = (start: Date, end?: Date) =>
-  `${start.getFullYear()} – ${end ? end.getFullYear() : 'now'}`;
+const postDate = (date: Date) =>
+  `${date.getFullYear()}·${String(date.getMonth() + 1).padStart(2, '0')}`;
 
-// Get recent blog posts (latest 3)
 const allBlogPosts = await getCollection('blog', ({ data }) => !data.draft);
 const recentPosts = allBlogPosts
   .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf())
   .slice(0, 3);
 
-// Get featured work (up to 3)
 const allWork = await getCollection('work');
 const featuredWork = allWork
   .filter((item) => item.data.featured)
-  .sort((a, b) => (b.data.order || 0) - (a.data.order || 0))
-  .slice(0, 3);
+  .sort((a, b) => (b.data.order || 0) - (a.data.order || 0));
 
-// Get featured projects (up to 3)
 const allProjects = await getCollection('projects');
 const featuredProjects = allProjects
   .filter((item) => item.data.featured)
-  .sort((a, b) => (b.data.order || 0) - (a.data.order || 0))
-  .slice(0, 3);
+  .sort((a, b) => (b.data.order || 0) - (a.data.order || 0));
+
+const indexEntries = [
+  ...featuredWork.map((w) => ({
+    href: `/work/${w.id}`,
+    title: w.data.client ? `${w.data.title} · ${w.data.client}` : w.data.title,
+    meta: yearOf(w.data.endDate ?? w.data.startDate),
+  })),
+  ...featuredProjects.map((p) => ({
+    href: `/projects/${p.id}`,
+    title: p.data.title,
+    meta: yearOf(p.data.endDate),
+  })),
+].slice(0, 6);
+
+const skills = ['TypeScript', 'React', 'Astro', 'CSS', 'UI/UX', 'Node'];
 ---
 
 <BaseLayout>
   <div class="container">
-    <!-- Hero -->
-    <section class="relative py-20 md:py-28">
-      <div class="grid gap-12 md:grid-cols-[1fr_auto] md:items-center">
-        <div class="max-w-3xl">
-          <p class="kicker reveal mb-6 flex items-center gap-3" style="animation-delay: 0ms">
-            <span class="inline-block h-px w-8 bg-purple/60"></span>
-            {site.name} · {site.role}
-          </p>
-
-          <h1 class="reveal mb-8 text-foreground" style="animation-delay: 80ms">
-            Frontend developer with a penchant for
-            <span class="text-purple">UI/UX design</span>, located in Middlebury, Vermont.
-          </h1>
-
-          <div class="reveal flex flex-wrap gap-3" style="animation-delay: 160ms">
-            {
-              site.social.map((link) => (
-                <a
-                  href={link.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="group inline-flex items-center gap-2 rounded-lg border border-current-line/60 bg-surface/60 px-4 py-2 font-mono text-sm text-foreground no-underline transition-colors hover:border-purple/60 hover:text-purple"
-                >
-                  {link.name}
-                  <span class="text-comment transition-transform group-hover:translate-x-0.5 group-hover:text-purple">
-                    &#8599;
-                  </span>
-                </a>
-              ))
-            }
-          </div>
-        </div>
-
-        <div class="reveal relative mx-auto md:mx-0" style="animation-delay: 200ms">
-          <div
-            class="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-56 w-56 -translate-x-1/2 -translate-y-1/2 rounded-full bg-purple/30 blur-3xl animate-glow-drift"
-          >
-          </div>
-          <div class="relative">
+    <section
+      class="grid items-end gap-10 border-b border-current-line/50 pb-14 pt-16 md:grid-cols-[1fr_auto] md:pt-24"
+    >
+      <div>
+        <p class="kicker mb-6">{site.role} — Middlebury, Vermont</p>
+        <h1 class="mb-0 text-5xl leading-[0.92] tracking-tighter md:text-7xl">
+          Zebhdiyah<br />Pykosz<span class="text-purple">.</span>
+        </h1>
+        <p class="mt-8 mb-0 max-w-md text-comment">{site.summary}</p>
+      </div>
+      <div class="font-mono text-xs leading-[2.2] text-comment md:text-right">
+        <div class="inline-flex items-center gap-2 text-purple md:justify-end">
+          <span class="relative flex h-1.5 w-1.5" aria-hidden="true">
             <span
-              class="absolute -inset-3 rounded-xl border border-current-line/40"
-              aria-hidden="true"></span>
-            <img
-              src={site.avatar}
-              alt={site.pic_alt}
-              class="relative h-44 w-44 rounded-lg object-cover shadow-2xl ring-1 ring-purple/40 md:h-52 md:w-52"
-            />
-          </div>
+              class="absolute inline-flex h-full w-full animate-ping rounded-full bg-purple opacity-40 motion-reduce:animate-none"
+            ></span>
+            <span class="relative inline-flex h-1.5 w-1.5 rounded-full bg-purple"></span>
+          </span>
+          available for work
         </div>
+        <div>{indexEntries.length} entries</div>
+        <div>{recentPosts.length} field notes</div>
       </div>
     </section>
 
-    <!-- Recent Blog Posts -->
+    {
+      indexEntries.length > 0 && (
+        <section class="border-b border-current-line/50 py-12">
+          <CatalogHeading label="Index" />
+          <ul class="m-0 list-none p-0">
+            {indexEntries.map((entry, i) => (
+              <ListRow
+                index={String(i + 1).padStart(2, '0')}
+                href={entry.href}
+                title={entry.title}
+                meta={entry.meta}
+              />
+            ))}
+          </ul>
+        </section>
+      )
+    }
+
     {
       recentPosts.length > 0 && (
-        <section class="mb-24">
-          <SectionHeader index="01" kicker="Writing" title="Recent posts" href="/blog" />
-          <ul class="list-none m-0 p-0">
+        <section class="border-b border-current-line/50 py-12">
+          <CatalogHeading label="Field notes" href="/blog" meta="Date" />
+          <ul class="m-0 list-none p-0">
             {recentPosts.map((post) => (
               <ListRow
                 href={`/blog/${post.id}`}
                 title={post.data.title}
-                meta={formatDate(post.data.pubDate)}
-                description={post.data.description}
+                meta={postDate(post.data.pubDate)}
               />
             ))}
           </ul>
@@ -105,41 +103,23 @@ const featuredProjects = allProjects
       )
     }
 
-    <!-- Featured Work -->
-    {
-      featuredWork.length > 0 && (
-        <section class="mb-24">
-          <SectionHeader index="02" kicker="Experience" title="Featured work" href="/work" />
-          <ul class="list-none m-0 p-0">
-            {featuredWork.map((work) => (
-              <ListRow
-                href={`/work/${work.id}`}
-                title={work.data.client ? `${work.data.title} · ${work.data.client}` : work.data.title}
-                meta={formatRange(work.data.startDate, work.data.endDate)}
-                description={work.data.description}
-              />
-            ))}
-          </ul>
-        </section>
-      )
-    }
-
-    <!-- Featured Projects -->
-    {
-      featuredProjects.length > 0 && (
-        <section class="mb-24">
-          <SectionHeader index="03" kicker="Side quests" title="Featured projects" href="/projects" />
-          <ul class="list-none m-0 p-0">
-            {featuredProjects.map((project) => (
-              <ListRow
-                href={`/projects/${project.id}`}
-                title={project.data.title}
-                description={project.data.description}
-              />
-            ))}
-          </ul>
-        </section>
-      )
-    }
+    <section class="grid gap-8 py-14 md:grid-cols-[200px_1fr]">
+      <p class="kicker mb-0">About</p>
+      <div>
+        <p class="mb-0 max-w-2xl text-lg leading-relaxed text-foreground/90">
+          I'm a frontend developer who cares a little too much about how things feel — chasing
+          the line between fast and delightful across the surfaces people touch every day.
+        </p>
+        <ul class="mt-6 mb-0 flex list-none flex-wrap gap-2 p-0">
+          {
+            skills.map((skill) => (
+              <li class="border border-current-line/70 px-3 py-1.5 font-mono text-xs text-comment">
+                {skill}
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </section>
   </div>
 </BaseLayout>
