@@ -1,0 +1,53 @@
+---
+interface Props {
+  chart: string;
+}
+
+const { chart } = Astro.props;
+---
+
+<div class="mermaid-wrapper my-8">
+  <pre class="mermaid">{chart}</pre>
+</div>
+
+<script>
+  import mermaid from 'mermaid';
+
+  mermaid.initialize({
+    startOnLoad: true,
+    theme: 'dark',
+    themeVariables: {
+      primaryColor: '#bd93f9',
+      primaryTextColor: '#f8f8f2',
+      primaryBorderColor: '#6272a4',
+      lineColor: '#6272a4',
+      secondaryColor: '#44475a',
+      tertiaryColor: '#282a36',
+      background: '#282a36',
+      mainBkg: '#44475a',
+      nodeBorder: '#6272a4',
+      clusterBkg: '#282a36',
+      clusterBorder: '#6272a4',
+      titleColor: '#f8f8f2',
+      edgeLabelBackground: '#282a36',
+      nodeTextColor: '#f8f8f2',
+    },
+    flowchart: {
+      htmlLabels: true,
+      curve: 'basis',
+    },
+  });
+
+  // Re-run mermaid on page load (for view transitions)
+  document.addEventListener('astro:page-load', () => {
+    mermaid.run();
+  });
+</script>
+
+<style>
+  .mermaid-wrapper :global(pre.mermaid) {
+    background: transparent;
+    padding: 0;
+    text-align: center;
+  }
+</style>

@@ -1,0 +1,105 @@
+---
+title: 'My stack, visualized'
+description: 'A hierarchy diagram of the hardware and software I use every day in 2026 — from the Mac down to the CLI tools.'
+pubDate: 2026-03-17
+tags: ['tools', 'workflow', 'productivity']
+draft: false
+---
+
+import Mermaid from '@/components/Mermaid.astro';
+
+I wrote about [my tools earlier this year](/blog/tools-2026), but a list doesn't capture how everything fits together. Here's the actual hierarchy — what runs on what, and where I spend my time.
+
+<Mermaid chart={`graph TD
+  MAC["🖥 MacBook Pro — M2"]
+
+  MAC --> GHOSTTY["👻 Ghostty"]
+  MAC --> VSCODE["💎 VS Code"]
+  MAC --> RAYCAST["🔍 Raycast"]
+  MAC --> VOYAGER["⌨️ ZSA Voyager"]
+  MAC --> SW["🎙 SuperWhisper"]
+
+  GHOSTTY --> CC["Claude Code"]
+  GHOSTTY --> GH["GitHub CLI"]
+  GHOSTTY --> NPM["npm + fuzz-run"]
+  GHOSTTY --> FZF["fzf"]
+
+  RAYCAST --> SNIPPETS["Snippets"]
+  RAYCAST --> CLIPBOARD["Clipboard history"]
+  RAYCAST --> WINDOW["Window management"]
+  RAYCAST --> EXTENSIONS["Extensions ↗"]
+
+  click EXTENSIONS href "#raycast" "Jump to Raycast section"
+
+  classDef hardware fill:#44475a,stroke:#bd93f9,stroke-width:2px,color:#f8f8f2
+  classDef app fill:#44475a,stroke:#8be9fd,stroke-width:1px,color:#f8f8f2
+  classDef cli fill:#44475a,stroke:#50fa7b,stroke-width:1px,color:#f8f8f2
+  classDef raycastNode fill:#44475a,stroke:#ffb86c,stroke-width:1px,color:#f8f8f2
+
+  class MAC,VOYAGER hardware
+  class GHOSTTY,VSCODE,RAYCAST,SW app
+  class CC,GH,NPM,FZF cli
+  class SNIPPETS,CLIPBOARD,WINDOW,EXTENSIONS raycastNode
+`} />
+
+## The terminal is the center
+
+Ghostty replaced Warp for me recently. I wrote about [still using Warp](/blog/tools-2026) a month ago — turns out draggable panes weren't the dealbreaker I thought. Ghostty is fast, minimal, and stays out of the way. That won.
+
+Most of my actual work happens through four CLI tools:
+
+- **Claude Code** — the big one. AI pair programming that understands my whole codebase. This is where I spend the most time now.
+- **GitHub CLI** — PRs, issues, repo management without leaving the terminal. `gh pr create` is muscle memory at this point.
+- **npm** — the unglamorous backbone. Package management, scripts, the usual. I use [fuzz-run](https://github.com/nicolo-ribaudo/fuzz-run) (`nr`) on top of it — fuzzy search your `package.json` scripts and run them without typing the full name.
+- **fzf** — fuzzy finding for everything. File search, command history, git branches. Small tool, massive impact.
+
+## VS Code is the escape hatch
+
+{/* Extensions pulled from `code --list-extensions` — Claude ran that directly in the terminal */}
+
+I'm in VS Code less than I used to be. Claude Code handles most of what I'd open an editor for. But when I need to visually diff something, use a specific extension, or just _look_ at a file tree, VS Code is still there. It's less of a daily driver and more of a power tool I reach for when the terminal isn't enough.
+
+The extensions still earning their keep:
+
+- **[Vim](https://marketplace.visualstudio.com/items?itemName=vscodevim.vim)** — muscle memory at this point, I can't type without it
+- **[Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)** + **[ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)** — formatting and linting that just runs on save
+- **[Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss)** — class autocomplete and hover previews, still useful even with Claude around
+- **[Prisma](https://marketplace.visualstudio.com/items?itemName=Prisma.prisma)** — schema formatting and syntax highlighting
+- **[REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client)** — fire HTTP requests from a `.http` file, lightweight alternative to Postman
+- **[Remote SSH](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-ssh)** — when I need to work on a remote box, this makes it seamless
+- **[File Utils](https://marketplace.visualstudio.com/items?itemName=sleistner.vscode-fileutils)** — rename, move, duplicate files from the command palette
+
+A few I used to rely on that Claude Code has quietly made redundant: GitHub Copilot Chat, most snippet extensions, import sorters. They're still installed but I don't reach for them.
+
+## Raycast
+
+Raycast deserves its own post — and I'm planning to write one. The short version: it replaced Spotlight, Alfred, Rectangle, and half a dozen other utilities.
+
+{/* Extensions pulled from ~/.config/raycast/extensions — Claude read each package.json title directly off disk */}
+
+A few extensions I reach for constantly:
+
+- **[Git Repos](https://www.raycast.com/moored/git-repos)** — fuzzy-search all local repos and open them instantly
+- **[Git Worktrees](https://www.raycast.com/StevenRCE0/git-worktrees)** — manage worktrees without leaving the keyboard
+- **[GitHub](https://www.raycast.com/raycast/github)** — PRs, issues, notifications, repo search
+- **[Linear](https://www.raycast.com/raycast/linear)** — create and navigate issues in seconds, pairs with the MCP integration
+- **[Color Picker](https://www.raycast.com/thomas/color-picker)** — pick from screen, convert formats, keep a history
+- **[Transform](https://www.raycast.com/andreaselia/transform)** — encode/decode, format JSON, convert case — one extension for all text munging
+- **[ray.so](https://www.raycast.com/garrett/ray-so)** — beautiful code screenshots without opening a browser
+- **[Tailwind CSS](https://www.raycast.com/vimtor/tailwindcss)** + **[shadcn/ui](https://www.raycast.com/luisFilipePT/shadcn-ui)** — search docs and component names without context-switching
+
+Built a few custom ones too (`faraday`, `claude-usage-menu-bar`, `rippling-time-off`) — those will be in the dedicated Raycast post.
+
+## SuperWhisper
+
+AI dictation that runs locally on the Mac. I use it with the Parakeet model — accurate, private, free. I wrote more about it in [my tools post](/blog/tools-2026), but the short version: speaking forces you to commit to a thought in a way typing doesn't. It changed how I think, not just how I input text.
+
+## The Voyager
+
+I wrote about [my keyboard layout philosophy](/blog/keyboard-layout) and the switch from the Moonlander to the ZSA Voyager. It's the piece of hardware I'm most opinionated about. A good keyboard disappears — you stop thinking about it and just type. The Voyager does that for me in a way the Moonlander never quite did.
+
+It's not software, but it's in the diagram because it's part of the stack. Productivity isn't just apps.
+
+---
+
+The thing I like about seeing it laid out like this: it's not that much stuff. A laptop, a keyboard, a terminal, and a few tools in each layer. The best setup is the one where you're not thinking about the setup.
